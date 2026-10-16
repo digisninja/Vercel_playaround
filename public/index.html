@@ -1,0 +1,1750 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Understand your joints and muscles, check where you're stiff, and train with guided mobility sessions built for adults 50 and over.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='4.2' r='2.6' fill='%233279f9'/%3E%3Cpath d='M4 22c2.2-6.5 4.8-11 8-11s5.8 4.5 8 11' fill='none' stroke='%2334a853' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Supple Body Atlas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap">
+<style>
+/* Layout: Antigravity-style centered product page — white field, particle hero, black starfield panels, aurora-glow cards — carrying one guided journey: understand → assess → explore → train → confident. */
+:root{
+  --bg:#ffffff; --fg:#121317; --muted:#45474d; --faint:#6a6d75;
+  --surface:#f8f9fc; --surface-2:#eff2f7; --line:rgba(33,34,38,.12); --line-soft:rgba(33,34,38,.07);
+  --pill:rgba(183,191,217,.14); --pill-hover:rgba(183,191,217,.28);
+  --btn:#121317; --btn-fg:#ffffff; --btn-hover:#2f3034;
+  --blue:#3279f9; --g-red:#ea4335; --g-orange:#f6923a; --g-yellow:#fbbc04; --g-green:#34a853;
+  --glow-a:rgba(50,121,249,.30); --glow-b:rgba(234,67,53,.16); --glow-c:rgba(251,188,4,.20); --glow-d:rgba(52,168,83,.16);
+  --panel:#0b0c0f; --panel-2:#16171b; --panel-fg:#e6eaf0; --panel-muted:#9aa0ab; --panel-line:rgba(230,234,240,.12);
+  --fig-body:rgba(230,234,240,.07); --fig-line:rgba(230,234,240,.32);
+  --focus:#f28b82; --build:#fdd663; --keep:#81c995; --unset:#8ab4f8;
+  --focus-ink:#c5221f; --build-ink:#a35f00; --keep-ink:#137333; --unset-ink:#1a5fd6;
+  --sans:"Google Sans Flex","Google Sans","Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"Google Sans Code","Roboto Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --r-xl:36px; --r-lg:24px; --r-md:16px;
+  --maxw:1180px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121317; --fg:#eef0f5; --muted:#b2bbc5; --faint:#8d939e;
+  --surface:#18191d; --surface-2:#212226; --line:rgba(230,234,240,.13); --line-soft:rgba(230,234,240,.07);
+  --pill:rgba(183,191,217,.10); --pill-hover:rgba(183,191,217,.2);
+  --btn:#eef0f5; --btn-fg:#121317; --btn-hover:#cdd4dc;
+  --glow-a:rgba(50,121,249,.26); --glow-b:rgba(234,67,53,.12); --glow-c:rgba(251,188,4,.12); --glow-d:rgba(52,168,83,.12);
+  --panel:#07080a; --panel-2:#121317;
+  --focus-ink:#f28b82; --build-ink:#fdd663; --keep-ink:#81c995; --unset-ink:#8ab4f8;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#121317; --fg:#eef0f5; --muted:#b2bbc5; --faint:#8d939e;
+  --surface:#18191d; --surface-2:#212226; --line:rgba(230,234,240,.13); --line-soft:rgba(230,234,240,.07);
+  --pill:rgba(183,191,217,.10); --pill-hover:rgba(183,191,217,.2);
+  --btn:#eef0f5; --btn-fg:#121317; --btn-hover:#cdd4dc;
+  --glow-a:rgba(50,121,249,.26); --glow-b:rgba(234,67,53,.12); --glow-c:rgba(251,188,4,.12); --glow-d:rgba(52,168,83,.12);
+  --panel:#07080a; --panel-2:#121317;
+  --focus-ink:#f28b82; --build-ink:#fdd663; --keep-ink:#81c995; --unset-ink:#8ab4f8;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:12px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono);font-size:.82rem;letter-spacing:.01em}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:450;letter-spacing:-.02em}
+p{margin:0}
+
+/* ---------- Header ---------- */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.hdr .wrap{display:flex;align-items:center;gap:12px;height:64px;max-width:1320px}
+.nav .pill{padding:0 12px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;font-size:1.15rem;font-weight:500;letter-spacing:-.01em}
+.logo svg{width:22px;height:22px}
+.nav{display:flex;gap:2px;margin-left:16px}
+.pill{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 16px;white-space:nowrap;flex-shrink:0;border-radius:999px;border:0;background:transparent;color:var(--muted);text-decoration:none;font-size:.94rem;font-weight:450;letter-spacing:.01em;cursor:pointer;transition:background .2s,color .2s}
+.pill:hover{background:var(--pill-hover);color:var(--fg)}
+.pill.tonal{background:var(--pill);color:var(--fg)}
+.pill.primary{background:var(--btn);color:var(--btn-fg)}
+.pill.primary:hover{background:var(--btn-hover)}
+.pill.big{height:48px;padding:0 24px;font-size:1rem}
+.hdr .spacer{flex:1}
+.theme-btn{width:38px;padding:0;justify-content:center}
+@media (max-width:820px){.nav{display:none}}
+.hdr .wrap > *{flex-shrink:0}
+.hdr .spacer{flex:1 1 0;min-width:8px}
+.hdr.compact .nav{display:none}
+.menu-btn{display:none;width:38px;padding:0;justify-content:center}
+.hdr.compact .menu-btn{display:inline-flex}
+.menu-btn .mb-close{display:none}
+.menu-btn[aria-expanded="true"] .mb-open{display:none}
+.menu-btn[aria-expanded="true"] .mb-close{display:inline}
+.menu-panel{border-top:1px solid var(--line-soft);background:var(--bg);box-shadow:0 18px 30px -18px rgba(18,19,23,.25);max-height:calc(100vh - 64px);overflow-y:auto}
+.hdr .menu-panel .wrap{display:flex;flex-direction:column;align-items:stretch;height:auto;gap:18px;padding-block:6px 22px}
+.menu-list{display:flex;flex-direction:column}
+.menu-list a{display:flex;align-items:baseline;gap:14px;padding:14px 4px;border-bottom:1px solid var(--line-soft);text-decoration:none;font-size:1.25rem;letter-spacing:-.01em}
+.menu-list a .mono{color:var(--faint);font-size:.78rem}
+.menu-list a:hover{color:var(--blue)}
+.menu-actions{display:flex;gap:10px;flex-wrap:wrap}
+.menu-theme{display:none}
+@media (max-width:520px){.hdr .theme-btn{display:none}.menu-theme{display:inline-flex}}
+.nav-lib svg{opacity:.7}
+.drill{width:100%;border:1px solid transparent;font:inherit;color:inherit;text-align:left;cursor:pointer;transition:border-color .2s,background .2s;grid-template-columns:auto minmax(0,1fr) auto auto !important}
+.drill:hover{border-color:var(--line);background:var(--surface-2)}
+.drill .play{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--btn);color:var(--btn-fg);flex:none;align-self:center}
+.drill .play svg{width:13px;height:13px;margin-left:2px}
+@media (max-width:480px){.drill{grid-template-columns:auto minmax(0,1fr) auto !important}.drill .dose{grid-column:2}.drill .play{grid-column:3;grid-row:1/3}}
+.sec-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.sec-row .sec-label{margin:0}
+.pl-back{height:32px;padding:0 12px;font-size:.86rem}
+.lib-today{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 18px;border-radius:var(--r-md);background:var(--surface-2)}
+.lib-today b{display:block;font-weight:500}
+.lib-today span{font-size:.9rem;color:var(--muted)}
+.lib-group{display:flex;flex-direction:column;gap:8px}
+.lib-group h4{margin:0;font-size:1rem;font-weight:500;display:flex;align-items:center;gap:8px}
+.lib-group h4 i{width:8px;height:8px;border-radius:50%}
+.lib-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:560px){.lib-items{grid-template-columns:1fr}}
+.lib-item{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border-radius:var(--r-md);border:1px solid var(--line);background:var(--surface);text-align:left;cursor:pointer;transition:border-color .2s}
+.lib-item:hover{border-color:var(--fg)}
+.lib-item b{font-weight:500;font-size:.95rem}
+.lib-item span{font-family:var(--mono);font-size:.74rem;color:var(--faint)}
+.pl-wrap.wide{width:min(820px,100%)}
+
+.banner{border-block:1px solid var(--line-soft);background:var(--surface)}
+.banner .wrap{display:flex;align-items:center;justify-content:center;gap:10px;min-height:44px;font-size:.92rem;color:var(--fg);text-align:center;flex-wrap:wrap;padding-block:6px}
+.tag-new{display:inline-flex;align-items:center;gap:4px;background:var(--btn);color:var(--btn-fg);font-size:.72rem;font-weight:600;letter-spacing:.06em;padding:3px 10px;border-radius:999px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;padding-block:56px 32px;text-align:center}
+#particles{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:28px}
+.brandline{display:flex;align-items:center;gap:10px;font-size:1.6rem;font-weight:450;letter-spacing:-.01em}
+.brandline svg{width:30px;height:30px}
+.hero h1{font-size:clamp(2.4rem,6.4vw,4.6rem);line-height:1.04;max-width:14ch;font-weight:450;letter-spacing:-.035em}
+.hero .lede{max-width:56ch;color:var(--muted);font-size:1.12rem}
+.startcard{display:flex;flex-direction:column;align-items:center;gap:14px;padding:22px 28px;border-radius:var(--r-lg);background:color-mix(in srgb,var(--surface) 82%,transparent);border:1px solid var(--line-soft);backdrop-filter:blur(6px)}
+.startcard .row{display:flex;align-items:center;gap:14px;text-align:left}
+.startcard .row svg{width:30px;height:30px;flex:none}
+.startcard b{display:block;font-weight:500;font-size:1.1rem}
+.startcard span{color:var(--muted);font-size:.95rem}
+.startcard .btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+
+/* black starfield panel */
+.panel{position:relative;overflow:hidden;background:var(--panel);color:var(--panel-fg);border-radius:var(--r-xl)}
+.panel canvas.stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-panel{width:100%;margin-top:12px;min-height:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:36px 16px 64px}
+.hero-fig{position:relative;z-index:1}
+.hero-chips{position:absolute;inset:0;pointer-events:none;z-index:2}
+.hero-leaders{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+.hero-leaders line{stroke:var(--panel-line);stroke-width:1;stroke-dasharray:3 4}
+.hero-leaders circle{fill:var(--panel-fg);opacity:.7}
+.hero-panel:not(.ready) .hero-chips{visibility:hidden}
+.hero-panel.stack .hero-chips{position:relative;inset:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:520px;visibility:visible}
+.hero-panel.stack .hero-chips .chip{position:static;max-width:100%;white-space:normal}
+.caption-pill{white-space:nowrap}
+.hero-panel.stack .hero-leaders{display:none}
+.hero-panel.stack .hero-fig{width:min(250px,64%)}
+.hero-fig{position:relative;width:min(360px,80%);aspect-ratio:300/620;max-height:560px}
+.hero-fig svg{width:100%;height:100%}
+.chip{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(22,23,27,.82);border:1px solid var(--panel-line);font-family:var(--mono);font-size:.74rem;color:var(--panel-fg);white-space:nowrap;backdrop-filter:blur(4px)}
+.chip i{width:7px;height:7px;border-radius:50%;flex:none}
+.caption-pill{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);padding:6px 16px;border-radius:999px;border:1px solid var(--panel-line);font-size:.85rem;color:var(--panel-fg);background:rgba(22,23,27,.6)}
+
+
+/* ---------- Statement ---------- */
+.statement{padding-block:96px 40px}
+.statement p{font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.22;letter-spacing:-.02em;font-weight:430;max-width:28ch;margin:0 auto;text-align:center}
+.statement .w{color:var(--faint);transition:color .35s}
+.statement .w.lit{color:var(--fg)}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-block:1px solid var(--line);margin-top:64px}
+.facts div{padding:28px 20px;display:flex;flex-direction:column;gap:6px;border-left:1px solid var(--line)}
+.facts div:first-child{border-left:0}
+.facts b{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:400;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.facts span{color:var(--muted);font-size:.92rem}
+@media (max-width:720px){.facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* ---------- Section heads ---------- */
+section.block{padding-block:96px 24px}
+.head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;margin-bottom:40px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.head h2{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.08}
+.head p{max-width:62ch;color:var(--muted);font-size:1.06rem}
+
+/* ---------- Journey ---------- */
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}
+.step{--c:var(--blue);position:relative;display:flex;flex-direction:column;gap:10px;padding:22px 20px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line-soft);text-decoration:none;transition:transform .25s,background .5s,border-color .5s}
+.step .feel i{background:var(--c);transition:box-shadow .5s,transform .5s}
+.step.on{border-color:color-mix(in srgb,var(--c) 45%,var(--line-soft));background:color-mix(in srgb,var(--c) 6%,var(--surface))}
+.step.on .feel i{transform:scale(1.2);box-shadow:0 0 0 5px color-mix(in srgb,var(--c) 22%,transparent)}
+.step:hover{transform:translateY(-3px);background:var(--surface-2)}
+.step .n{font-family:var(--mono);font-size:.78rem;color:var(--faint)}
+.step h3{font-size:1.3rem;font-weight:500}
+.step p{color:var(--muted);font-size:.94rem}
+.feel{margin-top:auto;padding-top:10px;display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--fg)}
+.feel i{width:8px;height:8px;border-radius:50%}
+.arc{position:relative;margin-top:26px;height:6px;border-radius:999px;background:var(--surface-2)}
+.arc-fill{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,var(--g-red),var(--g-orange) 25%,var(--g-yellow) 50%,var(--g-green) 75%,var(--blue));clip-path:inset(0 calc((1 - var(--x,.1)) * 100%) 0 0 round 999px);transition:clip-path .6s cubic-bezier(.2,.8,.2,1)}
+.arc-dot{position:absolute;top:50%;left:calc(var(--x,.1) * 100%);width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:var(--bg);border:3px solid var(--dot,var(--g-red));box-shadow:0 0 0 6px color-mix(in srgb,var(--dot,var(--g-red)) 22%,transparent);transition:left .6s cubic-bezier(.2,.8,.2,1),border-color .5s,box-shadow .5s}
+.arc-labels{display:flex;justify-content:space-between;margin-top:12px;font-family:var(--mono);font-size:.76rem;color:var(--faint)}
+.arc-labels span{transition:color .5s}
+.arc-labels span.on{color:var(--fg)}
+@media (max-width:900px){.journey{grid-template-columns:1fr 1fr}.journey .step:last-child{grid-column:1/-1}}
+@media (max-width:520px){.journey{grid-template-columns:1fr}}
+
+/* ---------- Glow card ---------- */
+.glow{position:relative;isolation:isolate}
+.glow::before{content:"";position:absolute;inset:-6% -4%;z-index:-1;filter:blur(48px);border-radius:60px;
+  background:radial-gradient(40% 50% at 15% 30%,var(--glow-a),transparent 70%),radial-gradient(35% 45% at 85% 25%,var(--glow-b),transparent 70%),radial-gradient(40% 45% at 80% 85%,var(--glow-c),transparent 70%),radial-gradient(35% 45% at 20% 85%,var(--glow-d),transparent 70%)}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r-xl)}
+
+/* ---------- Assessment ---------- */
+.assess{padding:clamp(20px,4vw,44px);display:flex;flex-direction:column;gap:28px}
+.dashes{display:flex;gap:6px}
+.dashes span{flex:1;height:4px;border-radius:4px;background:var(--surface-2);transition:background .3s}
+.dashes span.done{background:var(--fg)}
+.dashes span.now{background:var(--blue)}
+.q-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.region-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;background:var(--pill);font-size:.85rem}
+.q-title{font-size:clamp(1.6rem,3.4vw,2.3rem);line-height:1.12}
+.q-how{color:var(--muted);max-width:62ch;font-size:1.04rem}
+.q-why{font-size:.9rem;color:var(--faint);max-width:62ch}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px 18px;border-radius:var(--r-md);border:1px solid var(--line);background:var(--surface);cursor:pointer;transition:border-color .2s,background .2s,transform .15s}
+.opt:hover{border-color:var(--fg)}
+.opt:active{transform:scale(.995)}
+.opt .dot{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--faint);flex:none;display:grid;place-items:center}
+.opt[aria-pressed="true"]{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 8%,var(--surface))}
+.opt[aria-pressed="true"] .dot{border-color:var(--blue)}
+.opt[aria-pressed="true"] .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.opt .lv{margin-left:auto;font-family:var(--mono);font-size:.74rem;color:var(--faint);white-space:nowrap}
+.q-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;color:var(--muted);cursor:pointer;max-width:62ch}
+.consent input{margin-top:3px;width:16px;height:16px;accent-color:var(--blue);flex:none}
+.mood-msg{padding:16px 18px;border-radius:var(--r-md);background:var(--surface-2);color:var(--fg);max-width:70ch}
+.results{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+.results .mood-msg{grid-column:1/-1}
+@media (max-width:820px){.results{grid-template-columns:1fr}}
+.bars{display:flex;flex-direction:column;gap:12px}
+.bar{display:grid;grid-template-columns:150px 1fr 96px;align-items:center;gap:12px;font-size:.95rem}
+.bar .track{height:10px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.bar .fill{height:100%;border-radius:999px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.bar .st{font-family:var(--mono);font-size:.74rem;text-align:right}
+@media (max-width:480px){.bar{grid-template-columns:1fr 84px}.bar .track{grid-column:1/-1;grid-row:2}}
+.st-focus{color:var(--focus-ink)} .st-build{color:var(--build-ink)} .st-keep{color:var(--keep-ink)} .st-unset{color:var(--unset-ink)}
+.mini-panel{border-radius:var(--r-lg);min-height:360px;display:grid;place-items:center;padding:20px}
+.mini-panel svg{width:auto;height:340px;max-width:100%;position:relative}
+
+/* ---------- Explorer ---------- */
+.explorer{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:0;overflow:hidden}
+@media (max-width:900px){.explorer{grid-template-columns:1fr}}
+.ex-fig{border-radius:0;min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 16px}
+@media (max-width:900px){.ex-fig{min-height:520px}}
+.ex-fig svg{position:relative;height:560px;max-height:70vh;width:auto;max-width:100%}
+.legend{position:relative;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:14px;font-size:.78rem;color:var(--panel-muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:8px;height:8px;border-radius:50%}
+.ex-detail{padding:clamp(20px,3.4vw,40px);display:flex;flex-direction:column;gap:26px;min-width:0}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.tabs button{flex:none}
+.tabs button[aria-selected="true"]{background:var(--btn);color:var(--btn-fg)}
+.ex-title{display:flex;flex-direction:column;gap:8px}
+.ex-title h3{font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.05}
+.ex-title .sub{color:var(--muted)}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);font-size:.82rem}
+.badge i{width:7px;height:7px;border-radius:50%}
+.sec-label{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
+.rom{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.rom div{padding:14px;border-radius:var(--r-md);background:var(--surface)}
+.rom b{display:block;font-family:var(--mono);font-weight:400;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.rom span{font-size:.84rem;color:var(--muted)}
+@media (max-width:520px){.rom{grid-template-columns:1fr}}
+.muscles{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.muscles details{border-bottom:1px solid var(--line)}
+.muscles summary{list-style:none;display:flex;align-items:baseline;gap:12px;padding:14px 2px;cursor:pointer}
+.muscles summary::-webkit-details-marker{display:none}
+.muscles summary b{font-weight:500}
+.muscles summary span{color:var(--muted);font-size:.92rem;flex:1;min-width:0}
+.muscles summary::after{content:"+";font-family:var(--mono);color:var(--faint);transition:transform .2s}
+.muscles details[open] summary::after{transform:rotate(45deg)}
+.muscles .path{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:0 2px 16px;font-size:.9rem;color:var(--muted)}
+.muscles .path em{font-style:normal;padding:4px 10px;border-radius:8px;background:var(--surface-2);color:var(--fg)}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.links{grid-template-columns:1fr}}
+.link-card{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:var(--r-md);border:1px solid var(--line);background:transparent;text-align:left;cursor:pointer;transition:border-color .2s,background .2s}
+.link-card:hover{border-color:var(--fg);background:var(--surface)}
+.link-card b{font-weight:500;display:flex;align-items:center;gap:6px}
+.link-card span{font-size:.9rem;color:var(--muted)}
+.age{padding:16px 18px;border-radius:var(--r-md);background:var(--surface-2);font-size:.97rem}
+.drills{display:grid;gap:10px}
+.drill{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;padding:14px 16px;border-radius:var(--r-md);background:var(--surface)}
+.drill .ix{font-family:var(--mono);font-size:.78rem;color:var(--faint);padding-top:3px}
+.drill b{font-weight:500}
+.drill p{font-size:.9rem;color:var(--muted);margin-top:2px}
+.drill .dose{font-family:var(--mono);font-size:.78rem;white-space:nowrap;padding:4px 10px;border-radius:999px;background:var(--pill)}
+@media (max-width:480px){.drill{grid-template-columns:auto 1fr}.drill .dose{grid-column:2;justify-self:start}}
+.ex-nav{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+
+/* figure */
+.fig .body{fill:var(--fig-body);stroke:var(--fig-body);stroke-linejoin:round;stroke-linecap:round}
+.fig .bone{stroke:var(--fig-line);stroke-width:1.2;fill:none}
+.fig .spine{stroke:var(--fig-line);stroke-width:1.2;stroke-dasharray:2 5;fill:none}
+.fig .head{fill:var(--fig-body);stroke:var(--fig-line);stroke-width:1.2}
+.fig .minor{fill:var(--panel-fg);opacity:.55}
+.fig .joint .halo{fill:currentColor;opacity:.16;transition:opacity .3s,r .3s}
+.fig .joint .dot{fill:currentColor}
+.fig .joint .ring{fill:none;stroke:currentColor;stroke-width:1.2;opacity:0}
+.fig .joint{color:var(--unset);transition:color .3s}
+.fig .joint.s-focus{color:var(--focus)} .fig .joint.s-build{color:var(--build)} .fig .joint.s-keep{color:var(--keep)}
+.fig.interactive .joint{cursor:pointer}
+.fig.interactive .joint:hover .halo{opacity:.32}
+.fig .joint.active .halo{opacity:.4}
+.fig .joint.active .ring{opacity:.9}
+.fig .lbl{fill:var(--panel-muted);font-family:var(--mono);font-size:9px;letter-spacing:.04em}
+.fig .joint.active + .lbl, .fig .lbl.on{fill:var(--panel-fg)}
+@media (prefers-reduced-motion: no-preference){
+  .fig .joint .halo{animation:breathe 3.6s ease-in-out infinite}
+  .fig .joint:nth-of-type(2n) .halo{animation-delay:-1.2s}
+  .fig .joint:nth-of-type(3n) .halo{animation-delay:-2.4s}
+  .fig .joint.active .ring{animation:ping 2s ease-out infinite;transform-box:fill-box;transform-origin:center}
+}
+@keyframes breathe{0%,100%{opacity:.12}50%{opacity:.3}}
+@keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+
+/* ---------- Chain ---------- */
+.chain{display:grid;grid-template-columns:minmax(0,1fr);gap:0;max-width:880px;margin:0 auto}
+.link{display:grid;grid-template-columns:56px 180px 1fr;gap:18px;align-items:start;padding:20px 8px;border-top:1px solid var(--line);cursor:pointer;background:transparent;border-left:0;border-right:0;border-bottom:0;text-align:left;width:100%;transition:background .2s}
+.link:last-child{border-bottom:1px solid var(--line)}
+.link:hover{background:var(--surface)}
+.link .node{position:relative;display:grid;place-items:center;height:100%}
+.link .node::before{content:"";position:absolute;top:-21px;bottom:-21px;width:1.5px;background:var(--line)}
+.link:first-child .node::before{top:50%}
+.link:last-child .node::before{bottom:50%}
+.link .node i{position:relative;width:16px;height:16px;border-radius:50%;border:2px solid var(--fg);background:var(--bg)}
+.link.stable .node i{border-radius:4px;background:var(--fg)}
+.link b{font-size:1.15rem;font-weight:500;display:block}
+.link .role{font-family:var(--mono);font-size:.76rem;color:var(--faint);letter-spacing:.06em;text-transform:uppercase}
+.link p{color:var(--muted);font-size:.95rem}
+.link p strong{color:var(--fg);font-weight:500}
+@media (max-width:640px){.link{grid-template-columns:36px 1fr}.link p{grid-column:2}}
+.chain-key{display:flex;gap:22px;justify-content:center;margin-top:20px;font-size:.88rem;color:var(--muted);flex-wrap:wrap}
+.chain-key span{display:inline-flex;align-items:center;gap:8px}
+.chain-key i{width:12px;height:12px;border:2px solid var(--fg);border-radius:50%}
+.chain-key i.sq{border-radius:3px;background:var(--fg)}
+
+/* ---------- Plan ---------- */
+.plan{padding:clamp(20px,4vw,44px);display:flex;flex-direction:column;gap:24px}
+.plan-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.plan-top h3{font-size:clamp(1.5rem,3vw,2rem)}
+.example-flag{font-family:var(--mono);font-size:.76rem;padding:5px 12px;border-radius:999px;background:var(--surface-2);color:var(--muted)}
+.focus-row{display:flex;gap:8px;flex-wrap:wrap}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+@media (max-width:1240px){.week{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:640px){.week{grid-template-columns:1fr 1fr}}
+@media (max-width:400px){.week{grid-template-columns:1fr}}
+.day{display:flex;flex-direction:column;gap:8px;padding:14px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line-soft);min-width:0}
+.day .d{font-family:var(--mono);font-size:.74rem;color:var(--faint);display:flex;justify-content:space-between}
+.day b{font-weight:500;font-size:1rem}
+.day ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:.86rem;color:var(--muted)}
+.day li{display:flex;gap:6px}
+.day li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--faint);margin-top:.55em;flex:none}
+.day.mob{border-top:3px solid var(--blue)} .day.str{border-top:3px solid var(--g-green)} .day.easy{border-top:3px solid var(--g-yellow)}
+.daily{display:flex;gap:12px;align-items:center;padding:14px 18px;border-radius:var(--r-md);background:var(--surface-2);font-size:.95rem;flex-wrap:wrap}
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:720px){.ladder{grid-template-columns:1fr 1fr}}
+.rung{padding:16px;border-radius:var(--r-md);border:1px solid var(--line)}
+.rung .mono{color:var(--faint)}
+.rung b{display:block;font-weight:500;margin:6px 0 4px}
+.rung p{font-size:.88rem;color:var(--muted)}
+
+/* ---------- Footer ---------- */
+.final{padding-block:110px 60px;text-align:center}
+.final h2{font-size:clamp(2.2rem,5.6vw,4rem);line-height:1.04;max-width:16ch;margin:0 auto 26px;letter-spacing:-.035em}
+.safety{max-width:70ch;margin:32px auto 0;font-size:.88rem;color:var(--faint)}
+footer{border-top:1px solid var(--line);padding-block:28px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--faint);font-size:.88rem}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:var(--fg)}
+
+/* ---------- Language toggle ---------- */
+.lang{display:inline-flex;align-items:center;gap:2px;height:38px;padding:0 4px 0 10px;border-radius:999px;background:var(--pill);color:var(--muted);flex-shrink:0;white-space:nowrap}
+.lang svg{width:16px;height:16px;margin-right:4px;flex:none}
+.lang button{border:0;background:transparent;height:30px;min-width:36px;padding:0 9px;white-space:nowrap;line-height:1;border-radius:999px;cursor:pointer;font-size:.86rem;font-weight:500;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--bg);color:var(--fg);box-shadow:0 0 0 1px var(--line)}
+@media (max-width:540px){.hdr .cta-top{display:none}}
+:lang(zh) h1,:lang(zh) h2,:lang(zh) h3{letter-spacing:0}
+
+/* plan item dose */
+.day li > span{min-width:0;display:flex;flex-direction:column;gap:2px}
+.day ul{overflow-wrap:break-word;hyphens:auto}
+.day .ds{display:block;font-family:var(--mono);font-size:.74rem;color:var(--faint);white-space:normal}
+.day .d{flex-wrap:wrap;gap:2px 8px}
+.day .d > span:first-child{display:inline-flex;align-items:center;gap:6px;flex-wrap:wrap}
+.day b{overflow-wrap:break-word;hyphens:auto}
+.plan-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.today{display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;padding:18px 20px;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line)}
+.today .t-info{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1 1 320px}
+.today .t-eyebrow{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.today .t-eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.today .t-title{font-size:1.2rem;font-weight:500}
+.today .t-list{font-size:.92rem;color:var(--muted)}
+.today .t-list span+span::before{content:" · ";color:var(--faint)}
+@media (max-width:520px){.today [data-train]{width:100%;justify-content:center}}
+.day.is-today{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
+.day .now-tag{color:var(--blue)}
+
+/* ---------- Train-with-me player ---------- */
+.player{position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow-y:auto;background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.player[hidden]{display:none}
+.pl-wrap{width:min(640px,100%)}
+.pl-box{position:relative;padding:clamp(20px,4vw,36px);display:flex;flex-direction:column;gap:18px}
+.pl-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pl-top .mono{color:var(--faint)}
+.pl-close{width:38px;padding:0;justify-content:center;flex:none}
+.pl-note{font-size:.9rem;color:var(--muted);padding:10px 14px;border-radius:12px;background:var(--surface-2)}
+.pl-name{font-size:clamp(1.8rem,4.4vw,2.6rem);line-height:1.08}
+.pl-dose{align-self:flex-start;font-family:var(--mono);font-size:.95rem;padding:6px 14px;border-radius:999px;background:var(--pill)}
+.pl-cue{font-size:1.08rem;color:var(--muted);max-width:52ch}
+.pl-ring{position:relative;width:132px;height:132px;margin:0 auto;display:grid;place-items:center}
+.pl-stage{position:relative;height:250px;display:flex;align-items:center;justify-content:center;padding:28px 8px 8px;border-radius:var(--r-lg)}
+.pl-stage svg{position:relative;width:100%;height:100%;max-width:420px}
+.pl-chips{position:absolute;left:12px;top:12px;display:flex;gap:6px;flex-wrap:wrap;right:12px}
+.pchip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:rgba(22,23,27,.85);border:1px solid var(--panel-line);font-size:.76rem;color:var(--panel-fg)}
+.pchip i{width:7px;height:7px;border-radius:50%;flex:none}
+.pl-cap{position:absolute;right:14px;bottom:10px;font-family:var(--mono);font-size:.68rem;color:var(--panel-muted)}
+.pf-line{stroke:var(--panel-fg);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.pf-far{opacity:.4}
+.pf-ghost{opacity:.17}
+.pf-ghost .pf-line{stroke-width:2.4}
+.pf-head{fill:var(--panel);stroke:var(--panel-fg);stroke-width:2.4}
+.pf-ghost .pf-head{fill:none}
+.pf-dot{fill:var(--panel-fg)}
+.pf-prop{fill:var(--fig-body);stroke:var(--panel-muted);stroke-width:1.2}
+.pf-pl{stroke:var(--panel-muted);stroke-width:2}
+.pf-floor{stroke:var(--panel-line);stroke-width:1}
+.pf-band{fill:none;stroke:var(--build);stroke-width:2.2}
+.pf-rib{fill:var(--unset);fill-opacity:.18;stroke:var(--unset);stroke-width:1}
+.pf-hl{fill:var(--unset);opacity:.25}
+.pf-ring{fill:none;stroke:var(--unset);stroke-width:1.5}
+@media (prefers-reduced-motion: no-preference){.pf-ring{animation:ping 1.8s ease-out infinite;transform-box:fill-box;transform-origin:center}}
+.pl-ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)}
+.pl-ring circle{fill:none;stroke-width:8;stroke-linecap:round}
+.pl-ring .bgc{stroke:var(--surface-2)}
+.pl-ring .fgc{stroke:var(--blue);transition:stroke-dashoffset 1s linear}
+.pl-ring b{font-family:var(--mono);font-weight:400;font-size:1.8rem;font-variant-numeric:tabular-nums}
+.pl-ring small{position:absolute;bottom:26px;font-size:.78rem;color:var(--faint)}
+.pl-hint{text-align:center;font-size:.86rem;color:var(--faint)}
+.pl-ctrl{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.pl-ctrl .mid{flex:1;display:flex;justify-content:center}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Supple home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#34a853"/><stop offset=".35" stop-color="#fbbc04"/><stop offset=".65" stop-color="#ea4335"/><stop offset="1" stop-color="#3279f9"/></linearGradient></defs><circle cx="12" cy="4.2" r="2.6" fill="url(#lg)"/><path d="M4 22c2.2-6.5 4.8-11 8-11s5.8 4.5 8 11" fill="none" stroke="url(#lg)" stroke-width="3" stroke-linecap="round"/></svg>
+      Supple
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a class="pill" href="#journey">Journey</a>
+      <a class="pill" href="#assess">Check-in</a>
+      <a class="pill" href="#explore">Body atlas</a>
+      <a class="pill" href="#chain">How it connects</a>
+      <a class="pill" href="#plan">Your plan</a>
+      <button class="pill nav-lib" data-library><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Exercise library</button>
+    </nav>
+    <span class="spacer"></span>
+    <div class="lang" role="group" aria-label="Language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+      <button data-lang="en" aria-pressed="true" lang="en">EN</button>
+      <button data-lang="zh" aria-pressed="false" lang="zh">中文</button>
+      <button data-lang="pt" aria-pressed="false" lang="pt" title="Português">PT</button>
+    </div>
+    <button class="pill theme-btn" id="themeBtn" aria-label="Switch light or dark theme">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+    </button>
+    <a class="pill primary cta-top" id="ctaTop" href="#assess">Start check-in</a>
+    <button class="pill tonal menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menuPanel" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="mb-open" d="M4 7h16M4 12h16M4 17h16"/><path class="mb-close" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="menu-panel" id="menuPanel" hidden>
+    <div class="wrap">
+      <nav class="menu-list" aria-label="Sections">
+        <a href="#journey"><span class="mono">01</span><span>Journey</span></a>
+        <a href="#assess"><span class="mono">02</span><span>Check-in</span></a>
+        <a href="#explore"><span class="mono">03</span><span>Body atlas</span></a>
+        <a href="#chain"><span class="mono">04</span><span>How it connects</span></a>
+        <a href="#plan"><span class="mono">05</span><span>Your plan</span></a>
+      </nav>
+      <div class="menu-actions">
+        <button class="pill primary big" data-library><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Exercise library</button>
+        <button class="pill tonal big menu-theme" data-theme-toggle>Light / dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="banner" id="top">
+  <div class="wrap"><span class="tag-new">✦ NEW</span> A 7-move body check-in, designed for adults 50 and over <a class="pill" href="#assess" style="height:30px;padding:0 10px">Try it →</a></div>
+</div>
+
+<section class="hero">
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="brandline">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4.2" r="2.6" fill="url(#lg)"/><path d="M4 22c2.2-6.5 4.8-11 8-11s5.8 4.5 8 11" fill="none" stroke="url(#lg)" stroke-width="3" stroke-linecap="round"/></svg>
+      Supple Body Atlas
+    </div>
+    <h1>Move with confidence at every age</h1>
+    <p class="lede">Learn how your joints and muscles work together, find out where you're stiff, and train the parts that need it most. Everything starts with understanding your own body.</p>
+    <div class="startcard">
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 21v-6h12v6M6 15V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v6"/><path d="M4 21h16"/></svg>
+        <div><b>Start with your body</b><span>5 minutes · a chair and a wall · no equipment</span></div>
+      </div>
+      <div class="btns">
+        <a class="pill primary big" href="#assess">Begin the check-in</a>
+        <a class="pill tonal big" href="#explore">Explore the atlas</a>
+      </div>
+    </div>
+    <div class="panel hero-panel" aria-label="Preview of the body atlas">
+      <canvas class="stars" aria-hidden="true"></canvas>
+      <svg class="hero-leaders" aria-hidden="true"></svg>
+      <div class="hero-fig" id="heroFig"></div>
+      <div class="hero-chips" id="heroChips">
+        <span class="chip" data-j="neck" data-side="L"><i style="background:var(--keep)"></i>Neck · 70–80° rotation</span>
+        <span class="chip" data-j="thoracic" data-side="R"><i style="background:var(--unset)"></i>Upper back · ≈35° twist</span>
+        <span class="chip" data-j="hips" data-side="R"><i style="background:var(--build)"></i>Hip · 120° flexion</span>
+        <span class="chip" data-j="knees" data-side="L"><i style="background:var(--keep)"></i>Knee · stable hinge</span>
+        <span class="chip" data-j="ankles" data-side="R"><i style="background:var(--focus)"></i>Ankle · knee-to-wall 10 cm</span>
+      </div>
+      <span class="caption-pill">Body atlas view</span>
+    </div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <p id="statement">Movement starts with understanding. Stiffness is not a verdict on your age. It is information about which joints have stopped doing their job, and every one of them can be retrained.</p>
+    <div class="facts">
+      <div><b>206</b><span>bones in the adult skeleton</span></div>
+      <div><b>600+</b><span>skeletal muscles moving them</span></div>
+      <div><b>≈360</b><span>joints, most of them small</span></div>
+      <div><b>7</b><span>key regions you'll learn here, head to feet</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="journey">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">The journey</span>
+      <h2>From uncertain to confident, one step at a time</h2>
+      <p>Most people stop moving well because they stop trusting their body. The path back runs in this order: learn how it works, measure where you are, then train with a reason behind every move.</p>
+    </div>
+    <div class="journey">
+      <a class="step" href="#statement"><span class="n">01</span><h3>Understand</h3><p>See the bones, joints and muscles that make each movement possible.</p><span class="feel"><i style="background:var(--g-red)"></i>You feel: unsure</span></a>
+      <a class="step" href="#assess"><span class="n">02</span><h3>Assess</h3><p>Seven simple tests show which regions move freely and which don't.</p><span class="feel"><i style="background:#f6923a"></i>You feel: curious</span></a>
+      <a class="step" href="#explore"><span class="n">03</span><h3>Explore</h3><p>Go region by region, top to bottom. Learn what each muscle does and what it connects to.</p><span class="feel"><i style="background:var(--g-yellow)"></i>You feel: aware</span></a>
+      <a class="step" href="#plan"><span class="n">04</span><h3>Train</h3><p>A weekly plan aimed at your weakest links first, 12–15 minutes a day.</p><span class="feel"><i style="background:var(--g-green)"></i>You feel: capable</span></a>
+      <a class="step" href="#plan"><span class="n">05</span><h3>Grow confident</h3><p>Retest every four weeks. Watch your map change and your daily life get easier.</p><span class="feel"><i style="background:var(--blue)"></i>You feel: confident</span></a>
+    </div>
+    <div class="arc" aria-hidden="true"></div>
+    <div class="arc-labels" aria-hidden="true"><span>Fear of moving</span><span>Body awareness</span><span>Trust in movement</span></div>
+  </div>
+</section>
+
+<section class="block" id="assess">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Step 02 · Assess</span>
+      <h2>Find out where you are today</h2>
+      <p>Seven movements, about five minutes. Do them near a counter or wall for support. Stop any test that causes sharp pain, and answer with what you can do comfortably.</p>
+    </div>
+    <div class="glow">
+      <div class="card assess" id="assessCard" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="explore">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Step 03 · Explore</span>
+      <h2>Your body, top to bottom</h2>
+      <p>Tap any joint. Each region shows how far it should move, the muscles that move it, the neighbours it depends on, what changes with age, and three drills to start with.</p>
+    </div>
+    <div class="glow">
+      <div class="card explorer">
+        <div class="panel ex-fig">
+          <canvas class="stars" aria-hidden="true"></canvas>
+          <div id="exFig" style="position:relative;display:flex;justify-content:center;width:100%"></div>
+          <div class="legend">
+            <span><i style="background:var(--focus)"></i>Focus here</span>
+            <span><i style="background:var(--build)"></i>Build up</span>
+            <span><i style="background:var(--keep)"></i>Maintain</span>
+            <span><i style="background:var(--unset)"></i>Not checked</span>
+          </div>
+        </div>
+        <div class="ex-detail" id="exDetail"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="chain">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">How it connects</span>
+      <h2>Every joint has a job</h2>
+      <p>Your joints alternate down the body: one built to move, the next built to stay steady. When a mobile joint gets stiff, its stable neighbour is forced to move instead, and that is often where the pain shows up. This is the joint-by-joint idea used by many physical therapists and coaches.</p>
+    </div>
+    <div class="chain" id="chainList"></div>
+    <div class="chain-key"><span><i></i>Built to move (mobility)</span><span><i class="sq"></i>Built to hold steady (stability)</span></div>
+  </div>
+</section>
+
+<section class="block" id="plan">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Step 04 · Train</span>
+      <h2>A week built around your weakest links</h2>
+      <p>Mobility on three days, strength on two, and a little balance every day. Short sessions you can repeat matter more than long ones you skip.</p>
+    </div>
+    <div class="glow">
+      <div class="card plan" id="planCard"></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Your body is the starting point</h2>
+    <a class="pill primary big" href="#assess">Begin the check-in</a>
+    <p class="safety">Supple is educational and is not medical advice. Ranges shown are typical adult values and vary between people. Move within comfort, keep support nearby for balance work, and talk to a doctor or physiotherapist before starting if you have a recent injury or surgery, joint replacement, osteoporosis, or dizziness.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Supple Body Atlas</span>
+    <nav aria-label="Footer"><a href="#journey">Journey</a><a href="#assess">Check-in</a><a href="#explore">Body atlas</a><a href="#chain">How it connects</a><a href="#plan">Plan</a></nav>
+  </div>
+</footer>
+
+<div class="player" id="player" hidden>
+  <div class="pl-wrap glow">
+    <div class="card pl-box" id="plBox" role="dialog" aria-modal="true" aria-labelledby="plTitle"></div>
+  </div>
+</div>
+
+<script>
+/* ================= DATA ================= */
+const REGIONS = [
+ {id:"neck", name:"Neck", sub:"Cervical spine · 7 vertebrae, C1–C7", role:"Moves, with deep control",
+  rom:[["70–80°","Rotation each side"],["≈45–50°","Bending forward"],["≈45°","Side bend"]],
+  muscles:[
+   {n:"Sternocleidomastoid",s:"Turns your head to the opposite side and bends the neck forward",from:"Breastbone & collarbone",to:"Mastoid bone behind the ear"},
+   {n:"Upper trapezius",s:"Lifts the shoulder blades and tilts the head back",from:"Base of skull & neck ligament",to:"Outer collarbone & shoulder tip"},
+   {n:"Levator scapulae",s:"Lifts the shoulder blade; a common spot for neck tension",from:"Upper neck vertebrae, C1–C4",to:"Top inner corner of the shoulder blade"},
+   {n:"Deep neck flexors",s:"Keep the head stacked over the spine instead of drifting forward",from:"Front of the cervical vertebrae",to:"Base of skull & upper vertebrae"}],
+  links:[["thoracic","A rounded upper back pushes the head forward, and the neck muscles have to hold it there all day."],["shoulders","Levator scapulae and upper trapezius tie neck tension to how your shoulder blades sit."]],
+  age:"Discs lose some height and water over the decades, and turning the head usually gets harder. You notice it when checking a blind spot while driving or turning to hear someone.",
+  drills:[["Chin tucks","10 × 3-sec hold","Slide your head straight back, like making a double chin. Keep your eyes level."],["Slow neck turns","5 each side","Turn to the edge of comfort, breathe out, return to centre."],["Upper-trap stretch","30 sec each side","Sit on one hand and tilt your ear toward the other shoulder."]]},
+ {id:"shoulders", name:"Shoulders", sub:"Ball-and-socket joint + shoulder blade on the ribcage", role:"Ball moves, blade holds steady",
+  rom:[["≈170–180°","Arm overhead"],["≈90°","Outward rotation"],["≈70°","Inward rotation"]],
+  muscles:[
+   {n:"Deltoid",s:"Raises the arm forward, out to the side and back",from:"Collarbone, shoulder tip & blade spine",to:"Outer upper arm"},
+   {n:"Rotator cuff (4 muscles)",s:"Keeps the ball centred in the socket through every reach",from:"Shoulder blade",to:"Top of the upper-arm bone"},
+   {n:"Serratus anterior",s:"Wraps the blade around the ribs so the arm can go fully overhead",from:"Ribs 1–8",to:"Inner edge of the shoulder blade"},
+   {n:"Pectoralis minor",s:"Tips the blade forward; when tight, it rounds the shoulders",from:"Ribs 3–5",to:"Coracoid process at the front of the blade"},
+   {n:"Latissimus dorsi",s:"Pulls the arm down and in; tightness limits overhead reach",from:"Lower spine, pelvis & lower ribs",to:"Front of the upper-arm bone"}],
+  links:[["thoracic","Your arm only gets fully overhead if the upper back extends. A stiff upper back borrows range from the shoulder."],["lumbar","When the shoulders run out of overhead range, the lower back often arches to fake it."]],
+  age:"Rotator-cuff tendons thin with age and overhead reach often shrinks quietly, until a high shelf becomes hard to reach. Regular, controlled overhead work keeps it.",
+  drills:[["Wall slides","10 reps","Back and forearms on the wall. Slide up without letting your low back arch."],["Band pull-aparts","2 × 15","Arms straight at chest height, squeeze the shoulder blades gently together."],["Doorway chest stretch","30 sec each side","Forearm on the frame at shoulder height, step through until you feel the chest open."]]},
+ {id:"thoracic", name:"Upper back", sub:"Thoracic spine · 12 vertebrae, T1–T12, plus the ribs", role:"Built to move",
+  rom:[["≈30–35°","Rotation each side"],["most","of your trunk's twist"],["small","extension, but vital"]],
+  muscles:[
+   {n:"Erector spinae",s:"Extends the spine and holds you upright",from:"Pelvis & lower vertebrae",to:"Ribs & vertebrae higher up"},
+   {n:"Rhomboids",s:"Draw the shoulder blades toward the spine",from:"Spine, T2–T5",to:"Inner edge of the shoulder blade"},
+   {n:"Middle & lower trapezius",s:"Set the blades down and back for upright posture",from:"Thoracic spine",to:"Spine of the shoulder blade"},
+   {n:"Obliques",s:"Rotate and side-bend the trunk",from:"Lower ribs",to:"Pelvis & abdominal sheath"}],
+  links:[["lumbar","The upper back is built to rotate and the lower back is not. When the upper back stops turning, the lower back gets twisted instead."],["shoulders","Thoracic extension sets the shoulder blade up for every reach overhead."]],
+  age:"The upper back tends to round more with age. Extension and rotation work is one of the most useful ways to keep standing tall and breathing deeply.",
+  drills:[["Open book","8 each side","Lie on your side with knees bent. Sweep the top arm open and follow it with your eyes."],["Cat–cow","10 slow reps","On hands and knees, round and then gently arch, moving one vertebra at a time."],["Chair-back extension","8 reps","Hands behind your head, lean back over the top of the chair. Only the upper back moves."]]},
+ {id:"lumbar", name:"Lower back & core", sub:"Lumbar spine · 5 vertebrae, L1–L5, inside a muscular cylinder", role:"Built to hold steady",
+  rom:[["≈40–60°","Bending forward"],["small","Rotation, by design"],["brace","its main job"]],
+  muscles:[
+   {n:"Transversus abdominis",s:"A natural belt that stiffens the trunk just before you move",from:"Lower ribs, pelvis & back fascia",to:"Midline sheath of the abdomen"},
+   {n:"Multifidus",s:"Fine control of each spinal segment",from:"One vertebra",to:"The vertebrae 2–4 levels above"},
+   {n:"Diaphragm & pelvic floor",s:"The top and bottom of the core cylinder; they manage pressure that supports the spine",from:"Lower ribs & spine",to:"Central tendon / pelvic outlet"},
+   {n:"Quadratus lumborum",s:"Side-bends and hitches the hip; overworks when the glutes don't",from:"Top of the pelvis",to:"Lowest rib & L1–L4"}],
+  links:[["hips","If the hips can't bend, every bend becomes a back bend."],["thoracic","A stiff upper back pushes rotation down into the lower back."]],
+  age:"Low-back pain is common with age, and most of it is not damage. A trunk that can brace plus hips that can hinge spread the load where it belongs.",
+  drills:[["Dead bug","8 each side","Low back stays heavy on the floor while the opposite arm and leg reach away."],["Bird dog","8 each side","On hands and knees, reach long without letting the hips rotate."],["90/90 breathing","5 slow breaths","Lie with feet on a chair. Exhale fully and feel the ribs drop."]]},
+ {id:"hips", name:"Hips", sub:"Ball-and-socket · thigh bone in the pelvis", role:"Built to move",
+  rom:[["≈120°","Bending (knee to chest)"],["≈10–20°","Extension behind you"],["≈30–40°","Inward rotation"]],
+  muscles:[
+   {n:"Gluteus maximus",s:"Extends the hip: stands you up and climbs the stairs",from:"Back of the pelvis & sacrum",to:"Upper thigh bone & IT band"},
+   {n:"Gluteus medius",s:"Keeps the pelvis level when you stand on one leg, which is key for walking and balance",from:"Outer pelvis",to:"Outer top of the thigh bone"},
+   {n:"Iliopsoas",s:"Lifts the knee; shortens with long hours of sitting",from:"Lumbar spine & inner pelvis",to:"Inner upper thigh bone"},
+   {n:"Adductors",s:"Pull the legs together and steady you side to side",from:"Pubic bone",to:"Inner thigh bone"}],
+  links:[["lumbar","Stiff hips force the lower back to bend and twist for them."],["knees","A weak gluteus medius lets the knee drift inward on stairs and single-leg steps."]],
+  age:"Hip strength is closely tied to independence: rising from a chair, getting up off the floor, and catching yourself after a stumble.",
+  drills:[["90/90 switches","8 each side","Sit with both knees bent at 90°, rotate them side to side. Use your hands for support."],["Glute bridge","2 × 12","Drive through the heels, ribs down, pause at the top."],["Half-kneeling hip-flexor stretch","30 sec each side","Gently tuck your tail under, then shift your weight forward."]]},
+ {id:"knees", name:"Knees", sub:"Hinge joint · thigh bone, shin bone and kneecap", role:"Built to hold steady",
+  rom:[["≈135–150°","Bending"],["0°","Fully straight"],["little","Twist, by design"]],
+  muscles:[
+   {n:"Quadriceps",s:"Straighten the knee and control you as you sit down",from:"Pelvis & thigh bone",to:"Kneecap → shin"},
+   {n:"Hamstrings",s:"Bend the knee, extend the hip, and slow you down",from:"Sit bone",to:"Back of the shin"},
+   {n:"Gastrocnemius",s:"Crosses the knee and the ankle, so calf tightness affects both",from:"Back of the thigh bone",to:"Heel, via the Achilles"},
+   {n:"Popliteus",s:"Unlocks the fully straightened knee",from:"Outer thigh bone",to:"Back of the shin"}],
+  links:[["ankles","Stiff ankles make the knee twist or collapse inward when you squat or go down stairs."],["hips","The knee mostly does what the hip above it tells it to do."]],
+  age:"Strong thigh muscles protect the knee. Stronger quads are linked with less knee pain and easier stairs.",
+  drills:[["Sit-to-stand","10 reps","Chair behind you, lean forward, stand up without using your hands."],["Heel slides","10 each side","Lying down, slide the heel toward your seat and back, slowly."],["Step-ups","8 each side","Low step. Push through the whole foot and control the way down."]]},
+ {id:"ankles", name:"Ankles & feet", sub:"Ankle joint + 26 bones in each foot", role:"Built to move",
+  rom:[["≈20°","Toes toward shin"],["≈10 cm","Knee-to-wall target"],["≈40–50°","Pointing the foot"]],
+  muscles:[
+   {n:"Soleus",s:"The workhorse calf for walking and standing",from:"Back of the shin bones",to:"Heel, via the Achilles"},
+   {n:"Tibialis anterior",s:"Lifts the toes so you don't catch them and trip",from:"Front of the shin",to:"Inner midfoot"},
+   {n:"Fibularis (peroneals)",s:"Stop the ankle rolling outward",from:"Outer shin bone (fibula)",to:"Underside of the foot"},
+   {n:"Foot intrinsics",s:"Spread the toes, support the arch, and sense the ground",from:"Bones of the foot",to:"Toes"}],
+  links:[["knees","Limited ankle bend sends the movement up to the knee, which is built to stay steady."],["hips","For balance, the ankle makes small corrections first and the hip takes over for bigger ones."]],
+  age:"Ankle strength and range both drop with age, and both are linked with falls. Ankles also respond quickly to training.",
+  drills:[["Knee-to-wall rocks","10 each side","Toes near the wall. Push the knee forward to touch the wall without lifting the heel."],["Calf raises","2 × 15","Hold a counter. Rise up slowly and lower even slower."],["Tandem stance","30 sec","Stand heel to toe in a line, close to a counter."]]}
+];
+const R = Object.fromEntries(REGIONS.map(r=>[r.id,r]));
+
+const TESTS = [
+ {id:"neck_rotation",r:["neck"],t:"Look over your shoulder",how:"Sit tall. Turn your head slowly as far as is comfortable to each side.",why:"Checks neck rotation, which you need for driving and turning to talk.",o:["Chin stops well short of my shoulder","Chin nearly lines up with my shoulder","Chin lines up with my shoulder, both sides"]},
+ {id:"shoulder_reach",r:["shoulders"],t:"Reach behind your back",how:"Reach one hand over your shoulder and the other up from below, and try to bring your fingertips together. Swap sides.",why:"Tests shoulder rotation in both directions, used for dressing and reaching.",o:["More than a hand-length apart","A few inches apart","Fingertips touch or overlap"]},
+ {id:"seated_twist",r:["thoracic"],t:"Seated twist",how:"Sit on a chair, cross your arms on your chest, keep your knees still, and rotate to each side.",why:"Isolates upper-back rotation by keeping the hips quiet.",o:["I see the wall beside me only with effort","I see the side wall comfortably","I can see partly behind me"]},
+ {id:"toe_reach",r:["lumbar","hips"],t:"Reach toward your toes",how:"Stand with soft knees and hinge forward slowly. Stop at any pain.",why:"Shows how the hips and lower back share forward bending.",o:["Hands reach my knees or mid-shin","Fingers reach my ankles","Fingers reach my toes or the floor"]},
+ {id:"chair_stand_30s",r:["hips","knees"],t:"30-second chair stand",how:"Arms crossed, stand fully and sit down as many times as you safely can in 30 seconds.",why:"A standard leg-strength test for older adults. Lower scores are linked with higher fall risk.",o:["Fewer than 8","8 to 12","More than 12"]},
+ {id:"single_leg_stand",r:["ankles"],t:"Stand on one leg",how:"Next to a counter with your eyes open, lift one foot and time how long you can hold it. Try both sides.",why:"Balance starts at the ankle and hip. Times naturally fall with age, and they also improve with practice.",o:["Under 10 seconds","10 to 30 seconds","30 seconds or more"]},
+ {id:"knee_to_wall",r:["ankles","knees"],t:"Knee-to-wall",how:"Face a wall with your toes a few inches away. Bend your knee to touch the wall without lifting your heel. Move back until you can't.",why:"Measures ankle bend, which controls squatting, stairs, and walking downhill.",o:["Under 5 cm (2 in)","5 to 10 cm (2–4 in)","10 cm (4 in) or more"]}
+];
+const MOODS = [
+ {k:"cautious",l:"Cautious. I'm worried about getting hurt.",m:"That makes sense. We'll start with movements you fully control, close to support, in a range that feels safe. Confidence grows from small wins you can repeat."},
+ {k:"stiff",l:"Stiff. I know I've lost some range.",m:"Stiffness usually means a joint hasn't been asked to move lately, not that it can't. The check-in shows exactly where to start."},
+ {k:"curious",l:"Curious. I want to understand my body.",m:"Good place to start. Each test links to the joints and muscles behind it, so you'll learn your body as you go."},
+ {k:"ready",l:"Ready. I want a plan.",m:"Then let's build one. Answer honestly. The plan starts with your weakest links."}
+];
+const ST = {focus:"Focus here",build:"Build up",keep:"Maintain",unset:"Not checked"};
+
+/* ================= LANGUAGE (EN / 简体中文) ================= */
+const ZH = {
+/* nav, header, hero */
+"Journey":"旅程","Check-in":"身体自测","Body atlas":"身体图谱","How it connects":"关节如何联动","Your plan":"你的计划","Plan":"计划","Start check-in":"开始自测",
+"✦ NEW":"✦ 新","A 7-move body check-in, designed for adults 50 and over":"专为 50 岁以上人群设计的 7 项身体自测","Try it →":"立即体验 →",
+"Supple Body Atlas":"Supple 身体图谱","Move with confidence at every age":"任何年龄，都能自信地活动",
+"Learn how your joints and muscles work together, find out where you're stiff, and train the parts that need it most. Everything starts with understanding your own body.":"了解你的关节与肌肉如何协同工作，找出身体僵硬的部位，并有针对性地训练最需要的地方。一切从了解自己的身体开始。",
+"Start with your body":"从了解身体开始","5 minutes · a chair and a wall · no equipment":"5 分钟 · 一把椅子和一面墙 · 无需器械","Begin the check-in":"开始自测","Explore the atlas":"探索身体图谱",
+"Neck · 70–80° rotation":"颈部 · 旋转 70–80°","Upper back · ≈35° twist":"上背部 · 扭转约 35°","Hip · 120° flexion":"髋部 · 屈曲 120°","Knee · stable hinge":"膝部 · 稳定的铰链","Ankle · knee-to-wall 10 cm":"踝部 · 膝触墙 10 厘米","Body atlas view":"身体图谱视图",
+"bones in the adult skeleton":"成人骨骼的骨头总数","skeletal muscles moving them":"驱动骨骼的肌肉","joints, most of them small":"个关节，大多数都很小","key regions you'll learn here, head to feet":"个关键部位，从头到脚逐一学习",
+/* journey */
+"The journey":"旅程","From uncertain to confident, one step at a time":"从迷茫到自信，一步一步来",
+"Most people stop moving well because they stop trusting their body. The path back runs in this order: learn how it works, measure where you are, then train with a reason behind every move.":"很多人之所以不再灵活地活动，是因为不再信任自己的身体。找回它的路径是：先了解身体如何运作，再测量自己目前的状态，然后让每一个训练动作都有明确的理由。",
+"Understand":"了解","See the bones, joints and muscles that make each movement possible.":"认识让每个动作成为可能的骨骼、关节和肌肉。","You feel: unsure":"你的感受：不确定",
+"Assess":"评估","Seven simple tests show which regions move freely and which don't.":"七个简单测试，看看哪些部位活动自如，哪些不然。","You feel: curious":"你的感受：好奇",
+"Explore":"探索","Go region by region, top to bottom. Learn what each muscle does and what it connects to.":"从上到下逐个部位学习，了解每块肌肉的作用以及它与哪些部位相连。","You feel: aware":"你的感受：有所觉察",
+"Train":"训练","A weekly plan aimed at your weakest links first, 12–15 minutes a day.":"每周计划优先针对你最薄弱的环节，每天 12–15 分钟。","You feel: capable":"你的感受：有能力",
+"Grow confident":"建立自信","Retest every four weeks. Watch your map change and your daily life get easier.":"每四周重新测试一次，看着你的身体图谱改变，日常生活也越来越轻松。","You feel: confident":"你的感受：自信",
+"Fear of moving":"害怕活动","Body awareness":"身体觉察","Trust in movement":"信任活动",
+/* section heads */
+"Step 02 · Assess":"第 02 步 · 评估","Find out where you are today":"了解你今天的身体状态",
+"Seven movements, about five minutes. Do them near a counter or wall for support. Stop any test that causes sharp pain, and answer with what you can do comfortably.":"七个动作，大约五分钟。请在台面或墙边进行，以便扶靠。任何测试如引起剧痛请立即停止，并按照你能舒适完成的程度作答。",
+"Step 03 · Explore":"第 03 步 · 探索","Your body, top to bottom":"你的身体，从头到脚",
+"Tap any joint. Each region shows how far it should move, the muscles that move it, the neighbours it depends on, what changes with age, and three drills to start with.":"点击任意关节。每个部位都会显示它应有的活动范围、驱动它的肌肉、它所依赖的相邻部位、随年龄产生的变化，以及三个入门练习。",
+"Every joint has a job":"每个关节都有自己的职责",
+"Your joints alternate down the body: one built to move, the next built to stay steady. When a mobile joint gets stiff, its stable neighbour is forced to move instead, and that is often where the pain shows up. This is the joint-by-joint idea used by many physical therapists and coaches.":"关节沿着身体交替分工：一个负责活动，下一个负责稳定。当负责活动的关节变僵硬，它旁边负责稳定的关节就被迫代偿，疼痛往往就出现在那里。这就是许多物理治疗师和教练采用的“逐关节”理念。",
+"Built to move (mobility)":"负责活动（灵活性）","Built to hold steady (stability)":"负责稳定（稳定性）",
+"Step 04 · Train":"第 04 步 · 训练","A week built around your weakest links":"围绕你最薄弱环节打造的一周",
+"Mobility on three days, strength on two, and a little balance every day. Short sessions you can repeat matter more than long ones you skip.":"三天灵活性训练，两天力量训练，每天一点平衡练习。能坚持的短时训练，比经常跳过的长时间训练更重要。",
+"Your body is the starting point":"你的身体，就是起点",
+"Supple is educational and is not medical advice. Ranges shown are typical adult values and vary between people. Move within comfort, keep support nearby for balance work, and talk to a doctor or physiotherapist before starting if you have a recent injury or surgery, joint replacement, osteoporosis, or dizziness.":"Supple 仅供教育参考，不构成医疗建议。所示活动范围为成年人的典型数值，因人而异。请在舒适范围内活动，进行平衡练习时身边要有支撑物。如果你近期受伤或做过手术、做过关节置换、患有骨质疏松或有头晕症状，开始前请先咨询医生或物理治疗师。",
+/* status */
+"Focus here":"重点改善","Build up":"逐步加强","Maintain":"保持","Not checked":"未测试",
+/* regions */
+"Neck":"颈部","Shoulders":"肩部","Upper back":"上背部","Lower back & core":"下背部与核心","Hips":"髋部","Knees":"膝部","Ankles & feet":"踝部与足部",
+"Cervical spine · 7 vertebrae, C1–C7":"颈椎 · 7 节椎骨，C1–C7","Ball-and-socket joint + shoulder blade on the ribcage":"球窝关节 + 贴附在胸廓上的肩胛骨","Thoracic spine · 12 vertebrae, T1–T12, plus the ribs":"胸椎 · 12 节椎骨，T1–T12，以及肋骨","Lumbar spine · 5 vertebrae, L1–L5, inside a muscular cylinder":"腰椎 · 5 节椎骨，L1–L5，被肌肉组成的“圆柱”包裹","Ball-and-socket · thigh bone in the pelvis":"球窝关节 · 股骨嵌于骨盆","Hinge joint · thigh bone, shin bone and kneecap":"铰链关节 · 股骨、胫骨与髌骨","Ankle joint + 26 bones in each foot":"踝关节 + 每只脚 26 块骨头",
+"Moves, with deep control":"可活动，需深层控制","Ball moves, blade holds steady":"球头活动，肩胛稳定","Built to move":"负责活动","Built to hold steady":"负责稳定",
+"Rotation each side":"单侧旋转","Bending forward":"向前屈曲","Side bend":"侧屈","Arm overhead":"手臂举过头顶","Outward rotation":"外旋","Inward rotation":"内旋","most":"大部分","of your trunk's twist":"躯干扭转来自这里","small":"较小","extension, but vital":"伸展幅度小但关键","Rotation, by design":"旋转（天生如此）","brace":"支撑","its main job":"它的主要职责","Bending (knee to chest)":"屈曲（膝靠近胸）","Extension behind you":"向后伸展","Bending":"屈曲","Fully straight":"完全伸直","little":"很少","Twist, by design":"扭转（天生如此）","Toes toward shin":"脚尖向小腿勾","≈10 cm":"≈10 厘米","Knee-to-wall target":"膝触墙目标","Pointing the foot":"绷脚尖",
+/* muscles: neck */
+"Sternocleidomastoid":"胸锁乳突肌","Turns your head to the opposite side and bends the neck forward":"使头转向对侧并使颈部前屈","Breastbone & collarbone":"胸骨与锁骨","Mastoid bone behind the ear":"耳后的乳突",
+"Upper trapezius":"上斜方肌","Lifts the shoulder blades and tilts the head back":"上提肩胛骨并使头后仰","Base of skull & neck ligament":"颅底与项韧带","Outer collarbone & shoulder tip":"锁骨外侧与肩峰",
+"Levator scapulae":"肩胛提肌","Lifts the shoulder blade; a common spot for neck tension":"上提肩胛骨；颈部紧张的常见部位","Upper neck vertebrae, C1–C4":"上段颈椎，C1–C4","Top inner corner of the shoulder blade":"肩胛骨内上角",
+"Deep neck flexors":"颈深屈肌","Keep the head stacked over the spine instead of drifting forward":"让头部稳稳叠放在脊柱上方，而不是向前探","Front of the cervical vertebrae":"颈椎前方","Base of skull & upper vertebrae":"颅底与上段椎骨",
+"A rounded upper back pushes the head forward, and the neck muscles have to hold it there all day.":"上背部弓起会把头推向前方，颈部肌肉只能整天撑着它。","Levator scapulae and upper trapezius tie neck tension to how your shoulder blades sit.":"肩胛提肌和上斜方肌把颈部紧张与肩胛骨的位置联系在一起。",
+"Discs lose some height and water over the decades, and turning the head usually gets harder. You notice it when checking a blind spot while driving or turning to hear someone.":"随着年龄增长，椎间盘会逐渐变薄、失去水分，转头通常也变得更困难。开车查看盲区或转头听人说话时，你会有所察觉。",
+"Chin tucks":"收下巴","10 × 3-sec hold":"10 次 × 保持 3 秒","Slide your head straight back, like making a double chin. Keep your eyes level.":"头部水平向后平移，像做出双下巴。保持目光平视。","Slow neck turns":"缓慢转头","5 each side":"每侧 5 次","Turn to the edge of comfort, breathe out, return to centre.":"转到舒适的极限，呼气，回到中间。","Upper-trap stretch":"上斜方肌拉伸","30 sec each side":"每侧 30 秒","Sit on one hand and tilt your ear toward the other shoulder.":"一只手压在臀下坐好，耳朵向另一侧肩膀倾斜。",
+/* shoulders */
+"Deltoid":"三角肌","Raises the arm forward, out to the side and back":"使手臂向前、向侧和向后抬起","Collarbone, shoulder tip & blade spine":"锁骨、肩峰与肩胛冈","Outer upper arm":"上臂外侧",
+"Rotator cuff (4 muscles)":"肩袖（4 块肌肉）","Keeps the ball centred in the socket through every reach":"在每次伸手时让肱骨头保持在关节窝中央","Shoulder blade":"肩胛骨","Top of the upper-arm bone":"肱骨上端",
+"Serratus anterior":"前锯肌","Wraps the blade around the ribs so the arm can go fully overhead":"让肩胛骨贴着肋骨旋转，手臂才能完全举过头顶","Ribs 1–8":"第 1–8 肋","Inner edge of the shoulder blade":"肩胛骨内侧缘",
+"Pectoralis minor":"胸小肌","Tips the blade forward; when tight, it rounds the shoulders":"使肩胛骨前倾；紧张时会导致圆肩","Ribs 3–5":"第 3–5 肋","Coracoid process at the front of the blade":"肩胛骨前方的喙突",
+"Latissimus dorsi":"背阔肌","Pulls the arm down and in; tightness limits overhead reach":"把手臂向下、向内拉；紧张会限制上举","Lower spine, pelvis & lower ribs":"下段脊柱、骨盆与下部肋骨","Front of the upper-arm bone":"肱骨前方",
+"Your arm only gets fully overhead if the upper back extends. A stiff upper back borrows range from the shoulder.":"只有上背部能够伸展，手臂才能完全举过头顶。上背部僵硬就会向肩关节“借”活动度。","When the shoulders run out of overhead range, the lower back often arches to fake it.":"当肩部上举幅度不够时，下背部常常会过度弓起来“凑数”。",
+"Rotator-cuff tendons thin with age and overhead reach often shrinks quietly, until a high shelf becomes hard to reach. Regular, controlled overhead work keeps it.":"肩袖肌腱会随年龄变薄，上举能力常常在不知不觉中下降，直到够不着高处的架子才发现。规律而受控的上举练习能保持这项能力。",
+"Wall slides":"靠墙滑臂","10 reps":"10 次","Back and forearms on the wall. Slide up without letting your low back arch.":"背部和前臂贴墙，向上滑动，不要让下背部弓起。","Band pull-aparts":"弹力带水平拉开","2 × 15":"2 组 × 15 次","Arms straight at chest height, squeeze the shoulder blades gently together.":"手臂伸直与胸同高，轻轻夹紧肩胛骨。","Doorway chest stretch":"门框胸部拉伸","Forearm on the frame at shoulder height, step through until you feel the chest open.":"前臂贴在门框上与肩同高，向前迈步直到感觉胸部打开。",
+/* thoracic */
+"Erector spinae":"竖脊肌","Extends the spine and holds you upright":"伸展脊柱并让你保持直立","Pelvis & lower vertebrae":"骨盆与下段椎骨","Ribs & vertebrae higher up":"更高处的肋骨与椎骨",
+"Rhomboids":"菱形肌","Draw the shoulder blades toward the spine":"把肩胛骨拉向脊柱","Spine, T2–T5":"脊柱，T2–T5",
+"Middle & lower trapezius":"中、下斜方肌","Set the blades down and back for upright posture":"让肩胛骨下沉后收，保持挺拔姿态","Thoracic spine":"胸椎","Spine of the shoulder blade":"肩胛冈",
+"Obliques":"腹斜肌","Rotate and side-bend the trunk":"使躯干旋转和侧屈","Lower ribs":"下部肋骨","Pelvis & abdominal sheath":"骨盆与腹直肌鞘",
+"The upper back is built to rotate and the lower back is not. When the upper back stops turning, the lower back gets twisted instead.":"上背部天生负责旋转，下背部则不是。上背部不再转动时，下背部就被迫扭转。","Thoracic extension sets the shoulder blade up for every reach overhead.":"胸椎伸展为每次上举时的肩胛骨打好基础。",
+"The upper back tends to round more with age. Extension and rotation work is one of the most useful ways to keep standing tall and breathing deeply.":"随着年龄增长，上背部往往越来越弓。伸展和旋转练习是保持挺拔站姿和深呼吸最有效的方法之一。",
+"Open book":"开书式转体","8 each side":"每侧 8 次","Lie on your side with knees bent. Sweep the top arm open and follow it with your eyes.":"侧卧屈膝，上方手臂向后打开，目光跟随手臂。","Cat–cow":"猫牛式","10 slow reps":"缓慢 10 次","On hands and knees, round and then gently arch, moving one vertebra at a time.":"四点跪姿，先拱背再轻轻塌腰，一节一节地活动脊柱。","Chair-back extension":"椅背伸展","8 reps":"8 次","Hands behind your head, lean back over the top of the chair. Only the upper back moves.":"双手抱头，靠着椅背上缘向后仰，只让上背部活动。",
+/* lumbar */
+"Transversus abdominis":"腹横肌","A natural belt that stiffens the trunk just before you move":"天然的“腰带”，在你动作前先收紧躯干","Lower ribs, pelvis & back fascia":"下部肋骨、骨盆与背部筋膜","Midline sheath of the abdomen":"腹部正中腱鞘",
+"Multifidus":"多裂肌","Fine control of each spinal segment":"精细控制每一节脊柱","One vertebra":"一节椎骨","The vertebrae 2–4 levels above":"上方第 2–4 节椎骨",
+"Diaphragm & pelvic floor":"膈肌与盆底肌","The top and bottom of the core cylinder; they manage pressure that supports the spine":"核心“圆柱”的顶部与底部，调节支撑脊柱的腹内压","Lower ribs & spine":"下部肋骨与脊柱","Central tendon / pelvic outlet":"中心腱 / 骨盆出口",
+"Quadratus lumborum":"腰方肌","Side-bends and hitches the hip; overworks when the glutes don't":"使躯干侧屈、提髋；臀肌不发力时它会过劳","Top of the pelvis":"骨盆上缘","Lowest rib & L1–L4":"最下方肋骨与 L1–L4",
+"If the hips can't bend, every bend becomes a back bend.":"如果髋部无法屈曲，每一次弯腰都会变成腰椎在弯。","A stiff upper back pushes rotation down into the lower back.":"上背部僵硬会把旋转压力转移到下背部。",
+"Low-back pain is common with age, and most of it is not damage. A trunk that can brace plus hips that can hinge spread the load where it belongs.":"腰痛随年龄增长很常见，但大多数并不代表损伤。能够稳住的躯干加上能够屈髋的髋部，会把负荷分配到正确的位置。",
+"Dead bug":"死虫式","Low back stays heavy on the floor while the opposite arm and leg reach away.":"下背部稳稳贴地，对侧手臂和腿同时向远处伸展。","Bird dog":"鸟狗式","On hands and knees, reach long without letting the hips rotate.":"四点跪姿，手脚尽量伸远，不让髋部转动。","90/90 breathing":"90/90 呼吸","5 slow breaths":"缓慢呼吸 5 次","Lie with feet on a chair. Exhale fully and feel the ribs drop.":"仰卧，双脚放在椅子上。完全呼气，感受肋骨下沉。",
+/* hips */
+"Gluteus maximus":"臀大肌","Extends the hip: stands you up and climbs the stairs":"伸髋：帮你站起来、爬楼梯","Back of the pelvis & sacrum":"骨盆后方与骶骨","Upper thigh bone & IT band":"股骨上段与髂胫束",
+"Gluteus medius":"臀中肌","Keeps the pelvis level when you stand on one leg, which is key for walking and balance":"单腿站立时保持骨盆水平，是行走和平衡的关键","Outer pelvis":"骨盆外侧","Outer top of the thigh bone":"股骨上端外侧",
+"Iliopsoas":"髂腰肌","Lifts the knee; shortens with long hours of sitting":"抬膝；久坐会使它缩短","Lumbar spine & inner pelvis":"腰椎与骨盆内侧","Inner upper thigh bone":"股骨上段内侧",
+"Adductors":"内收肌群","Pull the legs together and steady you side to side":"使双腿并拢，并在左右方向稳定身体","Pubic bone":"耻骨","Inner thigh bone":"股骨内侧",
+"Stiff hips force the lower back to bend and twist for them.":"髋部僵硬会迫使下背部替它弯曲和扭转。","A weak gluteus medius lets the knee drift inward on stairs and single-leg steps.":"臀中肌无力会让膝盖在上下楼梯和单腿迈步时向内塌。",
+"Hip strength is closely tied to independence: rising from a chair, getting up off the floor, and catching yourself after a stumble.":"髋部力量与生活自理能力密切相关：从椅子上站起、从地上起身、绊倒时稳住自己。",
+"90/90 switches":"90/90 换髋","Sit with both knees bent at 90°, rotate them side to side. Use your hands for support.":"坐姿，双膝弯成 90°，左右交替转动。可用双手支撑。","Glute bridge":"臀桥","2 × 12":"2 组 × 12 次","Drive through the heels, ribs down, pause at the top.":"脚跟发力，肋骨下沉，在顶端停顿。","Half-kneeling hip-flexor stretch":"半跪髋屈肌拉伸","Gently tuck your tail under, then shift your weight forward.":"轻轻卷尾骨，再把重心向前移。",
+/* knees */
+"Quadriceps":"股四头肌","Straighten the knee and control you as you sit down":"伸直膝关节，并在坐下时控制动作","Pelvis & thigh bone":"骨盆与股骨","Kneecap → shin":"髌骨 → 胫骨",
+"Hamstrings":"腘绳肌","Bend the knee, extend the hip, and slow you down":"屈膝、伸髋，并帮助你减速","Sit bone":"坐骨","Back of the shin":"胫骨后方",
+"Gastrocnemius":"腓肠肌","Crosses the knee and the ankle, so calf tightness affects both":"跨越膝和踝两个关节，所以小腿紧张会同时影响两者","Back of the thigh bone":"股骨后方","Heel, via the Achilles":"经跟腱止于足跟",
+"Popliteus":"腘肌","Unlocks the fully straightened knee":"为完全伸直的膝关节“解锁”","Outer thigh bone":"股骨外侧",
+"Stiff ankles make the knee twist or collapse inward when you squat or go down stairs.":"踝关节僵硬会让膝盖在下蹲或下楼时扭转或内扣。","The knee mostly does what the hip above it tells it to do.":"膝盖大多听从上方髋部的“指挥”。",
+"Strong thigh muscles protect the knee. Stronger quads are linked with less knee pain and easier stairs.":"强壮的大腿肌肉能保护膝盖。股四头肌越强，膝痛越少，上下楼梯越轻松。",
+"Sit-to-stand":"坐站练习","Chair behind you, lean forward, stand up without using your hands.":"椅子放在身后，身体前倾，不用手撑站起来。","Heel slides":"足跟滑动","10 each side":"每侧 10 次","Lying down, slide the heel toward your seat and back, slowly.":"仰卧，把脚跟缓慢滑向臀部再滑回。","Step-ups":"踏台阶","Low step. Push through the whole foot and control the way down.":"选低台阶，用整个脚掌发力，下来时保持控制。",
+/* ankles */
+"Soleus":"比目鱼肌","The workhorse calf for walking and standing":"行走和站立时的主力小腿肌","Back of the shin bones":"胫腓骨后方",
+"Tibialis anterior":"胫骨前肌","Lifts the toes so you don't catch them and trip":"抬起脚尖，避免绊倒","Front of the shin":"胫骨前方","Inner midfoot":"足中部内侧",
+"Fibularis (peroneals)":"腓骨肌","Stop the ankle rolling outward":"防止脚踝向外崴","Outer shin bone (fibula)":"小腿外侧骨（腓骨）","Underside of the foot":"足底",
+"Foot intrinsics":"足内在肌","Spread the toes, support the arch, and sense the ground":"张开脚趾、支撑足弓、感知地面","Bones of the foot":"足部骨骼","Toes":"脚趾",
+"Limited ankle bend sends the movement up to the knee, which is built to stay steady.":"踝关节屈曲受限会把动作转嫁给本该保持稳定的膝关节。","For balance, the ankle makes small corrections first and the hip takes over for bigger ones.":"维持平衡时，踝关节先做细微调整，幅度大时由髋部接手。",
+"Ankle strength and range both drop with age, and both are linked with falls. Ankles also respond quickly to training.":"踝关节的力量和活动度都会随年龄下降，两者都与跌倒有关。好消息是，踝关节对训练的反应也很快。",
+"Knee-to-wall rocks":"膝触墙摆动","Toes near the wall. Push the knee forward to touch the wall without lifting the heel.":"脚尖靠近墙，膝盖向前推碰墙，脚跟不离地。","Calf raises":"提踵","Hold a counter. Rise up slowly and lower even slower.":"扶住台面，缓慢踮起，再更慢地落下。","Tandem stance":"前后脚站立","30 sec":"30 秒","Stand heel to toe in a line, close to a counter.":"在台面旁，脚跟贴脚尖站成一条直线。",
+"2 × 8":"2 组 × 8 次","2 × 10":"2 组 × 10 次",
+/* tests */
+"Look over your shoulder":"回头看肩膀","Sit tall. Turn your head slowly as far as is comfortable to each side.":"坐直。向两侧缓慢转头，转到舒适的最大幅度。","Checks neck rotation, which you need for driving and turning to talk.":"检查颈部旋转能力，开车和转头说话都需要它。","Chin stops well short of my shoulder":"下巴离肩膀还差很远","Chin nearly lines up with my shoulder":"下巴几乎能对齐肩膀","Chin lines up with my shoulder, both sides":"两侧下巴都能对齐肩膀",
+"Reach behind your back":"背后够手","Reach one hand over your shoulder and the other up from below, and try to bring your fingertips together. Swap sides.":"一只手从肩上向下，另一只手从下向上，尽量让指尖相碰。左右交换。","Tests shoulder rotation in both directions, used for dressing and reaching.":"测试肩部双向旋转，穿衣和够东西都要用到。","More than a hand-length apart":"相距超过一个手掌长","A few inches apart":"相距几厘米","Fingertips touch or overlap":"指尖相碰或重叠",
+"Seated twist":"坐姿转体","Sit on a chair, cross your arms on your chest, keep your knees still, and rotate to each side.":"坐在椅子上，双臂交叉抱胸，膝盖不动，向两侧转体。","Isolates upper-back rotation by keeping the hips quiet.":"固定髋部，单独检查上背部的旋转。","I see the wall beside me only with effort":"费力才能看到身旁的墙","I see the side wall comfortably":"能轻松看到侧面的墙","I can see partly behind me":"能看到身后的一部分",
+"Reach toward your toes":"弯腰够脚尖","Stand with soft knees and hinge forward slowly. Stop at any pain.":"站立，膝盖微屈，缓慢向前屈髋。有任何疼痛立即停止。","Shows how the hips and lower back share forward bending.":"显示髋部与下背部如何分担前屈动作。","Hands reach my knees or mid-shin":"手能到膝盖或小腿中部","Fingers reach my ankles":"手指能到脚踝","Fingers reach my toes or the floor":"手指能碰到脚尖或地面",
+"30-second chair stand":"30 秒坐站测试","Arms crossed, stand fully and sit down as many times as you safely can in 30 seconds.":"双臂交叉，在 30 秒内安全地完成尽可能多次完全站起再坐下。","A standard leg-strength test for older adults. Lower scores are linked with higher fall risk.":"针对老年人的标准腿部力量测试。分数越低，跌倒风险越高。","Fewer than 8":"少于 8 次","8 to 12":"8 到 12 次","More than 12":"多于 12 次",
+"Stand on one leg":"单腿站立","Next to a counter with your eyes open, lift one foot and time how long you can hold it. Try both sides.":"站在台面旁，睁眼，抬起一只脚，计时能保持多久。两侧都试一下。","Balance starts at the ankle and hip. Times naturally fall with age, and they also improve with practice.":"平衡始于踝和髋。时间会随年龄自然缩短，但也会随练习而提高。","Under 10 seconds":"少于 10 秒","10 to 30 seconds":"10 到 30 秒","30 seconds or more":"30 秒或以上",
+"Knee-to-wall":"膝触墙测试","Face a wall with your toes a few inches away. Bend your knee to touch the wall without lifting your heel. Move back until you can't.":"面对墙，脚尖离墙几厘米。弯曲膝盖碰墙，脚跟不离地。逐步后退，直到做不到为止。","Measures ankle bend, which controls squatting, stairs, and walking downhill.":"测量踝关节屈曲度，它决定下蹲、上下楼梯和下坡走路的能力。","Under 5 cm (2 in)":"少于 5 厘米","5 to 10 cm (2–4 in)":"5 到 10 厘米","10 cm (4 in) or more":"10 厘米或以上",
+/* moods */
+"Cautious. I'm worried about getting hurt.":"谨慎。我担心会受伤。","That makes sense. We'll start with movements you fully control, close to support, in a range that feels safe. Confidence grows from small wins you can repeat.":"这很正常。我们会从你能完全控制的动作开始，靠近支撑物，在感觉安全的范围内进行。自信来自可以不断重复的小成功。",
+"Stiff. I know I've lost some range.":"僵硬。我知道自己的活动度下降了。","Stiffness usually means a joint hasn't been asked to move lately, not that it can't. The check-in shows exactly where to start.":"僵硬通常意味着关节最近没被要求活动，而不是它动不了。自测会准确告诉你从哪里开始。",
+"Curious. I want to understand my body.":"好奇。我想了解自己的身体。","Good place to start. Each test links to the joints and muscles behind it, so you'll learn your body as you go.":"很好的起点。每个测试都关联到背后的关节和肌肉，你会边测边了解自己的身体。",
+"Ready. I want a plan.":"准备好了。我想要一个计划。","Then let's build one. Answer honestly. The plan starts with your weakest links.":"那我们就来制定吧。请如实作答，计划会从你最薄弱的环节开始。",
+"cautious":"谨慎","stiff":"僵硬","curious":"好奇","ready":"准备好了",".":"。",
+/* assessment UI */
+"Before we start":"开始之前","How does moving feel for you right now?":"现在，活动身体对你来说是什么感觉？","There's no wrong answer. How you feel about movement shapes how you move, so we start here.":"没有错误答案。你对活动的感受会影响你的活动方式，所以我们从这里开始。",
+"Start the movements →":"开始动作测试 →","Limited":"受限","Partial":"部分","Full":"充分","← Back":"← 返回","See my results →":"查看结果 →","Next →":"下一步 →","Why:":"原因：",
+"Your body map":"你的身体图谱","Retake the check-in":"重新自测","Here's where you are today":"这是你今天的状态",
+"Scores average the tests linked to each region. Your plan below now starts with the regions marked “Focus here”.":"每个部位的分数是相关测试的平均值。下方计划会优先安排标记为“重点改善”的部位。",
+"Open my plan":"打开我的计划","See it on your body":"在身体上查看","You started out feeling":"你开始时的感受是","Retest in four weeks and compare.":"四周后重新测试并对比。",
+/* explorer UI */
+"Typical adult range":"成人典型活动范围","Muscles that move it":"驱动它的肌肉","Works together with":"协同部位","What changes with age":"随年龄的变化","Start with these three":"从这三个练习开始","↑ Up the body":"↑ 向上","Down the body ↓":"向下 ↓",
+/* chain */
+"Shoulder joint":"肩关节","Lower back":"下背部","Ankles":"踝部",
+"Needs range to reach overhead.":"需要足够的活动度来举过头顶。","If it stiffens:":"一旦僵硬：","the lower back arches and the neck tenses to lift the arm.":"下背部会弓起、颈部会紧张来帮忙抬手臂。",
+"Needs a steady base on the ribs.":"需要在肋骨上形成稳定的基础。","If it gets loose:":"一旦失稳：","the rotator cuff overworks and the shoulder pinches.":"肩袖会过劳，肩部容易夹挤。",
+"Needs rotation and extension.":"需要旋转和伸展。","the neck and lower back twist instead.":"颈部和下背部就会代替它扭转。",
+"Needs to brace and resist.":"需要稳住、抵抗外力。","If it's forced to move:":"一旦被迫活动：","this is where back pain often shows up.":"腰痛往往就出现在这里。",
+"Needs to bend, extend and rotate.":"需要屈曲、伸展和旋转。","If they stiffen:":"一旦僵硬：","the lower back and knees pick up the slack.":"下背部和膝盖就要替它补位。",
+"Needs to track straight under load.":"负重时需要保持正直的轨迹。","If pushed to twist:":"一旦被迫扭转：","stairs and squats start to hurt.":"上下楼梯和下蹲就会开始疼。",
+"Needs to bend forward over the foot.":"需要能向前屈曲越过脚面。","the knee collapses inward and balance suffers.":"膝盖会内扣，平衡也会变差。",
+/* plan */
+"Example week":"示例周计划","Your first week":"你的第一周","Focus regions":"重点部位","Example plan · finish the check-in to personalise it":"示例计划 · 完成自测即可个性化","Built from your check-in":"根据你的自测生成",
+"Mon":"周一","Tue":"周二","Wed":"周三","Thu":"周四","Fri":"周五","Sat":"周六","Sun":"周日",
+"Mobility":"灵活性","Strength":"力量","Strength + balance":"力量 + 平衡","Walk":"步行","Rest + retest":"休息 + 复测",
+"12 min":"12 分钟","15 min":"15 分钟","20–30 min":"20–30 分钟","5 min":"5 分钟",
+"Easy pace, able to hold a conversation":"轻松步速，可以边走边聊","Swing your arms; let the upper back turn":"摆动手臂，让上背部自然转动","Repeat one test you marked “Limited”":"重做一项标记为“受限”的测试","Note how it felt":"记录下感受",
+"Every day":"每天","Balance snack: two rounds of 30-second single-leg stands next to the counter while the kettle boils.":"平衡小练习：烧水时在台面旁做两轮 30 秒单腿站立。",
+"How confidence builds":"自信如何建立","Week 1–2":"第 1–2 周","Learn the moves":"学会动作","Slow and controlled. Stay in a range that feels safe.":"缓慢、受控，保持在感觉安全的范围内。","Week 3–4":"第 3–4 周","Own the range":"掌控活动范围","Add a pause at the end of each move. Retest.":"每个动作末端加一个停顿。重新测试。","Week 5–8":"第 5–8 周","Add load":"增加负荷","More reps, a band, or a light weight. Less support for balance.":"增加次数、使用弹力带或轻重量。平衡练习时减少扶靠。","Week 9+":"第 9 周以后","Live it":"融入生活","Stairs, floor, garden, travel. Movement you trust.":"楼梯、地面、花园、旅行。你信任的活动能力。",
+/* player */
+"Train with me":"跟我一起练","Close":"关闭","Start":"开始","Pause":"暂停","Resume":"继续","Restart":"重新开始","← Previous":"← 上一个","Next exercise →":"下一个动作 →","Finish session →":"完成训练 →",
+"Today is a rest or walk day, so here is Monday's mobility session.":"今天是休息或步行日，这里为你准备了周一的灵活性训练。",
+"Follow the dose at your own pace, or keep moving until the timer ends.":"按建议的次数自行完成，或跟着计时器持续练习。","seconds":"秒","Time's up. Move on when you're ready.":"时间到。准备好了就进入下一个动作。",
+"Session complete":"训练完成","How do you feel now compared with when you started?":"和开始时相比，你现在感觉如何？",
+"Looser":"更放松了","About the same":"差不多","Tired, in a good way":"有点累，但很舒服","Something hurt":"有地方疼",
+"That's your body answering. Come back tomorrow and it will answer faster.":"这是你的身体在回应你。明天再来，它会回应得更快。",
+"Normal for the first sessions. Range usually starts to change after a week or two of steady practice.":"前几次训练这很正常。坚持一到两周后，活动度通常会开始改变。",
+"Good. That's the training effect. Drink some water and keep moving gently today.":"很好，这就是训练效果。多喝水，今天继续温和地活动。",
+"Skip that exercise next time or make the range smaller. Sharp or lasting pain is a reason to check with a physiotherapist.":"下次跳过那个动作或缩小幅度。如果是剧痛或持续疼痛，请咨询物理治疗师。",
+"Back to my plan":"返回我的计划","Save my answers anonymously (no name or email) to help improve Supple.":"匿名保存我的答案（不含姓名或邮箱），帮助改进 Supple。","Exercise library":"动作库","Train today":"今日训练","Today's session":"今日训练","Watch and train":"观看并练习","Train all three":"三个一起练","← Library":"← 动作库","Menu":"菜单","Light / dark":"浅色 / 深色","Pick any exercise to see how it moves and train along.":"选择任意动作，观看演示并跟着练习。","Today":"今天","Train again":"再练一次"
+};
+const PT = {
+"Journey":"Jornada","Check-in":"Avaliação","Body atlas":"Atlas do corpo","How it connects":"Conexões","Your plan":"Seu plano","Plan":"Plano","Start check-in":"Começar avaliação",
+"✦ NEW":"✦ NOVO","A 7-move body check-in, designed for adults 50 and over":"Uma autoavaliação com 7 movimentos, criada para adultos a partir de 50 anos","Try it →":"Experimente →",
+"Supple Body Atlas":"Supple Atlas do Corpo","Move with confidence at every age":"Movimente-se com confiança em qualquer idade",
+"Learn how your joints and muscles work together, find out where you're stiff, and train the parts that need it most. Everything starts with understanding your own body.":"Entenda como suas articulações e músculos trabalham juntos, descubra onde você está rígido e treine as partes que mais precisam. Tudo começa com conhecer o seu próprio corpo.",
+"Start with your body":"Comece pelo seu corpo","5 minutes · a chair and a wall · no equipment":"5 minutos · uma cadeira e uma parede · sem equipamentos","Begin the check-in":"Começar a avaliação","Explore the atlas":"Explorar o atlas",
+"Neck · 70–80° rotation":"Pescoço · rotação de 70–80°","Upper back · ≈35° twist":"Parte alta das costas · giro de ≈35°","Hip · 120° flexion":"Quadril · flexão de 120°","Knee · stable hinge":"Joelho · dobradiça estável","Ankle · knee-to-wall 10 cm":"Tornozelo · joelho na parede 10 cm","Body atlas view":"Visão do atlas do corpo",
+"bones in the adult skeleton":"ossos no esqueleto adulto","skeletal muscles moving them":"músculos esqueléticos que os movem","joints, most of them small":"articulações, a maioria pequenas","key regions you'll learn here, head to feet":"regiões-chave que você vai conhecer aqui, da cabeça aos pés",
+"The journey":"A jornada","From uncertain to confident, one step at a time":"Da insegurança à confiança, um passo de cada vez",
+"Most people stop moving well because they stop trusting their body. The path back runs in this order: learn how it works, measure where you are, then train with a reason behind every move.":"A maioria das pessoas deixa de se movimentar bem porque deixa de confiar no próprio corpo. O caminho de volta segue esta ordem: entender como ele funciona, medir onde você está e treinar com um motivo por trás de cada movimento.",
+"Understand":"Entender","See the bones, joints and muscles that make each movement possible.":"Conheça os ossos, articulações e músculos que tornam cada movimento possível.","You feel: unsure":"Você se sente: inseguro",
+"Assess":"Avaliar","Seven simple tests show which regions move freely and which don't.":"Sete testes simples mostram quais regiões se movem com liberdade e quais não.","You feel: curious":"Você se sente: curioso",
+"Explore":"Explorar","Go region by region, top to bottom. Learn what each muscle does and what it connects to.":"Vá região por região, de cima para baixo. Veja o que cada músculo faz e com o que ele se conecta.","You feel: aware":"Você se sente: consciente",
+"Train":"Treinar","A weekly plan aimed at your weakest links first, 12–15 minutes a day.":"Um plano semanal que começa pelos seus pontos mais fracos, 12–15 minutos por dia.","You feel: capable":"Você se sente: capaz",
+"Grow confident":"Ganhar confiança","Retest every four weeks. Watch your map change and your daily life get easier.":"Refaça os testes a cada quatro semanas. Veja seu mapa mudar e o dia a dia ficar mais fácil.","You feel: confident":"Você se sente: confiante",
+"Fear of moving":"Medo de se mexer","Body awareness":"Consciência corporal","Trust in movement":"Confiança no movimento",
+"Step 02 · Assess":"Etapa 02 · Avaliar","Find out where you are today":"Descubra como você está hoje",
+"Seven movements, about five minutes. Do them near a counter or wall for support. Stop any test that causes sharp pain, and answer with what you can do comfortably.":"Sete movimentos, cerca de cinco minutos. Faça perto de uma bancada ou parede para se apoiar. Interrompa qualquer teste que cause dor aguda e responda com o que você consegue fazer com conforto.",
+"Step 03 · Explore":"Etapa 03 · Explorar","Your body, top to bottom":"Seu corpo, de cima a baixo",
+"Tap any joint. Each region shows how far it should move, the muscles that move it, the neighbours it depends on, what changes with age, and three drills to start with.":"Toque em qualquer articulação. Cada região mostra quanto ela deve se mover, os músculos que a movem, as vizinhas de que depende, o que muda com a idade e três exercícios para começar.",
+"Every joint has a job":"Cada articulação tem uma função",
+"Your joints alternate down the body: one built to move, the next built to stay steady. When a mobile joint gets stiff, its stable neighbour is forced to move instead, and that is often where the pain shows up. This is the joint-by-joint idea used by many physical therapists and coaches.":"Ao longo do corpo, as articulações se alternam: uma feita para se mover, a seguinte feita para ficar firme. Quando uma articulação móvel fica rígida, a vizinha estável é obrigada a se mover no lugar dela, e muitas vezes é aí que a dor aparece. Essa é a abordagem articulação por articulação usada por muitos fisioterapeutas e treinadores.",
+"Built to move (mobility)":"Feita para se mover (mobilidade)","Built to hold steady (stability)":"Feita para ficar firme (estabilidade)",
+"Step 04 · Train":"Etapa 04 · Treinar","A week built around your weakest links":"Uma semana montada em torno dos seus pontos mais fracos",
+"Mobility on three days, strength on two, and a little balance every day. Short sessions you can repeat matter more than long ones you skip.":"Mobilidade em três dias, força em dois e um pouco de equilíbrio todos os dias. Sessões curtas que você consegue repetir valem mais do que sessões longas que você pula.",
+"Your body is the starting point":"Seu corpo é o ponto de partida",
+"Supple is educational and is not medical advice. Ranges shown are typical adult values and vary between people. Move within comfort, keep support nearby for balance work, and talk to a doctor or physiotherapist before starting if you have a recent injury or surgery, joint replacement, osteoporosis, or dizziness.":"O Supple é educativo e não substitui orientação médica. As amplitudes mostradas são valores típicos de adultos e variam de pessoa para pessoa. Movimente-se dentro do conforto, mantenha um apoio por perto nos exercícios de equilíbrio e fale com um médico ou fisioterapeuta antes de começar se tiver lesão ou cirurgia recente, prótese articular, osteoporose ou tontura.",
+"Focus here":"Foco aqui","Build up":"Fortalecer","Maintain":"Manter","Not checked":"Não avaliado",
+"Neck":"Pescoço","Shoulders":"Ombros","Upper back":"Parte alta das costas","Lower back & core":"Lombar e core","Hips":"Quadris","Knees":"Joelhos","Ankles & feet":"Tornozelos e pés",
+"Cervical spine · 7 vertebrae, C1–C7":"Coluna cervical · 7 vértebras, C1–C7","Ball-and-socket joint + shoulder blade on the ribcage":"Articulação esférica + escápula sobre a caixa torácica","Thoracic spine · 12 vertebrae, T1–T12, plus the ribs":"Coluna torácica · 12 vértebras, T1–T12, mais as costelas","Lumbar spine · 5 vertebrae, L1–L5, inside a muscular cylinder":"Coluna lombar · 5 vértebras, L1–L5, dentro de um cilindro muscular","Ball-and-socket · thigh bone in the pelvis":"Articulação esférica · fêmur encaixado na pelve","Hinge joint · thigh bone, shin bone and kneecap":"Articulação em dobradiça · fêmur, tíbia e patela","Ankle joint + 26 bones in each foot":"Articulação do tornozelo + 26 ossos em cada pé",
+"Moves, with deep control":"Move-se, com controle profundo","Ball moves, blade holds steady":"A cabeça do úmero se move, a escápula fica firme","Built to move":"Feita para se mover","Built to hold steady":"Feita para ficar firme",
+"Rotation each side":"Rotação para cada lado","Bending forward":"Flexão para a frente","Side bend":"Inclinação lateral","Arm overhead":"Braço acima da cabeça","Outward rotation":"Rotação externa","Inward rotation":"Rotação interna","most":"a maior parte","of your trunk's twist":"da rotação do tronco","small":"pequena","extension, but vital":"extensão, mas essencial","Rotation, by design":"Rotação, por natureza","brace":"estabilizar","its main job":"sua função principal","Bending (knee to chest)":"Flexão (joelho ao peito)","Extension behind you":"Extensão para trás","Bending":"Flexão","Fully straight":"Totalmente estendido","little":"pouca","Twist, by design":"Torção, por natureza","Toes toward shin":"Dedos em direção à canela","≈10 cm":"≈10 cm","Knee-to-wall target":"Meta do joelho na parede","Pointing the foot":"Pé em ponta",
+"Sternocleidomastoid":"Esternocleidomastoideo","Turns your head to the opposite side and bends the neck forward":"Gira a cabeça para o lado oposto e flexiona o pescoço para a frente","Breastbone & collarbone":"Esterno e clavícula","Mastoid bone behind the ear":"Processo mastoide, atrás da orelha",
+"Upper trapezius":"Trapézio superior","Lifts the shoulder blades and tilts the head back":"Eleva as escápulas e inclina a cabeça para trás","Base of skull & neck ligament":"Base do crânio e ligamento da nuca","Outer collarbone & shoulder tip":"Parte externa da clavícula e ponta do ombro",
+"Levator scapulae":"Levantador da escápula","Lifts the shoulder blade; a common spot for neck tension":"Eleva a escápula; um ponto comum de tensão no pescoço","Upper neck vertebrae, C1–C4":"Vértebras superiores do pescoço, C1–C4","Top inner corner of the shoulder blade":"Ângulo superior interno da escápula",
+"Deep neck flexors":"Flexores profundos do pescoço","Keep the head stacked over the spine instead of drifting forward":"Mantêm a cabeça alinhada sobre a coluna em vez de projetada para a frente","Front of the cervical vertebrae":"Frente das vértebras cervicais","Base of skull & upper vertebrae":"Base do crânio e vértebras superiores",
+"A rounded upper back pushes the head forward, and the neck muscles have to hold it there all day.":"Costas curvadas empurram a cabeça para a frente, e os músculos do pescoço precisam sustentá-la o dia todo.","Levator scapulae and upper trapezius tie neck tension to how your shoulder blades sit.":"O levantador da escápula e o trapézio superior ligam a tensão do pescoço à posição das escápulas.",
+"Discs lose some height and water over the decades, and turning the head usually gets harder. You notice it when checking a blind spot while driving or turning to hear someone.":"Com as décadas, os discos perdem altura e água, e virar a cabeça costuma ficar mais difícil. Você percebe ao olhar o ponto cego dirigindo ou ao se virar para ouvir alguém.",
+"Chin tucks":"Recolher o queixo","10 × 3-sec hold":"10 × segurar 3 s","Slide your head straight back, like making a double chin. Keep your eyes level.":"Leve a cabeça reto para trás, como se fizesse papada. Mantenha o olhar na horizontal.","Slow neck turns":"Giros lentos do pescoço","5 each side":"5 de cada lado","Turn to the edge of comfort, breathe out, return to centre.":"Gire até o limite do conforto, solte o ar e volte ao centro.","Upper-trap stretch":"Alongamento do trapézio","30 sec each side":"30 s de cada lado","Sit on one hand and tilt your ear toward the other shoulder.":"Sente sobre uma das mãos e incline a orelha em direção ao outro ombro.",
+"Deltoid":"Deltoide","Raises the arm forward, out to the side and back":"Eleva o braço para a frente, para o lado e para trás","Collarbone, shoulder tip & blade spine":"Clavícula, ponta do ombro e espinha da escápula","Outer upper arm":"Parte externa do braço",
+"Rotator cuff (4 muscles)":"Manguito rotador (4 músculos)","Keeps the ball centred in the socket through every reach":"Mantém a cabeça do úmero centrada na cavidade em todo movimento de alcance","Shoulder blade":"Escápula","Top of the upper-arm bone":"Topo do úmero",
+"Serratus anterior":"Serrátil anterior","Wraps the blade around the ribs so the arm can go fully overhead":"Mantém a escápula junto às costelas para o braço subir totalmente","Ribs 1–8":"Costelas 1–8","Inner edge of the shoulder blade":"Borda interna da escápula",
+"Pectoralis minor":"Peitoral menor","Tips the blade forward; when tight, it rounds the shoulders":"Inclina a escápula para a frente; quando encurtado, arredonda os ombros","Ribs 3–5":"Costelas 3–5","Coracoid process at the front of the blade":"Processo coracoide, na frente da escápula",
+"Latissimus dorsi":"Grande dorsal","Pulls the arm down and in; tightness limits overhead reach":"Puxa o braço para baixo e para dentro; quando tenso, limita o alcance acima da cabeça","Lower spine, pelvis & lower ribs":"Coluna inferior, pelve e costelas inferiores","Front of the upper-arm bone":"Frente do úmero",
+"Your arm only gets fully overhead if the upper back extends. A stiff upper back borrows range from the shoulder.":"O braço só sobe totalmente se a parte alta das costas se estender. Costas rígidas “pegam emprestada” a amplitude do ombro.","When the shoulders run out of overhead range, the lower back often arches to fake it.":"Quando falta amplitude no ombro, a lombar costuma arquear para compensar.",
+"Rotator-cuff tendons thin with age and overhead reach often shrinks quietly, until a high shelf becomes hard to reach. Regular, controlled overhead work keeps it.":"Os tendões do manguito rotador afinam com a idade e o alcance acima da cabeça diminui aos poucos, até que uma prateleira alta fica difícil de alcançar. Trabalho regular e controlado acima da cabeça preserva esse alcance.",
+"Wall slides":"Deslizamento na parede","10 reps":"10 repetições","Back and forearms on the wall. Slide up without letting your low back arch.":"Costas e antebraços na parede. Deslize para cima sem deixar a lombar arquear.","Band pull-aparts":"Abertura com elástico","2 × 15":"2 × 15","Arms straight at chest height, squeeze the shoulder blades gently together.":"Braços estendidos na altura do peito, aproxime as escápulas suavemente.","Doorway chest stretch":"Alongamento do peito no batente","Forearm on the frame at shoulder height, step through until you feel the chest open.":"Antebraço no batente na altura do ombro, dê um passo à frente até sentir o peito abrir.",
+"Erector spinae":"Eretores da espinha","Extends the spine and holds you upright":"Estendem a coluna e mantêm você ereto","Pelvis & lower vertebrae":"Pelve e vértebras inferiores","Ribs & vertebrae higher up":"Costelas e vértebras mais acima",
+"Rhomboids":"Romboides","Draw the shoulder blades toward the spine":"Aproximam as escápulas da coluna","Spine, T2–T5":"Coluna, T2–T5",
+"Middle & lower trapezius":"Trapézio médio e inferior","Set the blades down and back for upright posture":"Levam as escápulas para baixo e para trás, para uma postura ereta","Thoracic spine":"Coluna torácica","Spine of the shoulder blade":"Espinha da escápula",
+"Obliques":"Oblíquos","Rotate and side-bend the trunk":"Giram e inclinam o tronco","Lower ribs":"Costelas inferiores","Pelvis & abdominal sheath":"Pelve e bainha abdominal",
+"The upper back is built to rotate and the lower back is not. When the upper back stops turning, the lower back gets twisted instead.":"A parte alta das costas foi feita para girar; a lombar, não. Quando a parte alta para de girar, a lombar é torcida no lugar dela.","Thoracic extension sets the shoulder blade up for every reach overhead.":"A extensão torácica prepara a escápula para cada alcance acima da cabeça.",
+"The upper back tends to round more with age. Extension and rotation work is one of the most useful ways to keep standing tall and breathing deeply.":"A parte alta das costas tende a curvar mais com a idade. Trabalhar extensão e rotação é uma das formas mais úteis de manter a postura alta e a respiração profunda.",
+"Open book":"Livro aberto","8 each side":"8 de cada lado","Lie on your side with knees bent. Sweep the top arm open and follow it with your eyes.":"Deite de lado com os joelhos dobrados. Abra o braço de cima em arco e acompanhe com os olhos.","Cat–cow":"Gato–vaca","10 slow reps":"10 repetições lentas","On hands and knees, round and then gently arch, moving one vertebra at a time.":"Em quatro apoios, arredonde e depois arqueie suavemente, uma vértebra de cada vez.","Chair-back extension":"Extensão no encosto da cadeira","8 reps":"8 repetições","Hands behind your head, lean back over the top of the chair. Only the upper back moves.":"Mãos atrás da cabeça, incline-se para trás sobre o encosto da cadeira. Só a parte alta das costas se move.",
+"Transversus abdominis":"Transverso do abdome","A natural belt that stiffens the trunk just before you move":"Um cinto natural que firma o tronco logo antes de você se mexer","Lower ribs, pelvis & back fascia":"Costelas inferiores, pelve e fáscia das costas","Midline sheath of the abdomen":"Bainha da linha média do abdome",
+"Multifidus":"Multífido","Fine control of each spinal segment":"Controle fino de cada segmento da coluna","One vertebra":"Uma vértebra","The vertebrae 2–4 levels above":"As vértebras 2–4 níveis acima",
+"Diaphragm & pelvic floor":"Diafragma e assoalho pélvico","The top and bottom of the core cylinder; they manage pressure that supports the spine":"O topo e a base do cilindro do core; regulam a pressão que sustenta a coluna","Lower ribs & spine":"Costelas inferiores e coluna","Central tendon / pelvic outlet":"Centro tendíneo / saída pélvica",
+"Quadratus lumborum":"Quadrado lombar","Side-bends and hitches the hip; overworks when the glutes don't":"Inclina o tronco e eleva o quadril; trabalha demais quando os glúteos não trabalham","Top of the pelvis":"Topo da pelve","Lowest rib & L1–L4":"Última costela e L1–L4",
+"If the hips can't bend, every bend becomes a back bend.":"Se o quadril não dobra, toda flexão vira uma flexão da coluna.","A stiff upper back pushes rotation down into the lower back.":"Costas rígidas no alto empurram a rotação para a lombar.",
+"Low-back pain is common with age, and most of it is not damage. A trunk that can brace plus hips that can hinge spread the load where it belongs.":"A dor lombar é comum com a idade, e na maioria das vezes não indica lesão. Um tronco que sabe se firmar e quadris que sabem dobrar distribuem a carga onde ela deve estar.",
+"Dead bug":"Inseto morto","Low back stays heavy on the floor while the opposite arm and leg reach away.":"A lombar fica apoiada no chão enquanto o braço e a perna opostos se estendem.","Bird dog":"Perdigueiro","On hands and knees, reach long without letting the hips rotate.":"Em quatro apoios, estenda-se longe sem deixar o quadril girar.","90/90 breathing":"Respiração 90/90","5 slow breaths":"5 respirações lentas","Lie with feet on a chair. Exhale fully and feel the ribs drop.":"Deite com os pés sobre uma cadeira. Solte todo o ar e sinta as costelas descerem.",
+"Gluteus maximus":"Glúteo máximo","Extends the hip: stands you up and climbs the stairs":"Estende o quadril: levanta você e sobe escadas","Back of the pelvis & sacrum":"Parte de trás da pelve e sacro","Upper thigh bone & IT band":"Parte superior do fêmur e trato iliotibial",
+"Gluteus medius":"Glúteo médio","Keeps the pelvis level when you stand on one leg, which is key for walking and balance":"Mantém a pelve nivelada quando você fica em uma perna só, essencial para caminhar e para o equilíbrio","Outer pelvis":"Parte externa da pelve","Outer top of the thigh bone":"Parte externa superior do fêmur",
+"Iliopsoas":"Iliopsoas","Lifts the knee; shortens with long hours of sitting":"Eleva o joelho; encurta com longas horas sentado","Lumbar spine & inner pelvis":"Coluna lombar e parte interna da pelve","Inner upper thigh bone":"Parte interna superior do fêmur",
+"Adductors":"Adutores","Pull the legs together and steady you side to side":"Aproximam as pernas e estabilizam você de um lado para o outro","Pubic bone":"Osso púbico","Inner thigh bone":"Parte interna do fêmur",
+"Stiff hips force the lower back to bend and twist for them.":"Quadris rígidos obrigam a lombar a dobrar e torcer no lugar deles.","A weak gluteus medius lets the knee drift inward on stairs and single-leg steps.":"Um glúteo médio fraco deixa o joelho cair para dentro na escada e em passos com uma perna.",
+"Hip strength is closely tied to independence: rising from a chair, getting up off the floor, and catching yourself after a stumble.":"A força do quadril está ligada à independência: levantar de uma cadeira, levantar do chão e se segurar depois de um tropeço.",
+"90/90 switches":"Troca 90/90","Sit with both knees bent at 90°, rotate them side to side. Use your hands for support.":"Sente com os dois joelhos dobrados a 90° e gire-os de um lado para o outro. Use as mãos como apoio.","Glute bridge":"Ponte de glúteo","2 × 12":"2 × 12","Drive through the heels, ribs down, pause at the top.":"Empurre pelos calcanhares, costelas para baixo, pause no alto.","Half-kneeling hip-flexor stretch":"Alongamento do flexor do quadril semiajoelhado","Gently tuck your tail under, then shift your weight forward.":"Encaixe o quadril suavemente e leve o peso para a frente.",
+"Quadriceps":"Quadríceps","Straighten the knee and control you as you sit down":"Estendem o joelho e controlam você ao sentar","Pelvis & thigh bone":"Pelve e fêmur","Kneecap → shin":"Patela → tíbia",
+"Hamstrings":"Isquiotibiais","Bend the knee, extend the hip, and slow you down":"Dobram o joelho, estendem o quadril e ajudam você a frear","Sit bone":"Ísquio","Back of the shin":"Parte de trás da tíbia",
+"Gastrocnemius":"Gastrocnêmio","Crosses the knee and the ankle, so calf tightness affects both":"Cruza o joelho e o tornozelo, então a panturrilha tensa afeta os dois","Back of the thigh bone":"Parte de trás do fêmur","Heel, via the Achilles":"Calcanhar, pelo tendão de Aquiles",
+"Popliteus":"Poplíteo","Unlocks the fully straightened knee":"Destrava o joelho totalmente estendido","Outer thigh bone":"Parte externa do fêmur",
+"Stiff ankles make the knee twist or collapse inward when you squat or go down stairs.":"Tornozelos rígidos fazem o joelho torcer ou cair para dentro ao agachar ou descer escadas.","The knee mostly does what the hip above it tells it to do.":"O joelho geralmente faz o que o quadril acima dele manda.",
+"Strong thigh muscles protect the knee. Stronger quads are linked with less knee pain and easier stairs.":"Coxas fortes protegem o joelho. Quadríceps mais fortes estão ligados a menos dor no joelho e escadas mais fáceis.",
+"Sit-to-stand":"Sentar e levantar","Chair behind you, lean forward, stand up without using your hands.":"Cadeira atrás de você, incline-se para a frente e levante sem usar as mãos.","Heel slides":"Deslizamento do calcanhar","10 each side":"10 de cada lado","Lying down, slide the heel toward your seat and back, slowly.":"Deitado, deslize o calcanhar em direção ao bumbum e de volta, devagar.","Step-ups":"Subida no degrau","Low step. Push through the whole foot and control the way down.":"Degrau baixo. Empurre com o pé inteiro e controle a descida.",
+"Soleus":"Sóleo","The workhorse calf for walking and standing":"O músculo da panturrilha que mais trabalha ao andar e ficar em pé","Back of the shin bones":"Parte de trás da tíbia e da fíbula",
+"Tibialis anterior":"Tibial anterior","Lifts the toes so you don't catch them and trip":"Levanta a ponta do pé para você não tropeçar","Front of the shin":"Frente da canela","Inner midfoot":"Parte interna do meio do pé",
+"Fibularis (peroneals)":"Fibulares","Stop the ankle rolling outward":"Evitam que o tornozelo vire para fora","Outer shin bone (fibula)":"Osso externo da perna (fíbula)","Underside of the foot":"Planta do pé",
+"Foot intrinsics":"Músculos intrínsecos do pé","Spread the toes, support the arch, and sense the ground":"Abrem os dedos, sustentam o arco e sentem o chão","Bones of the foot":"Ossos do pé","Toes":"Dedos do pé",
+"Limited ankle bend sends the movement up to the knee, which is built to stay steady.":"Pouca flexão no tornozelo manda o movimento para o joelho, que foi feito para ficar firme.","For balance, the ankle makes small corrections first and the hip takes over for bigger ones.":"No equilíbrio, o tornozelo faz as pequenas correções primeiro e o quadril assume as maiores.",
+"Ankle strength and range both drop with age, and both are linked with falls. Ankles also respond quickly to training.":"A força e a amplitude do tornozelo diminuem com a idade, e ambas estão ligadas a quedas. A boa notícia: os tornozelos respondem rápido ao treino.",
+"Knee-to-wall rocks":"Joelho na parede","Toes near the wall. Push the knee forward to touch the wall without lifting the heel.":"Dedos perto da parede. Leve o joelho à frente até tocar a parede sem tirar o calcanhar do chão.","Calf raises":"Elevação de panturrilha","Hold a counter. Rise up slowly and lower even slower.":"Segure-se numa bancada. Suba devagar e desça mais devagar ainda.","Tandem stance":"Postura em tandem","30 sec":"30 s","Stand heel to toe in a line, close to a counter.":"Fique com um calcanhar encostado nos dedos do outro pé, em linha, perto de uma bancada.",
+"2 × 8":"2 × 8","2 × 10":"2 × 10",
+"Look over your shoulder":"Olhe por cima do ombro","Sit tall. Turn your head slowly as far as is comfortable to each side.":"Sente-se ereto. Gire a cabeça devagar até onde for confortável, para cada lado.","Checks neck rotation, which you need for driving and turning to talk.":"Verifica a rotação do pescoço, necessária para dirigir e se virar para conversar.","Chin stops well short of my shoulder":"O queixo para bem antes do ombro","Chin nearly lines up with my shoulder":"O queixo quase se alinha com o ombro","Chin lines up with my shoulder, both sides":"O queixo se alinha com o ombro, dos dois lados",
+"Reach behind your back":"Mãos atrás das costas","Reach one hand over your shoulder and the other up from below, and try to bring your fingertips together. Swap sides.":"Leve uma mão por cima do ombro e a outra por baixo, e tente encostar as pontas dos dedos. Troque de lado.","Tests shoulder rotation in both directions, used for dressing and reaching.":"Testa a rotação do ombro nas duas direções, usada para se vestir e alcançar coisas.","More than a hand-length apart":"Mais de um palmo de distância","A few inches apart":"Alguns centímetros de distância","Fingertips touch or overlap":"As pontas dos dedos se tocam ou se cruzam",
+"Seated twist":"Rotação sentado","Sit on a chair, cross your arms on your chest, keep your knees still, and rotate to each side.":"Sente numa cadeira, cruze os braços no peito, mantenha os joelhos parados e gire para cada lado.","Isolates upper-back rotation by keeping the hips quiet.":"Isola a rotação da parte alta das costas mantendo o quadril parado.","I see the wall beside me only with effort":"Só vejo a parede ao meu lado com esforço","I see the side wall comfortably":"Vejo a parede lateral com conforto","I can see partly behind me":"Consigo ver parte do que está atrás de mim",
+"Reach toward your toes":"Alcance os dedos dos pés","Stand with soft knees and hinge forward slowly. Stop at any pain.":"Em pé, joelhos levemente dobrados, incline-se à frente devagar a partir do quadril. Pare se sentir dor.","Shows how the hips and lower back share forward bending.":"Mostra como quadril e lombar dividem a flexão para a frente.","Hands reach my knees or mid-shin":"As mãos chegam aos joelhos ou ao meio da canela","Fingers reach my ankles":"Os dedos chegam aos tornozelos","Fingers reach my toes or the floor":"Os dedos chegam aos dedos dos pés ou ao chão",
+"30-second chair stand":"Levantar da cadeira em 30 segundos","Arms crossed, stand fully and sit down as many times as you safely can in 30 seconds.":"Braços cruzados, levante-se totalmente e sente quantas vezes conseguir com segurança em 30 segundos.","A standard leg-strength test for older adults. Lower scores are linked with higher fall risk.":"Um teste padrão de força das pernas para idosos. Resultados mais baixos estão ligados a maior risco de queda.","Fewer than 8":"Menos de 8","8 to 12":"De 8 a 12","More than 12":"Mais de 12",
+"Stand on one leg":"Fique em uma perna só","Next to a counter with your eyes open, lift one foot and time how long you can hold it. Try both sides.":"Ao lado de uma bancada, com os olhos abertos, levante um pé e cronometre quanto tempo consegue ficar. Teste os dois lados.","Balance starts at the ankle and hip. Times naturally fall with age, and they also improve with practice.":"O equilíbrio começa no tornozelo e no quadril. Os tempos caem naturalmente com a idade e também melhoram com a prática.","Under 10 seconds":"Menos de 10 segundos","10 to 30 seconds":"De 10 a 30 segundos","30 seconds or more":"30 segundos ou mais",
+"Knee-to-wall":"Joelho na parede","Face a wall with your toes a few inches away. Bend your knee to touch the wall without lifting your heel. Move back until you can't.":"De frente para a parede, com os dedos a alguns centímetros dela, dobre o joelho até tocar a parede sem tirar o calcanhar do chão. Afaste o pé até não conseguir mais.","Measures ankle bend, which controls squatting, stairs, and walking downhill.":"Mede a flexão do tornozelo, que controla o agachamento, as escadas e as descidas.","Under 5 cm (2 in)":"Menos de 5 cm","5 to 10 cm (2–4 in)":"De 5 a 10 cm","10 cm (4 in) or more":"10 cm ou mais",
+"Cautious. I'm worried about getting hurt.":"Cauteloso. Tenho medo de me machucar.","That makes sense. We'll start with movements you fully control, close to support, in a range that feels safe. Confidence grows from small wins you can repeat.":"Faz sentido. Vamos começar com movimentos que você controla totalmente, perto de um apoio, numa amplitude que pareça segura. A confiança cresce com pequenas vitórias que você consegue repetir.",
+"Stiff. I know I've lost some range.":"Rígido. Sei que perdi um pouco de amplitude.","Stiffness usually means a joint hasn't been asked to move lately, not that it can't. The check-in shows exactly where to start.":"Rigidez geralmente significa que a articulação não tem sido usada, não que ela não consiga se mover. A avaliação mostra exatamente por onde começar.",
+"Curious. I want to understand my body.":"Curioso. Quero entender meu corpo.","Good place to start. Each test links to the joints and muscles behind it, so you'll learn your body as you go.":"Ótimo ponto de partida. Cada teste se liga às articulações e músculos por trás dele, então você aprende sobre o seu corpo enquanto avança.",
+"Ready. I want a plan.":"Pronto. Quero um plano.","Then let's build one. Answer honestly. The plan starts with your weakest links.":"Então vamos montar um. Responda com sinceridade. O plano começa pelos seus pontos mais fracos.",
+"cautious":"cauteloso","stiff":"rígido","curious":"curioso","ready":"pronto",
+"Before we start":"Antes de começar","How does moving feel for you right now?":"Como você se sente ao se movimentar neste momento?","There's no wrong answer. How you feel about movement shapes how you move, so we start here.":"Não existe resposta errada. O que você sente sobre o movimento influencia como você se move, então começamos por aqui.",
+"Start the movements →":"Começar os movimentos →","Limited":"Limitado","Partial":"Parcial","Full":"Completo","← Back":"← Voltar","See my results →":"Ver meus resultados →","Next →":"Próximo →","Why:":"Por quê:",
+"Your body map":"Seu mapa corporal","Retake the check-in":"Refazer a avaliação","Here's where you are today":"Veja como você está hoje",
+"Scores average the tests linked to each region. Your plan below now starts with the regions marked “Focus here”.":"As notas são a média dos testes ligados a cada região. Seu plano abaixo agora começa pelas regiões marcadas como “Foco aqui”.",
+"Open my plan":"Abrir meu plano","See it on your body":"Ver no seu corpo","You started out feeling":"Você começou se sentindo","Retest in four weeks and compare.":"Refaça em quatro semanas e compare.",
+"Typical adult range":"Amplitude típica de adultos","Muscles that move it":"Músculos que a movem","Works together with":"Trabalha junto com","What changes with age":"O que muda com a idade","Start with these three":"Comece com estes três","↑ Up the body":"↑ Subir no corpo","Down the body ↓":"Descer no corpo ↓",
+"Shoulder joint":"Articulação do ombro","Lower back":"Lombar","Ankles":"Tornozelos",
+"Needs range to reach overhead.":"Precisa de amplitude para alcançar acima da cabeça.","If it stiffens:":"Se ficar rígida:","the lower back arches and the neck tenses to lift the arm.":"a lombar arqueia e o pescoço tensiona para levantar o braço.",
+"Needs a steady base on the ribs.":"Precisa de uma base firme sobre as costelas.","If it gets loose:":"Se ficar instável:","the rotator cuff overworks and the shoulder pinches.":"o manguito rotador trabalha demais e o ombro fica pinçado.",
+"Needs rotation and extension.":"Precisa de rotação e extensão.","the neck and lower back twist instead.":"o pescoço e a lombar torcem no lugar dela.",
+"Needs to brace and resist.":"Precisa se firmar e resistir.","If it's forced to move:":"Se for forçada a se mover:","this is where back pain often shows up.":"é aí que a dor nas costas costuma aparecer.",
+"Needs to bend, extend and rotate.":"Precisa dobrar, estender e girar.","If they stiffen:":"Se ficarem rígidos:","the lower back and knees pick up the slack.":"a lombar e os joelhos compensam.",
+"Needs to track straight under load.":"Precisa seguir alinhado quando recebe carga.","If pushed to twist:":"Se for forçado a torcer:","stairs and squats start to hurt.":"escadas e agachamentos começam a doer.",
+"Needs to bend forward over the foot.":"Precisa dobrar à frente sobre o pé.","the knee collapses inward and balance suffers.":"o joelho cai para dentro e o equilíbrio piora.",
+"Example week":"Semana de exemplo","Your first week":"Sua primeira semana","Focus regions":"Regiões de foco","Example plan · finish the check-in to personalise it":"Plano de exemplo · conclua a avaliação para personalizá-lo","Built from your check-in":"Montado a partir da sua avaliação",
+"Mon":"Seg","Tue":"Ter","Wed":"Qua","Thu":"Qui","Fri":"Sex","Sat":"Sáb","Sun":"Dom",
+"Mobility":"Mobilidade","Strength":"Força","Strength + balance":"Força + equilíbrio","Walk":"Caminhada","Rest + retest":"Descanso + reteste",
+"12 min":"12 min","15 min":"15 min","20–30 min":"20–30 min","5 min":"5 min",
+"Easy pace, able to hold a conversation":"Ritmo leve, conseguindo conversar","Swing your arms; let the upper back turn":"Balance os braços; deixe a parte alta das costas girar","Repeat one test you marked “Limited”":"Repita um teste que você marcou como “Limitado”","Note how it felt":"Anote como se sentiu",
+"Every day":"Todos os dias","Balance snack: two rounds of 30-second single-leg stands next to the counter while the kettle boils.":"Pausa de equilíbrio: duas rodadas de 30 segundos em uma perna só, ao lado da bancada, enquanto a água ferve.",
+"How confidence builds":"Como a confiança se constrói","Week 1–2":"Semana 1–2","Learn the moves":"Aprenda os movimentos","Slow and controlled. Stay in a range that feels safe.":"Devagar e com controle. Fique numa amplitude que pareça segura.","Week 3–4":"Semana 3–4","Own the range":"Domine a amplitude","Add a pause at the end of each move. Retest.":"Acrescente uma pausa no fim de cada movimento. Refaça os testes.","Week 5–8":"Semana 5–8","Add load":"Aumente a carga","More reps, a band, or a light weight. Less support for balance.":"Mais repetições, um elástico ou um peso leve. Menos apoio no equilíbrio.","Week 9+":"Semana 9+","Live it":"Viva isso","Stairs, floor, garden, travel. Movement you trust.":"Escadas, chão, jardim, viagens. Movimento em que você confia.",
+"Train with me":"Treine comigo","Close":"Fechar","Start":"Iniciar","Pause":"Pausar","Resume":"Continuar","Restart":"Recomeçar","← Previous":"← Anterior","Next exercise →":"Próximo exercício →","Finish session →":"Finalizar sessão →",
+"Today is a rest or walk day, so here is Monday's mobility session.":"Hoje é dia de descanso ou caminhada, então aqui está a sessão de mobilidade de segunda-feira.",
+"Follow the dose at your own pace, or keep moving until the timer ends.":"Siga a dose no seu ritmo ou continue se movendo até o cronômetro acabar.","seconds":"segundos","Time's up. Move on when you're ready.":"Tempo esgotado. Siga quando estiver pronto.",
+"Session complete":"Sessão concluída","How do you feel now compared with when you started?":"Como você se sente agora em comparação com o início?",
+"Looser":"Mais solto","About the same":"Mais ou menos igual","Tired, in a good way":"Cansado, do jeito bom","Something hurt":"Algo doeu",
+"That's your body answering. Come back tomorrow and it will answer faster.":"É o seu corpo respondendo. Volte amanhã e ele vai responder mais rápido.",
+"Normal for the first sessions. Range usually starts to change after a week or two of steady practice.":"Normal nas primeiras sessões. A amplitude costuma mudar depois de uma ou duas semanas de prática constante.",
+"Good. That's the training effect. Drink some water and keep moving gently today.":"Ótimo. Esse é o efeito do treino. Beba água e continue se movendo com leveza hoje.",
+"Skip that exercise next time or make the range smaller. Sharp or lasting pain is a reason to check with a physiotherapist.":"Pule esse exercício na próxima vez ou diminua a amplitude. Dor aguda ou persistente é motivo para consultar um fisioterapeuta.",
+"Back to my plan":"Voltar ao meu plano","Save my answers anonymously (no name or email) to help improve Supple.":"Salvar minhas respostas de forma anônima (sem nome ou e-mail) para ajudar a melhorar o Supple.","Exercise library":"Exercícios","Train today":"Treinar hoje","Today's session":"Sessão de hoje","Watch and train":"Ver e treinar","Train all three":"Treinar os três","← Library":"← Exercícios","Menu":"Menu","Light / dark":"Claro / escuro","Pick any exercise to see how it moves and train along.":"Escolha qualquer exercício para ver como ele se move e treinar junto.","Train again":"Treinar de novo","Today":"Hoje",
+"Moving:":"Em movimento:","Support:":"Apoio:","Chair":"Cadeira","Wall":"Parede","Resistance band":"Elástico de resistência","Door frame":"Batente da porta","Floor mat":"Tapete","Step":"Degrau","Counter":"Bancada","Faint figure = start position":"Figura clara = posição inicial",
+"Move":"Movimento","Region":"Região","head to feet":"da cabeça aos pés","Exercise":"Exercício"
+};
+Object.assign(ZH,{"Move":"动作","Region":"部位","head to feet":"从头到脚","Exercise":"动作"});
+const DICT={zh:ZH,pt:PT};
+const SVGLBL={pt:{neck:"PESCOÇO",shoulders:"OMBROS",thoracic:"TORÁCICA",lumbar:"LOMBAR",hips:"QUADRIS",knees:"JOELHOS",ankles:"TORNOZELOS"}};
+let LANG="en";
+function detectLang(){
+  const list=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||"en"];
+  for(const x of list){const c=String(x).toLowerCase(); if(c.startsWith("zh"))return "zh"; if(c.startsWith("pt"))return "pt"; if(c.startsWith("en"))return "en";}
+  return "en";
+}
+LANG=detectLang();
+try{
+  localStorage.removeItem("supple.lang");
+  const l=localStorage.getItem("supple.lang.choice"); if(["zh","en","pt"].includes(l)) LANG=l;
+}catch(e){}
+const zh=()=>LANG==="zh";
+const ORIG=new WeakMap();
+function tr(root){
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;return p&&!p.closest("script,style,#statement,.lang")?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
+  let n;
+  while((n=w.nextNode())){
+    if(!ORIG.has(n)) ORIG.set(n,n.nodeValue);
+    const o=ORIG.get(n), t=o.trim(); if(!t) continue;
+    const key=t.replace(/\s+/g," ");
+    const dct=DICT[LANG];
+    n.nodeValue = (dct&&dct[key]!==undefined) ? o.replace(t,dct[key]) : o;
+  }
+}
+const T=s=>{const d=DICT[LANG];return d&&d[s]!==undefined?d[s]:s};
+const of=(i,n)=>LANG==="zh"?`${i} / ${n}`:LANG==="pt"?`${i} de ${n}`:`${i} of ${n}`;
+
+/* ================= STATE ================= */
+const KEY="supple.v1";
+let S={step:0,mood:null,ans:Array(TESTS.length).fill(null),region:"neck"};
+try{const raw=localStorage.getItem(KEY); if(raw){const p=JSON.parse(raw); if(p&&Array.isArray(p.ans)&&p.ans.length===TESTS.length) S={...S,...p};}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+
+/* ================= TRACKING (anonymous) =================
+   Sends check-in answers to /api/assess (your Vercel backend) and mirrors
+   aggregate events to Google Analytics. Nothing is sent when the visitor
+   unticks "Save my answers anonymously". No names, emails or free text. */
+let SHARE=true; try{ if(localStorage.getItem("supple.share")==="0") SHARE=false }catch(e){}
+const uuid=()=> (crypto.randomUUID ? crypto.randomUUID() : "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==="x"?r:(r&3|8)).toString(16)}));
+function anonId(){ try{let a=localStorage.getItem("supple.anon"); if(!a){a=uuid();localStorage.setItem("supple.anon",a)} return a}catch(e){return uuid()} }
+function sendApi(body){
+  if(!SHARE || !/^https?:$/.test(location.protocol)) return;
+  try{ fetch("/api/assess",{method:"POST",headers:{"Content-Type":"application/json"},keepalive:true,
+        body:JSON.stringify({...body,anon_id:anonId(),lang:LANG})}).catch(()=>{}); }catch(e){}
+}
+function sendGa(name,params){ if(!SHARE) return; try{ if(typeof window.gtag==="function") window.gtag("event",name,params) }catch(e){} }
+const SCORE_LABEL=["limited","partial","full"];
+const Track={
+  start(){ S.aid=uuid(); S.sent=false; save();
+    sendApi({type:"start",assessment_id:S.aid,mood:S.mood});
+    sendGa("assess_start",{mood:S.mood,language:LANG}); },
+  answer(i,score){ if(!S.aid) Track.start(); const t=TESTS[i];
+    sendApi({type:"answer",assessment_id:S.aid,test_id:t.id,regions:t.r,score});
+    sendGa("assess_answer",{test_id:t.id,region:t.r[0],score,score_label:SCORE_LABEL[score]}); },
+  complete(){ const sc=scores(); const focus=Object.entries(sc).filter(x=>x[1]!=null).sort((a,b)=>a[1]-b[1])[0];
+    sendApi({type:"complete",assessment_id:S.aid,region_scores:sc});
+    sendGa("assess_complete",{mood:S.mood,language:LANG,focus_region:focus?focus[0]:"none"}); },
+  feel(f){ sendApi({type:"feel",assessment_id:S.aid||null,feel:f,session:(PL&&PL.label?PL.label.join(" · "):"").slice(0,120)});
+    sendGa("train_feedback",{feel:f}); }
+};
+
+function scores(){
+  const out={};
+  REGIONS.forEach(r=>{
+    const v=TESTS.map((t,i)=>t.r.includes(r.id)?S.ans[i]:null).filter(x=>x!==null);
+    out[r.id]=v.length? v.reduce((a,b)=>a+b,0)/v.length : null;
+  });
+  return out;
+}
+function status(s){return s==null?"unset":s<0.75?"focus":s<1.5?"build":"keep"}
+const complete=()=>S.ans.every(a=>a!==null);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ================= FIGURE ================= */
+const J={neck:[[150,100]],shoulders:[[105,126],[195,126]],thoracic:[[150,172]],lumbar:[[150,238]],hips:[[124,298],[176,298]],knees:[[127,420],[173,420]],ankles:[[129,546],[171,546]]};
+function figure(interactive){
+  const sc=scores();
+  let joints="";
+  REGIONS.forEach(r=>{
+    J[r.id].forEach((p,i)=>{
+      const st=status(sc[r.id]);
+      const attrs=interactive?` role="button" tabindex="${i===0?0:-1}" aria-label="${esc(r.name)}: ${ST[st]}"`:"";
+      joints+=`<g class="joint s-${st}" data-r="${r.id}"${attrs}><circle class="halo" cx="${p[0]}" cy="${p[1]}" r="17"/><circle class="ring" cx="${p[0]}" cy="${p[1]}" r="12"/><circle class="dot" cx="${p[0]}" cy="${p[1]}" r="4.6"/></g>`;
+    });
+    if(interactive){
+      const p=J[r.id][J[r.id].length-1], left=J[r.id].length===1;
+      const x=left? p[0]-26 : p[0]+26, anchor=left?"end":"start";
+      joints+=`<text class="lbl" data-l="${r.id}" x="${x}" y="${p[1]+3}" text-anchor="${anchor}">${esc(zh()?T(r.name):SVGLBL[LANG]?SVGLBL[LANG][r.id]:r.name.split(" ")[0].toUpperCase())}</text>`;
+    }
+  });
+  return `<svg class="fig${interactive?" interactive":""}" viewBox="0 0 300 600" role="img" aria-label="Front view of the body with seven joint regions">
+   <path class="body" stroke-width="20" d="M108 120 Q150 110 192 120 L184 236 Q150 250 116 236 Z"/>
+   <path class="body" stroke-width="16" d="M118 252 L182 252 L178 300 L122 300 Z"/>
+   <line class="body" stroke-width="18" x1="150" y1="80" x2="150" y2="114"/>
+   <polyline class="body" fill="none" stroke-width="20" points="104,126 88,214 80,296"/>
+   <polyline class="body" fill="none" stroke-width="20" points="196,126 212,214 220,296"/>
+   <polyline class="body" fill="none" stroke-width="26" points="124,300 127,420 129,546"/>
+   <polyline class="body" fill="none" stroke-width="26" points="176,300 173,420 171,546"/>
+   <polyline class="body" fill="none" stroke-width="14" points="129,550 116,574"/>
+   <polyline class="body" fill="none" stroke-width="14" points="171,550 184,574"/>
+   <circle class="head" cx="150" cy="50" r="28"/>
+   <path class="spine" d="M150 104 L150 292"/>
+   <polyline class="bone" points="105,126 150,100 195,126"/>
+   <polyline class="bone" points="105,126 88,214 80,296"/>
+   <polyline class="bone" points="195,126 212,214 220,296"/>
+   <polyline class="bone" points="124,298 150,286 176,298"/>
+   <polyline class="bone" points="124,298 127,420 129,546 116,574"/>
+   <polyline class="bone" points="176,298 173,420 171,546 184,574"/>
+   <path class="bone" d="M112 150 Q150 162 188 150 M114 176 Q150 188 186 176 M117 202 Q150 212 183 202"/>
+   <circle class="minor" cx="88" cy="214" r="2.6"/><circle class="minor" cx="212" cy="214" r="2.6"/>
+   <circle class="minor" cx="80" cy="296" r="2.2"/><circle class="minor" cx="220" cy="296" r="2.2"/>
+   ${joints}
+  </svg>`;
+}
+
+/* ================= ASSESSMENT ================= */
+const card=document.getElementById("assessCard");
+function dashes(){
+  const total=TESTS.length+2;
+  return `<div class="dashes" aria-hidden="true">${Array.from({length:total},(_,i)=>`<span class="${i<S.step?"done":i===S.step?"now":""}"></span>`).join("")}</div>`;
+}
+function renderAssess(){
+  const n=TESTS.length;
+  if(S.step>n && complete() && S.aid && !S.sent){ Track.complete(); S.sent=true; save(); }
+  if(S.step===0){
+    card.innerHTML=`${dashes()}
+     <div class="q-meta"><span class="region-tag">Before we start</span><span class="mono" style="color:var(--faint)">${T("Check-in")} · ${of(0,n)}</span></div>
+     <h3 class="q-title">How does moving feel for you right now?</h3>
+     <p class="q-how">There's no wrong answer. How you feel about movement shapes how you move, so we start here.</p>
+     <div class="opts">${MOODS.map(m=>`<button class="opt" data-mood="${m.k}" aria-pressed="${S.mood===m.k}"><span class="dot"></span>${esc(m.l)}</button>`).join("")}</div>
+     ${S.mood?`<p class="mood-msg">${esc(MOODS.find(m=>m.k===S.mood).m)}</p>`:""}
+     <label class="consent"><input type="checkbox" id="shareToggle" ${SHARE?"checked":""}><span>Save my answers anonymously (no name or email) to help improve Supple.</span></label>
+     <div class="q-nav"><span></span><button class="pill primary big" data-go="1" ${S.mood?"":"disabled style='opacity:.4;cursor:not-allowed'"}>Start the movements →</button></div>`;
+  } else if(S.step<=n){
+    const i=S.step-1, t=TESTS[i];
+    card.innerHTML=`${dashes()}
+     <div class="q-meta"><span class="region-tag">${t.r.map(id=>`<span>${esc(R[id].name)}</span>`).join(" + ")}</span><span class="mono" style="color:var(--faint)">${T("Move")} ${of(S.step,n)}</span></div>
+     <h3 class="q-title">${esc(t.t)}</h3>
+     <p class="q-how">${esc(t.how)}</p>
+     <p class="q-why"><span>Why:</span> <span>${esc(t.why)}</span></p>
+     <div class="opts">${t.o.map((o,k)=>`<button class="opt" data-ans="${k}" aria-pressed="${S.ans[i]===k}"><span class="dot"></span>${esc(o)}<span class="lv">${["Limited","Partial","Full"][k]}</span></button>`).join("")}</div>
+     <div class="q-nav"><button class="pill tonal big" data-go="${S.step-1}">← Back</button><button class="pill primary big" data-go="${S.step+1}" ${S.ans[i]===null?"disabled style='opacity:.4;cursor:not-allowed'":""}>${S.step===n?"See my results":"Next"} →</button></div>`;
+  } else {
+    const sc=scores();
+    const mood=MOODS.find(m=>m.k===S.mood);
+    card.innerHTML=`${dashes()}
+     <div class="q-meta"><span class="region-tag">Your body map</span><button class="pill" data-reset>Retake the check-in</button></div>
+     <h3 class="q-title">Here's where you are today</h3>
+     <div class="results">
+       <div class="bars">${REGIONS.map(r=>{const s=sc[r.id],st=status(s),w=s==null?0:Math.max(6,s/2*100);
+         return `<div class="bar"><span>${esc(r.name)}</span><span class="track"><span class="fill" style="width:${w}%;background:var(--${st})"></span></span><span class="st st-${st}">${ST[st]}</span></div>`}).join("")}
+         <p class="q-why" style="margin-top:8px">Scores average the tests linked to each region. Your plan below now starts with the regions marked “Focus here”.</p>
+         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:6px"><a class="pill primary" href="#plan">Open my plan</a><a class="pill tonal" href="#explore">See it on your body</a></div>
+       </div>
+       <div class="panel mini-panel"><canvas class="stars" aria-hidden="true"></canvas>${figure(false)}</div>
+       ${mood?`<p class="mood-msg"><span>You started out feeling</span> <b>${esc(mood.k)}</b><span>.</span> <span>${esc(mood.m)}</span> <span>Retest in four weeks and compare.</span></p>`:""}
+     </div>`;
+    card.querySelectorAll("canvas.stars").forEach(drawStars);
+  }
+  tr(card);
+}
+card.addEventListener("change",e=>{ if(e.target.id==="shareToggle"){ SHARE=e.target.checked; try{localStorage.setItem("supple.share",SHARE?"1":"0")}catch(_){} } });
+card.addEventListener("click",e=>{
+  const b=e.target.closest("button,a"); if(!b) return;
+  if(b.dataset.mood){S.mood=b.dataset.mood;save();renderAssess();return}
+  if(b.dataset.ans!==undefined){
+    S.ans[S.step-1]=+b.dataset.ans;Track.answer(S.step-1,+b.dataset.ans);save();renderAssess();refreshAll();
+    setTimeout(()=>{ if(S.step<=TESTS.length){S.step++;save();renderAssess();refreshAll();} },420);
+    return;
+  }
+  if(b.dataset.go!==undefined && !b.disabled){ if(S.step===0&&+b.dataset.go===1&&!S.aid) Track.start(); S.step=+b.dataset.go;save();renderAssess();refreshAll();card.scrollIntoView({block:"nearest",behavior:"smooth"});return}
+  if(b.hasAttribute("data-reset")){S.step=0;S.mood=null;S.aid=null;S.sent=false;S.ans=Array(TESTS.length).fill(null);save();renderAssess();refreshAll();}
+});
+
+/* ================= EXPLORER ================= */
+const exFig=document.getElementById("exFig"), exDetail=document.getElementById("exDetail");
+function renderExplorer(){
+  exFig.innerHTML=figure(true);
+  exFig.querySelectorAll(".joint").forEach(g=>{ if(g.dataset.r===S.region) g.classList.add("active"); });
+  exFig.querySelectorAll(".lbl").forEach(t=>t.classList.toggle("on",t.dataset.l===S.region));
+  const r=R[S.region], sc=scores(), st=status(sc[r.id]), idx=REGIONS.indexOf(r);
+  exDetail.innerHTML=`
+   <div class="tabs" role="tablist" aria-label="Body regions, head to feet">${REGIONS.map(x=>`<button class="pill tonal" role="tab" data-r="${x.id}" aria-selected="${x.id===r.id}">${esc(x.name)}</button>`).join("")}</div>
+   <div class="ex-title">
+     <span class="mono" style="color:var(--faint)">${T("Region")} ${of(idx+1,REGIONS.length)} · ${T("head to feet")}</span>
+     <h3>${esc(r.name)}</h3>
+     <p class="sub">${esc(r.sub)}</p>
+     <div class="badges"><span class="badge">${esc(r.role)}</span><span class="badge"><i style="background:var(--${st})"></i><span class="st-${st}">${ST[st]}</span></span></div>
+   </div>
+   <div><div class="sec-label">Typical adult range</div><div class="rom">${r.rom.map(x=>`<div><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div></div>
+   <div><div class="sec-label">Muscles that move it</div><div class="muscles">${r.muscles.map((m,k)=>`<details${k===0?" open":""}><summary><b>${esc(m.n)}</b><span>${esc(m.s)}</span></summary><div class="path"><em>${esc(m.from)}</em><span aria-label="to">→</span><em>${esc(m.to)}</em></div></details>`).join("")}</div></div>
+   <div><div class="sec-label">Works together with</div><div class="links">${r.links.map(l=>`<button class="link-card" data-r="${l[0]}"><b>${esc(R[l[0]].name)} <span aria-hidden="true">↗</span></b><span>${esc(l[1])}</span></button>`).join("")}</div></div>
+   <div><div class="sec-label">What changes with age</div><p class="age">${esc(r.age)}</p></div>
+   <div><div class="sec-row"><div class="sec-label">Start with these three</div><button class="pill tonal" data-drill="0"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Train all three</button></div><div class="drills">${r.drills.map((d,k)=>`<button class="drill" data-drill="${k}" aria-label="${esc(T(d[0]))} · ${esc(T("Watch and train"))}"><span class="ix">0${k+1}</span><div><b>${esc(d[0])}</b><p>${esc(d[2])}</p></div><span class="dose">${esc(d[1])}</span><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4v16l14-8z"/></svg></span></button>`).join("")}</div></div>
+   <div class="ex-nav">
+     <button class="pill tonal" data-r="${REGIONS[Math.max(0,idx-1)].id}" ${idx===0?"disabled style='opacity:.4'":""}>↑ Up the body</button>
+     <button class="pill primary" data-r="${REGIONS[Math.min(REGIONS.length-1,idx+1)].id}" ${idx===REGIONS.length-1?"disabled style='opacity:.4'":""}>Down the body ↓</button>
+   </div>`;
+  tr(exDetail); tr(exFig);
+}
+function selectRegion(id,scroll){
+  S.region=id;save();renderExplorer();
+  if(scroll) document.getElementById("explore").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+}
+exFig.addEventListener("click",e=>{const g=e.target.closest(".joint");if(g)selectRegion(g.dataset.r)});
+exFig.addEventListener("keydown",e=>{const g=e.target.closest(".joint");if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();selectRegion(g.dataset.r);exFig.querySelector(`.joint[data-r="${g.dataset.r}"]`)?.focus()}});
+exDetail.addEventListener("click",e=>{const dr=e.target.closest("[data-drill]");if(dr){openPlayer(dr,{region:S.region,i:+dr.dataset.drill});return}const b=e.target.closest("[data-r]");if(b&&!b.disabled){selectRegion(b.dataset.r);exDetail.querySelector(".tabs [aria-selected=true]")?.scrollIntoView({block:"nearest",inline:"center"})}});
+
+/* ================= CHAIN ================= */
+const CHAIN=[
+ ["Shoulder joint","mobile","shoulders","Needs range to reach overhead. <strong>If it stiffens:</strong> the lower back arches and the neck tenses to lift the arm."],
+ ["Shoulder blade","stable","shoulders","Needs a steady base on the ribs. <strong>If it gets loose:</strong> the rotator cuff overworks and the shoulder pinches."],
+ ["Upper back","mobile","thoracic","Needs rotation and extension. <strong>If it stiffens:</strong> the neck and lower back twist instead."],
+ ["Lower back","stable","lumbar","Needs to brace and resist. <strong>If it's forced to move:</strong> this is where back pain often shows up."],
+ ["Hips","mobile","hips","Needs to bend, extend and rotate. <strong>If they stiffen:</strong> the lower back and knees pick up the slack."],
+ ["Knees","stable","knees","Needs to track straight under load. <strong>If pushed to twist:</strong> stairs and squats start to hurt."],
+ ["Ankles","mobile","ankles","Needs to bend forward over the foot. <strong>If they stiffen:</strong> the knee collapses inward and balance suffers."]
+];
+function renderChain(){
+  const el=document.getElementById("chainList");
+  el.innerHTML=CHAIN.map(c=>`<button class="link ${c[1]}" data-r="${c[2]}"><span class="node"><i></i></span><span><b>${c[0]}</b><span class="role">${c[1]==="mobile"?"Built to move":"Built to hold steady"}</span></span><p>${c[3]}</p></button>`).join("");
+  tr(el);
+}
+document.getElementById("chainList").addEventListener("click",e=>{const b=e.target.closest(".link");if(b)selectRegion(b.dataset.r,true)});
+
+/* ================= PLAN ================= */
+const planCard=document.getElementById("planCard");
+const DR=(id,k,dose)=>({name:R[id].drills[k][0],dose:dose||R[id].drills[k][1],cue:R[id].drills[k][2],region:id});
+function planFocus(){
+  const sc=scores(), example=!complete();
+  const focus=example?["thoracic","hips","ankles"]:REGIONS.map(r=>r.id).sort((a,b)=>(sc[a]??2)-(sc[b]??2)).slice(0,3);
+  return {sc,example,focus};
+}
+function buildDays(){
+  const [a,b,c]=planFocus().focus;
+  return [
+   {d:"Mon",cls:"mob",type:"Mobility",dur:"12 min",items:[DR(a,0),DR(b,0),DR(c,0),DR(a,1)]},
+   {d:"Tue",cls:"str",type:"Strength",dur:"15 min",items:[DR("knees",0,"2 × 8"),DR("hips",1),DR("ankles",1),DR("shoulders",0,"2 × 10")]},
+   {d:"Wed",cls:"mob",type:"Mobility",dur:"12 min",items:[DR(a,1),DR(b,1),DR(c,1),DR(b,2)]},
+   {d:"Thu",cls:"str",type:"Strength + balance",dur:"15 min",items:[DR("lumbar",1),DR("knees",2),DR("shoulders",1),DR("ankles",2)]},
+   {d:"Fri",cls:"mob",type:"Mobility",dur:"12 min",items:[DR(a,2),DR(b,2),DR(c,2)]},
+   {d:"Sat",cls:"easy",type:"Walk",dur:"20–30 min",items:[{name:"Easy pace, able to hold a conversation"},{name:"Swing your arms; let the upper back turn"}]},
+   {d:"Sun",cls:"easy",type:"Rest + retest",dur:"5 min",items:[{name:"Repeat one test you marked “Limited”"},{name:"Note how it felt"}]}
+  ];
+}
+function renderPlan(){
+  const {sc,example,focus}=planFocus(), days=buildDays();
+  const todayIdx=(new Date().getDay()+6)%7, swapped=days[todayIdx].cls==="easy", tday=swapped?days[0]:days[todayIdx];
+  planCard.innerHTML=`
+   <div class="plan-top">
+     <div style="display:flex;flex-direction:column;gap:10px">
+       <h3>${example?"Example week":"Your first week"}</h3>
+       <span class="q-why">${example?"Example plan · finish the check-in to personalise it":"Built from your check-in"}</span>
+       <div class="focus-row"><span class="mono" style="color:var(--faint);align-self:center">Focus regions</span>${focus.map(id=>{const st=status(sc[id]);return `<button class="pill tonal" data-r="${id}"><i style="width:7px;height:7px;border-radius:50%;background:var(--${example?"unset":st})"></i>${esc(R[id].name)}</button>`}).join("")}</div>
+     </div>
+   </div>
+   <div class="today">
+     <div class="t-info">
+       <span class="t-eyebrow"><i></i><span>Today</span></span>
+       <span class="t-title"><span>${tday.d}</span> · <span>${tday.type}</span> · <span>${tday.dur}</span></span>
+       ${swapped?`<span class="q-why">Today is a rest or walk day, so here is Monday's mobility session.</span>`:""}
+       <span class="t-list">${tday.items.map(i=>`<span>${esc(i.name)}</span>`).join("")}</span>
+     </div>
+     <button class="pill primary big" data-train>Train with me</button>
+   </div>
+   <div class="week">${days.map((x,k)=>`<div class="day ${x.cls}${k===todayIdx?" is-today":""}"><span class="d"><span>${x.d}${k===todayIdx?` <span class="now-tag">● ${T("Today")}</span>`:""}</span><span>${x.dur}</span></span><b>${x.type}</b><ul>${x.items.map(i=>`<li><span><span>${esc(i.name)}</span>${i.dose?` <span class="ds">${esc(i.dose)}</span>`:""}</span></li>`).join("")}</ul></div>`).join("")}</div>
+   <div class="daily"><span class="badge">Every day</span><span>Balance snack: two rounds of 30-second single-leg stands next to the counter while the kettle boils.</span></div>
+   <div>
+     <div class="sec-label">How confidence builds</div>
+     <div class="ladder">
+       <div class="rung"><span class="mono">Week 1–2</span><b>Learn the moves</b><p>Slow and controlled. Stay in a range that feels safe.</p></div>
+       <div class="rung"><span class="mono">Week 3–4</span><b>Own the range</b><p>Add a pause at the end of each move. Retest.</p></div>
+       <div class="rung"><span class="mono">Week 5–8</span><b>Add load</b><p>More reps, a band, or a light weight. Less support for balance.</p></div>
+       <div class="rung"><span class="mono">Week 9+</span><b>Live it</b><p>Stairs, floor, garden, travel. Movement you trust.</p></div>
+     </div>
+   </div>`;
+  tr(planCard);
+}
+planCard.addEventListener("click",e=>{
+  const t=e.target.closest("[data-train]"); if(t){openPlayer(t);return}
+  const b=e.target.closest("[data-r]"); if(b)selectRegion(b.dataset.r,true);
+});
+
+/* ================= TRAIN WITH ME ================= */
+const player=document.getElementById("player"), plBox=document.getElementById("plBox");
+const WORK=45, CIRC=2*Math.PI*72;
+let PL=null;
+function todayPlan(){
+  const days=buildDays(); let di=(new Date().getDay()+6)%7, swapped=false;
+  if(days[di].cls==="easy"){di=0;swapped=true}
+  return {label:[days[di].d,days[di].type,days[di].dur],items:days[di].items,swapped};
+}
+function regionPlan(id){
+  return {label:[R[id].name,"Start with these three"],items:R[id].drills.map((_,k)=>DR(id,k)),swapped:false};
+}
+function setSession(sess,i,from){
+  Object.assign(PL,{mode:"session",label:sess.label,items:sess.items,swapped:sess.swapped,i:i||0,left:WORK,running:false,done:false,feel:null,from:from||null});
+}
+function openPlayer(trigger,opts){
+  opts=opts||{};
+  if(PL){clearInterval(PL.timer);cancelAnimationFrame(PL.raf)}
+  PL={trigger,timer:null,raf:0};
+  if(opts.library){PL.mode="library"}
+  else setSession(opts.region?regionPlan(opts.region):todayPlan(),opts.i);
+  player.hidden=false; document.body.style.overflow="hidden";
+  renderPlayer(); plBox.querySelector("[data-pl=close]")?.focus();
+}
+function closePlayer(){
+  if(!PL) return; clearInterval(PL.timer); cancelAnimationFrame(PL.raf); const tg=PL.trigger; PL=null;
+  player.hidden=true; document.body.style.overflow=""; tg?.focus();
+}
+function stopTimer(){clearInterval(PL.timer);PL.running=false}
+function tick(){
+  PL.left--; if(PL.left<=0){PL.left=0;stopTimer();renderPlayer();return}
+  updateRing();
+}
+function updateRing(){
+  const f=plBox.querySelector(".fgc"), b=plBox.querySelector(".pl-ring b");
+  if(f) f.style.strokeDashoffset=CIRC*(1-PL.left/WORK);
+  if(b) b.textContent=PL.left;
+}
+function renderLibrary(){
+  const t=todayPlan(), sc=scores();
+  plBox.innerHTML=`<div class="pl-top"><span class="mono">Supple</span><button class="pill tonal pl-close" data-pl="close" aria-label="${T("Close")}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <h3 class="pl-name" id="plTitle">Exercise library</h3>
+    <p class="pl-cue">Pick any exercise to see how it moves and train along.</p>
+    <div class="lib-today"><div><b>Today's session</b><span><span>${t.label[0]}</span> · <span>${t.label[1]}</span> · <span>${t.label[2]}</span></span></div><button class="pill primary big" data-lib="today">Train with me</button></div>
+    ${REGIONS.map(r=>`<div class="lib-group"><h4><i style="background:var(--${status(sc[r.id])})"></i><span>${esc(r.name)}</span></h4><div class="lib-items">${r.drills.map((d,k)=>`<button class="lib-item" data-lib="${r.id}" data-k="${k}"><b>${esc(d[0])}</b><span>${esc(d[1])}</span></button>`).join("")}</div></div>`).join("")}`;
+  tr(plBox);
+}
+function renderPlayer(){
+  cancelAnimationFrame(PL.raf);
+  plBox.parentElement.classList.toggle("wide",PL.mode==="library");
+  if(PL.mode==="library"){renderLibrary();return}
+  const n=PL.items.length;
+  const back=PL.from==="library"?`<button class="pill tonal pl-back" data-pl="library">← Library</button>`:"";
+  const top=`<div class="pl-top">${back}<span class="mono" style="${back?"display:none":""}">${PL.label.map(x=>`<span>${esc(x)}</span>`).join(" · ")}</span><button class="pill tonal pl-close" data-pl="close" aria-label="${T("Close")}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>`;
+  if(PL.done){
+    const FEELS=[["looser","Looser","That's your body answering. Come back tomorrow and it will answer faster."],["same","About the same","Normal for the first sessions. Range usually starts to change after a week or two of steady practice."],["tired","Tired, in a good way","Good. That's the training effect. Drink some water and keep moving gently today."],["hurt","Something hurt","Skip that exercise next time or make the range smaller. Sharp or lasting pain is a reason to check with a physiotherapist."]];
+    const f=FEELS.find(x=>x[0]===PL.feel);
+    plBox.innerHTML=`${top}
+      <div class="dashes" aria-hidden="true">${PL.items.map(()=>`<span class="done"></span>`).join("")}</div>
+      <h3 class="pl-name" id="plTitle">Session complete</h3>
+      <p class="pl-cue">How do you feel now compared with when you started?</p>
+      <div class="opts">${FEELS.map(x=>`<button class="opt" data-feel="${x[0]}" aria-pressed="${PL.feel===x[0]}"><span class="dot"></span>${x[1]}</button>`).join("")}</div>
+      ${f?`<p class="mood-msg">${f[2]}</p>`:""}
+      <div class="pl-ctrl"><button class="pill tonal big" data-pl="again">Train again</button><button class="pill primary big" data-pl="close">Back to my plan</button></div>`;
+  } else {
+    const it=PL.items[PL.i], ended=PL.left===0;
+    plBox.innerHTML=`${top}
+      ${PL.swapped?`<p class="pl-note">Today is a rest or walk day, so here is Monday's mobility session.</p>`:""}
+      <div class="dashes" aria-hidden="true">${PL.items.map((_,k)=>`<span class="${k<PL.i?"done":k===PL.i?"now":""}"></span>`).join("")}</div>
+      <div class="q-meta">${FAM[it.name]?"<span></span>":`<span class="region-tag"><span>${esc(R[it.region].name)}</span></span>`}<span class="mono" style="color:var(--faint)">${T("Exercise")} ${of(PL.i+1,n)}</span></div>
+      ${stageHTML(it)}
+      <h3 class="pl-name" id="plTitle">${esc(it.name)}</h3>
+      <span class="pl-dose">${esc(it.dose)}</span>
+      <p class="pl-cue">${esc(it.cue)}</p>
+      <div class="pl-ring" aria-live="off"><svg viewBox="0 0 168 168" aria-hidden="true"><circle class="bgc" cx="84" cy="84" r="72"/><circle class="fgc" cx="84" cy="84" r="72" stroke-dasharray="${CIRC}" stroke-dashoffset="${CIRC*(1-PL.left/WORK)}"/></svg><b>${PL.left}</b><small>seconds</small></div>
+      <p class="pl-hint" aria-live="polite">${ended?"Time's up. Move on when you're ready.":"Follow the dose at your own pace, or keep moving until the timer ends."}</p>
+      <div class="pl-ctrl">
+        <button class="pill tonal big" data-pl="prev" ${PL.i===0?"disabled style='opacity:.4'":""}>← Previous</button>
+        <span class="mid"><button class="pill tonal big" data-pl="toggle">${ended?"Restart":PL.running?"Pause":PL.left<WORK?"Resume":"Start"}</button></span>
+        <button class="pill ${ended?"primary":"tonal"} big" data-pl="next">${PL.i===n-1?"Finish session →":"Next exercise →"}</button>
+      </div>`;
+  }
+  tr(plBox);
+  if(!PL.done) startAnim(PL.items[PL.i]); else cancelAnimationFrame(PL.raf);
+}
+plBox.addEventListener("click",e=>{
+  if(!PL) return;
+  const f=e.target.closest("[data-feel]"); if(f){ if(PL.feel!==f.dataset.feel) Track.feel(f.dataset.feel); PL.feel=f.dataset.feel;renderPlayer();return}
+  const lb=e.target.closest("[data-lib]");
+  if(lb){ if(lb.dataset.lib==="today") setSession(todayPlan(),0,"library"); else setSession(regionPlan(lb.dataset.lib),+lb.dataset.k,"library"); renderPlayer(); plBox.querySelector("[data-pl=toggle]")?.focus(); return }
+  const b=e.target.closest("[data-pl]"); if(!b||b.disabled) return;
+  const a=b.dataset.pl;
+  if(a==="close"){closePlayer();return}
+  if(a==="library"){stopTimer();PL.mode="library";renderPlayer();plBox.querySelector("[data-pl=close]")?.focus();return}
+  if(a==="again"){PL.i=0;PL.left=WORK;PL.done=false;PL.feel=null;renderPlayer();return}
+  if(a==="toggle"){
+    if(PL.running){stopTimer()}
+    else{ if(PL.left===0) PL.left=WORK; PL.running=true; PL.timer=setInterval(tick,1000) }
+    renderPlayer(); plBox.querySelector("[data-pl=toggle]")?.focus(); return;
+  }
+  if(a==="prev"||a==="next"){
+    stopTimer(); PL.left=WORK;
+    if(a==="prev") PL.i=Math.max(0,PL.i-1);
+    else if(PL.i===PL.items.length-1) PL.done=true; else PL.i++;
+    renderPlayer(); plBox.querySelector(a==="next"&&!PL.done?"[data-pl=toggle]":"[data-pl=close]")?.focus();
+  }
+});
+player.addEventListener("click",e=>{ if(e.target===player) closePlayer(); });
+document.addEventListener("keydown",e=>{
+  if(!PL) return;
+  if(e.key==="Escape"){closePlayer();return}
+  if(e.key==="Tab"){
+    const fs=[...plBox.querySelectorAll("button:not([disabled])")]; if(!fs.length) return;
+    const first=fs[0], last=fs[fs.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  }
+});
+
+
+/* ================= TRAINER ATLAS ANIMATION ================= */
+const DG=Math.PI/180;
+const dv=a=>[Math.sin(a*DG),-Math.cos(a*DG)];
+const ad=(p,v,l)=>[p[0]+v[0]*l,p[1]+v[1]*l];
+function ik(P,T,a,b,s){
+  const dx=T[0]-P[0],dy=T[1]-P[1],d=Math.hypot(dx,dy)||1,dd=Math.min(d,a+b-.01);
+  const al=Math.acos(Math.max(-1,Math.min(1,(a*a+dd*dd-b*b)/(2*a*dd))));
+  const th=Math.atan2(dy,dx)+s*al;
+  return [[P[0]+a*Math.cos(th),P[1]+a*Math.sin(th)],[P[0]+dx/d*dd,P[1]+dy/d*dd]];
+}
+function limb(root,sp,L1,L2){ if(sp.t) return ik(root,sp.t,L1,L2,sp.s); const j=ad(root,dv(sp.a1),L1); return [j,ad(j,dv(sp.a2),L2)]; }
+function lerpV(a,b,k){
+  if(typeof a==="number") return a+(b-a)*k;
+  if(Array.isArray(a)) return a.map((x,i)=>lerpV(x,b[i],k));
+  if(a&&typeof a==="object"){const o={};for(const key in a) o[key]=(b&&key in b)?lerpV(a[key],b[key],k):a[key];return o}
+  return a;
+}
+function sidePose(p){
+  const tv=dv(p.t), hip=p.hip, neck=ad(hip,tv,52), sh=ad(hip,tv,46);
+  const hb=ad(neck,dv(p.h??p.t),14), head=[hb[0]+(p.hdx||0),hb[1]];
+  const nose=ad(head,dv((p.h??p.t)+90),9*(1-.85*(p.turn||0)));
+  const n=[tv[1],-tv[0]], mid=[(hip[0]+neck[0])/2,(hip[1]+neck[1])/2], sb=p.sb||0;
+  const ctrl=[mid[0]+n[0]*sb,mid[1]+n[1]*sb];
+  const q=(u)=>[(1-u)*(1-u)*hip[0]+2*(1-u)*u*ctrl[0]+u*u*neck[0],(1-u)*(1-u)*hip[1]+2*(1-u)*u*ctrl[1]+u*u*neck[1]];
+  const [elN,haN]=limb(sh,p.aN,26,24), [elF,haF]=limb(sh,p.aF||p.aN,26,24);
+  const lN=p.lN, lF=p.lF||p.lN;
+  const [knN,anN]=limb(hip,lN,34,32), [knF,anF]=limb(hip,lF,34,32);
+  return {side:true,head,nose,neck,sh,ctrl,hip,elN,haN,elF,haF,knN,anN,knF,anF,
+    toN:ad(anN,dv(lN.f??90),11),toF:ad(anF,dv(lF.f??90),11),rib:p.rib,ribC:ad(hip,tv,30),
+    spine70:q(.7),spine25:q(.25)};
+}
+const SEAT={hip:[100,136],t:0,h:0,aN:{t:[126,128],s:1},lN:{t:[134,168],s:-1,f:90}};
+const STAND={hip:[112,102],t:0,h:0,aN:{t:[114,106],s:1},lN:{t:[112,168],s:-1,f:90}};
+const HK={hip:[90,134],t:69.6,h:100,sb:0,aN:{a1:180,a2:180},aF:{a1:180,a2:180},lN:{a1:180,a2:270,f:270},lF:{a1:180,a2:270,f:270}};
+const FS={head:[120,36],neck:[120,50],shL:[104,57],shR:[136,57],elL:[100,82],haL:[98,106],elR:[140,82],haR:[142,106],pelvis:[120,102],hipL:[112,104],hipR:[128,104],knL:[112,136],knR:[128,136],anL:[112,167],anR:[128,167],toL:[106,168],toR:[134,168]};
+const FSE={head:[120,70],neck:[120,84],shL:[104,91],shR:[136,91],elL:[101,116],haL:[100,140],elR:[139,114],haR:[132,134],pelvis:[120,134],hipL:[112,138],hipR:[128,138],knL:[109,144],knR:[131,144],anL:[109,167],anR:[131,167],toL:[103,168],toR:[137,168]};
+const FFL={head:[120,82],neck:[120,96],shL:[104,103],shR:[136,103],elL:[94,126],haL:[88,148],elR:[146,126],haR:[152,148],pelvis:[120,146],hipL:[112,150],hipR:[128,150]};
+const ARMX={a1:160,a2:200};
+const FAM={
+ "Chin tucks":{A:{...SEAT,hdx:3},B:{...SEAT,hdx:-5},props:["chair"],sup:"Chair"},
+ "Slow neck turns":{A:{...SEAT,turn:0},B:{...SEAT,turn:1},props:["chair"],sup:"Chair"},
+ "Upper-trap stretch":{front:true,A:FSE,B:{...FSE,head:[129,73]},props:["chairFront"],sup:"Chair"},
+ "Wall slides":{front:true,A:{...FS,elL:[84,58],haL:[82,32],elR:[156,58],haR:[158,32]},B:{...FS,elL:[98,30],haL:[104,8],elR:[142,30],haR:[136,8]},props:["wallBack"],sup:"Wall"},
+ "Band pull-aparts":{front:true,A:{...FS,elL:[106,72],haL:[112,76],elR:[134,72],haR:[128,76]},B:{...FS,elL:[80,60],haL:[56,62],elR:[160,60],haR:[184,62]},props:[],band:true,sup:"Resistance band"},
+ "Doorway chest stretch":{A:{...STAND,aN:{a1:270,a2:0},lN:{t:[112,168],s:-1,f:90},lF:{t:[112,168],s:-1,f:90}},B:{...STAND,hip:[120,102],t:8,h:8,aN:{a1:258,a2:-8},lN:{t:[136,168],s:-1,f:90},lF:{t:[102,168],s:-1,f:90}},props:["door"],sup:"Door frame"},
+ "Open book":{top:true,A:{hip:[124,150],t:-90,h:-90,aN:{a1:0,a2:0},aF:{a1:0,a2:0},lN:{t:[164,124],s:-1,f:30},lF:{t:[164,124],s:-1,f:30}},B:{hip:[124,150],t:-90,h:-90,aN:{a1:-155,a2:-155},aF:{a1:0,a2:0},lN:{t:[164,124],s:-1,f:30},lF:{t:[164,124],s:-1,f:30}},props:["matTop"],sup:"Floor mat"},
+ "Cat–cow":{A:{...HK,sb:12,h:150},B:{...HK,sb:-8,h:70},props:["mat"],sup:"Floor mat"},
+ "Chair-back extension":{A:{...SEAT,aN:{a1:40,a2:-120},aF:{a1:40,a2:-120}},B:{...SEAT,t:-25,h:-25,aN:{a1:15,a2:-145},aF:{a1:15,a2:-145}},props:["chairTall"],sup:"Chair"},
+ "Dead bug":{A:{hip:[112,158],t:-90,h:-90,aN:{a1:0,a2:0},aF:{a1:0,a2:0},lN:{a1:0,a2:90,f:20},lF:{a1:0,a2:90,f:20}},B:{hip:[112,158],t:-90,h:-90,aN:{a1:-80,a2:-80},aF:{a1:0,a2:0},lN:{a1:0,a2:90,f:20},lF:{a1:70,a2:80,f:90}},props:["mat"],sup:"Floor mat"},
+ "Bird dog":{A:{...HK},B:{...HK,aN:{a1:90,a2:90},lF:{a1:270,a2:270,f:270}},props:["mat"],sup:"Floor mat"},
+ "90/90 breathing":{A:{hip:[96,158],t:-90,h:-90,aN:{a1:95,a2:95},lN:{a1:20,a2:90,f:0},rib:5},B:{hip:[96,158],t:-90,h:-90,aN:{a1:95,a2:95},lN:{a1:20,a2:90,f:0},rib:10},props:["mat","chairR"],sup:"Chair"},
+ "90/90 switches":{front:true,A:{...FFL,knL:[88,140],anL:[76,164],knR:[106,142],anR:[94,166]},B:{...FFL,knL:[134,142],anL:[146,166],knR:[152,140],anR:[164,164]},props:["mat"],sup:"Floor mat"},
+ "Glute bridge":{A:{hip:[112,158],t:-90,h:-90,aN:{a1:95,a2:95},lN:{t:[146,166],s:-1,f:90}},B:{hip:[112,134],t:-116,h:-90,aN:{a1:110,a2:100},lN:{t:[146,166],s:-1,f:90}},props:["mat"],sup:"Floor mat"},
+ "Half-kneeling hip-flexor stretch":{A:{hip:[110,134],t:0,h:0,aN:ARMX,aF:ARMX,lN:{t:[144,168],s:-1,f:90},lF:{a1:180,a2:270,f:270}},B:{hip:[122,136],t:-4,h:-4,aN:ARMX,aF:ARMX,lN:{t:[144,168],s:-1,f:90},lF:{a1:200,a2:270,f:270}},props:["mat"],sup:"Floor mat"},
+ "Sit-to-stand":{A:{...SEAT,t:25,h:20,aN:{a1:200,a2:30},aF:{a1:200,a2:30}},B:{...SEAT,hip:[130,102],t:0,h:0,aN:{a1:175,a2:20},aF:{a1:175,a2:20}},props:["chair"],sup:"Chair"},
+ "Heel slides":{A:{hip:[112,158],t:-90,h:-90,aN:{a1:95,a2:95},lN:{t:[178,160],s:-1,f:20},lF:{a1:92,a2:92,f:20}},B:{hip:[112,158],t:-90,h:-90,aN:{a1:95,a2:95},lN:{t:[136,164],s:-1,f:60},lF:{a1:92,a2:92,f:20}},props:["mat"],sup:"Floor mat"},
+ "Step-ups":{A:{...STAND,lN:{t:[140,144],s:-1,f:90},lF:{t:[112,168],s:-1,f:90}},B:{...STAND,hip:[138,80],aN:{t:[140,84],s:1},lN:{t:[140,144],s:-1,f:90},lF:{t:[128,140],s:-1,f:90}},props:["step"],sup:"Step"},
+ "Knee-to-wall rocks":{A:{hip:[134,102],t:0,h:0,aN:{t:[156,72],s:1},lN:{t:[140,168],s:-1,f:90},lF:{t:[114,168],s:-1,f:90}},B:{hip:[140,108],t:4,h:4,aN:{t:[156,72],s:1},lN:{t:[140,168],s:-1,f:90},lF:{t:[114,168],s:-1,f:90}},props:["wallR"],sup:"Wall"},
+ "Calf raises":{A:{...STAND,aN:{t:[148,90],s:1},lN:{t:[112,168],s:-1,f:90}},B:{...STAND,hip:[112,94],aN:{t:[148,90],s:1},lN:{t:[112,160],s:-1,f:125}},props:["counter"],sup:"Counter"},
+ "Tandem stance":{A:{...STAND,hip:[110,102],t:-2,h:-2,aN:{t:[148,90],s:1},lN:{t:[118,168],s:-1,f:90},lF:{t:[104,168],s:-1,f:90}},B:{...STAND,hip:[114,102],t:2,h:2,aN:{t:[148,90],s:1},lN:{t:[118,168],s:-1,f:90},lF:{t:[104,168],s:-1,f:90}},props:["counter"],sup:"Counter"}
+};
+const PROPS={
+ chair:`<path class="pf-prop" d="M74 140h40v5h-40z"/><path class="pf-line pf-pl" d="M77 145v25M111 145v25M77 140V96"/>`,
+ chairTall:`<path class="pf-prop" d="M74 140h40v5h-40z"/><path class="pf-line pf-pl" d="M77 145v25M111 145v25M77 140V100M71 100h10"/>`,
+ chairFront:`<path class="pf-prop" d="M96 140h48v5H96z"/><path class="pf-line pf-pl" d="M99 145v25M141 145v25"/><path class="pf-prop" d="M98 90h44v48H98z" opacity=".5"/>`,
+ chairR:`<path class="pf-prop" d="M126 129h40v5h-40z"/><path class="pf-line pf-pl" d="M129 134v36M163 134v36M163 129V92"/>`,
+ wallBack:`<rect class="pf-prop" x="62" y="4" width="116" height="166" rx="4" opacity=".55"/>`,
+ wallR:`<path class="pf-prop" d="M158 14h10v156h-10z"/>`,
+ door:`<path class="pf-prop" d="M74 14h8v156h-8zM74 14h70v6H74z"/>`,
+ mat:`<rect class="pf-prop" x="18" y="166" width="204" height="5" rx="2.5"/>`,
+ matTop:`<rect class="pf-prop" x="16" y="88" width="208" height="110" rx="10" opacity=".7"/>`,
+ step:`<path class="pf-prop" d="M128 146h50v24h-50z"/>`,
+ counter:`<path class="pf-prop" d="M146 88h64v6h-64z"/><path class="pf-prop" d="M152 94h52v76h-52z" opacity=".5"/>`
+};
+const L=(a,b,cls)=>`<line class="pf-line ${cls||""}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}"/>`;
+const PL_=(pts,cls)=>`<polyline class="pf-line ${cls||""}" points="${pts.map(p=>p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ")}"/>`;
+const DOT=(p,r)=>`<circle class="pf-dot" cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="${r||2.2}"/>`;
+function drawFig(P,fam){
+  let s="";
+  if(P.side){
+    s+=PL_([P.sh,P.elF,P.haF],"pf-far")+PL_([P.hip,P.knF,P.anF,P.toF],"pf-far");
+    s+=`<path class="pf-line" d="M${P.hip[0].toFixed(1)} ${P.hip[1].toFixed(1)}Q${P.ctrl[0].toFixed(1)} ${P.ctrl[1].toFixed(1)} ${P.neck[0].toFixed(1)} ${P.neck[1].toFixed(1)}"/>`;
+    if(P.rib) s+=`<circle class="pf-rib" cx="${P.ribC[0].toFixed(1)}" cy="${P.ribC[1].toFixed(1)}" r="${P.rib.toFixed(1)}"/>`;
+    s+=L(P.neck,P.head)+PL_([P.hip,P.knN,P.anN,P.toN])+PL_([P.sh,P.elN,P.haN]);
+    s+=`<circle class="pf-head" cx="${P.head[0].toFixed(1)}" cy="${P.head[1].toFixed(1)}" r="9"/>`+DOT(P.nose,1.8);
+    s+=[P.elN,P.haN,P.knN,P.anN,P.hip,P.sh].map(p=>DOT(p)).join("");
+  } else {
+    if(fam.band){const m=[(P.haL[0]+P.haR[0])/2,(P.haL[1]+P.haR[1])/2+Math.max(0,14-Math.abs(P.haR[0]-P.haL[0])/8)];s+=`<path class="pf-band" d="M${P.haL[0]} ${P.haL[1]}Q${m[0]} ${m[1]} ${P.haR[0]} ${P.haR[1]}"/>`}
+    s+=L(P.pelvis,P.neck)+L(P.neck,P.head)+PL_([P.shL,P.neck,P.shR])+PL_([P.shL,P.elL,P.haL])+PL_([P.shR,P.elR,P.haR]);
+    s+=PL_([P.hipL,P.hipR])+PL_([P.hipL,P.knL,P.anL].concat(P.toL?[P.toL]:[]))+PL_([P.hipR,P.knR,P.anR].concat(P.toR?[P.toR]:[]));
+    s+=`<circle class="pf-head" cx="${P.head[0].toFixed(1)}" cy="${P.head[1].toFixed(1)}" r="9"/>`;
+    s+=[P.elL,P.haL,P.elR,P.haR,P.knL,P.knR,P.anL,P.anR,P.shL,P.shR].map(p=>DOT(p)).join("");
+  }
+  return s;
+}
+function famPose(fam,k){ if(fam.front){const o={};for(const key in fam.A) o[key]=lerpV(fam.A[key],fam.B[key]||fam.A[key],k);return o} return sidePose(lerpV(fam.A,fam.B,k)); }
+function hlPoints(P,region){
+  if(P.side) return [{neck:P.neck,shoulders:P.sh,thoracic:P.spine70,lumbar:P.spine25,hips:P.hip,knees:P.knN,ankles:P.anN}[region]];
+  const mid=[(P.pelvis[0]+P.neck[0])/2,(P.pelvis[1]+P.neck[1])/2];
+  return {neck:[P.neck],shoulders:[P.shL,P.shR],thoracic:[mid],lumbar:[P.pelvis],hips:[P.hipL,P.hipR],knees:[P.knL,P.knR],ankles:[P.anL,P.anR]}[region];
+}
+function stageHTML(it){
+  const fam=FAM[it.name]; if(!fam) return "";
+  return `<div class="panel pl-stage"><canvas class="stars" aria-hidden="true"></canvas>
+    <svg viewBox="0 0 240 200" role="img" aria-label="${esc(T(it.name))}">
+      ${fam.top?"":`<line class="pf-floor" x1="6" y1="170" x2="234" y2="170"/>`}
+      <g>${fam.props.map(p=>PROPS[p]).join("")}</g>
+      <g class="pf-ghost">${drawFig(famPose(fam,0),fam)}</g>
+      <g class="pf-live"></g><g class="pf-hls"></g>
+    </svg>
+    <div class="pl-chips">
+      <span class="pchip"><i style="background:var(--unset)"></i><span>Moving:</span> <span>${esc(R[it.region].name)}</span></span>
+      <span class="pchip"><i style="background:var(--build)"></i><span>Support:</span> <span>${esc(fam.sup)}</span></span>
+    </div>
+    <span class="pl-cap">Faint figure = start position</span>
+  </div>`;
+}
+function startAnim(it){
+  if(!PL) return; cancelAnimationFrame(PL.raf);
+  const fam=FAM[it.name], st=plBox.querySelector(".pl-stage"); if(!fam||!st) return;
+  drawStars(st.querySelector("canvas.stars"));
+  const live=st.querySelector(".pf-live"), hls=st.querySelector(".pf-hls");
+  const n=hlPoints(famPose(fam,0),it.region).length;
+  hls.innerHTML=Array.from({length:n},()=>`<g><circle class="pf-hl" r="10"/><circle class="pf-ring" r="10"/></g>`).join("");
+  const gs=[...hls.children], t0=performance.now();
+  const frame=now=>{
+    if(!PL) return;
+    const ph=((now-t0)/3600)%1, k=reduce?1:(1-Math.cos(ph*2*Math.PI))/2;
+    const P=famPose(fam,k); live.innerHTML=drawFig(P,fam);
+    hlPoints(P,it.region).forEach((p,i)=>gs[i]?.querySelectorAll("circle").forEach(c=>{c.setAttribute("cx",p[0].toFixed(1));c.setAttribute("cy",p[1].toFixed(1))}));
+    if(!reduce) PL.raf=requestAnimationFrame(frame);
+  };
+  PL.raf=requestAnimationFrame(frame);
+}
+Object.assign(ZH,{"Moving:":"活动部位：","Support:":"支撑：","Chair":"椅子","Wall":"墙","Resistance band":"弹力带","Door frame":"门框","Floor mat":"地垫","Step":"台阶","Counter":"台面","Faint figure = start position":"淡色人形 = 起始姿势"});
+
+function refreshAll(){renderExplorer();renderPlan();if(typeof updateCta==="function"){updateCta();fitHeader()}}
+
+/* ================= VISUALS ================= */
+const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function drawStars(cv){
+  const r=cv.getBoundingClientRect(), dpr=Math.min(2,devicePixelRatio||1);
+  if(!r.width) return;
+  cv.width=r.width*dpr; cv.height=r.height*dpr;
+  const x=cv.getContext("2d"); x.scale(dpr,dpr);
+  const n=Math.round(r.width*r.height/2600);
+  for(let i=0;i<n;i++){
+    const a=Math.random()*.55+.08, s=Math.random()<.08?1.4:.8;
+    x.fillStyle=`rgba(230,234,240,${a})`; x.beginPath(); x.arc(Math.random()*r.width,Math.random()*r.height,s,0,7); x.fill();
+  }
+}
+function heroFigure(){
+  const host=document.getElementById("heroFig");
+  host.insertAdjacentHTML("afterbegin",figure(false));
+  requestAnimationFrame(layoutHeroChips);
+}
+/* hero labels: float beside the figure with leader lines; stack below when there is no side room */
+function layoutHeroChips(){
+  const panel=document.querySelector(".hero-panel"), svg=panel?.querySelector("#heroFig svg"), lead=panel?.querySelector(".hero-leaders");
+  if(!svg) return;
+  const chips=[...panel.querySelectorAll(".hero-chips .chip")];
+  panel.classList.remove("stack"); chips.forEach(c=>{c.style.left=c.style.top=""});
+  const pr=panel.getBoundingClientRect(), fr=svg.getBoundingClientRect(), ctm=svg.getScreenCTM();
+  if(!pr.width||!ctm){panel.classList.add("ready");return}
+  const GAP=28, EDGE=16;
+  const roomL=fr.left-pr.left-EDGE-GAP, roomR=pr.right-fr.right-EDGE-GAP;
+  const fits=chips.every(c=>c.offsetWidth<=(c.dataset.side==="L"?roomL:roomR));
+  if(!fits){panel.classList.add("stack","ready");lead.innerHTML="";return}
+  const pt=(id,side)=>{const pts=J[id];const p=pts.length>1?(side==="L"?pts[0]:pts[1]):pts[0];return [ctm.a*p[0]+ctm.e-pr.left, ctm.d*p[1]+ctm.f-pr.top]};
+  let lines="";
+  ["L","R"].forEach(side=>{
+    let lastBottom=-Infinity;
+    chips.filter(c=>c.dataset.side===side).map(c=>({c,p:pt(c.dataset.j,side)})).sort((a,b)=>a.p[1]-b.p[1]).forEach(({c,p})=>{
+      const h=c.offsetHeight, w=c.offsetWidth;
+      let y=Math.max(p[1]-h/2,lastBottom+8,EDGE); y=Math.min(y,pr.height-h-EDGE); lastBottom=y+h;
+      const x= side==="L" ? (fr.left-pr.left)-GAP-w : (fr.right-pr.left)+GAP;
+      c.style.left=x+"px"; c.style.top=y+"px";
+      const cx= side==="L" ? x+w : x, cy=y+h/2;
+      lines+=`<line x1="${p[0].toFixed(1)}" y1="${p[1].toFixed(1)}" x2="${cx.toFixed(1)}" y2="${cy.toFixed(1)}"/><circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="2"/>`;
+    });
+  });
+  lead.innerHTML=lines; panel.classList.add("ready");
+}
+addEventListener("resize",()=>requestAnimationFrame(layoutHeroChips));
+document.fonts?.ready?.then(()=>layoutHeroChips());
+function particles(){
+  const cv=document.getElementById("particles"), ctx=cv.getContext("2d");
+  const cols=["#3279f9","#ea4335","#fbbc04","#34a853","#8ab4f8"];
+  let W,H,P=[],mx=-999,my=-999;
+  function size(){const r=cv.getBoundingClientRect(),d=Math.min(2,devicePixelRatio||1);W=r.width;H=r.height;cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+    const n=Math.round(W*H/5200);P=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,c:cols[Math.random()*cols.length|0],l:Math.random()*3+1.2,a:Math.random()*Math.PI,o:Math.random()*.5+.25}))}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(const p of P){
+      if(!reduce){
+        const dx=p.x-mx,dy=p.y-my,d2=dx*dx+dy*dy;
+        if(d2<14000){const f=(14000-d2)/14000*.9;p.x+=dx/Math.sqrt(d2+1)*f;p.y+=dy/Math.sqrt(d2+1)*f}
+        p.x+=p.vx;p.y+=p.vy;p.a+=.004;
+        if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+      }
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);ctx.globalAlpha=p.o;ctx.fillStyle=p.c;ctx.fillRect(-p.l/2,-.8,p.l,1.6);ctx.restore();
+    }
+    if(!reduce) requestAnimationFrame(draw);
+  }
+  const hero=cv.parentElement;
+  hero.addEventListener("pointermove",e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+  hero.addEventListener("pointerleave",()=>{mx=my=-999});
+  size();draw();
+  addEventListener("resize",()=>{size(); if(reduce) draw();});
+}
+const STATEMENT={
+  en:"Movement starts with understanding. Stiffness is not a verdict on your age. It is information about which joints have stopped doing their job, and every one of them can be retrained.",
+  pt:"O movimento começa com a compreensão. A rigidez não é um veredito sobre a sua idade. É uma informação sobre quais articulações deixaram de fazer o seu trabalho, e cada uma delas pode ser treinada de novo.",
+  zh:"活动始于理解。僵硬并不是年龄的判决书。它只是在告诉你，哪些关节不再履行自己的职责，而每一个关节都可以重新训练。"
+};
+let WS=[];
+function updStatement(){
+  const el=document.getElementById("statement"); if(!WS.length) return;
+  if(reduce){WS.forEach(w=>w.classList.add("lit"));return}
+  const r=el.getBoundingClientRect(),vh=innerHeight;
+  const p=Math.min(1,Math.max(0,(vh*.85-r.top)/(r.height+vh*.35)));
+  const k=Math.round(p*WS.length); WS.forEach((w,i)=>w.classList.toggle("lit",i<k));
+}
+function statement(){
+  const el=document.getElementById("statement");
+  const parts=zh()? (STATEMENT.zh.match(/[^，。]+[，。]?/g)||[]).flatMap(seg=>seg.match(/.{1,3}/gu)||[]) : (STATEMENT[LANG]||STATEMENT.en).split(/\s+/);
+  el.innerHTML=parts.map(w=>`<span class="w">${esc(w)}</span>`).join(zh()?"":" ");
+  WS=[...el.querySelectorAll(".w")]; updStatement();
+}
+addEventListener("scroll",updStatement,{passive:true});
+document.getElementById("themeBtn").addEventListener("click",()=>{
+  const root=document.documentElement, cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");
+  root.setAttribute("data-theme",cur==="dark"?"light":"dark");
+});
+
+/* language switch */
+function setLang(l,chosen){
+  LANG=l; if(chosen){try{localStorage.setItem("supple.lang.choice",l)}catch(e){}}
+  document.documentElement.lang=l==="zh"?"zh-CN":l==="pt"?"pt-BR":"en";
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===l)));
+  tr(document.body);
+  statement(); renderAssess(); renderChain(); refreshAll();
+  const hf=document.getElementById("heroFig"); hf.querySelector("svg")?.remove(); heroFigure();
+  if(PL) renderPlayer();
+  fitHeader(); requestAnimationFrame(layoutHeroChips);
+}
+function fitHeader(){
+  const h=document.querySelector(".hdr"), w=h.querySelector(".wrap"), nav=h.querySelector(".nav");
+  h.classList.remove("compact");
+  if(getComputedStyle(nav).display==="none"||w.scrollWidth>w.clientWidth+1) h.classList.add("compact");
+  if(!h.classList.contains("compact")) setMenu(false);
+}
+const menuBtn=document.getElementById("menuBtn"), menuPanel=document.getElementById("menuPanel");
+function setMenu(open){menuPanel.hidden=!open;menuBtn.setAttribute("aria-expanded",String(open))}
+menuBtn.addEventListener("click",()=>setMenu(menuPanel.hidden));
+menuPanel.addEventListener("click",e=>{
+  if(e.target.closest(".menu-list a")) setMenu(false);
+  if(e.target.closest("[data-theme-toggle]")) document.getElementById("themeBtn").click();
+});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!menuPanel.hidden){setMenu(false);menuBtn.focus()}});
+document.addEventListener("click",e=>{if(!menuPanel.hidden&&!e.target.closest(".hdr"))setMenu(false)});
+document.addEventListener("click",e=>{const l=e.target.closest("[data-library]");if(l&&!l.closest("#plBox")){setMenu(false);openPlayer(l,{library:true})}});
+const ctaTop=document.getElementById("ctaTop");
+function updateCta(){
+  const done=complete();
+  ctaTop.textContent=T(done?"Train today":"Start check-in");
+  ctaTop.setAttribute("href",done?"#plan":"#assess");
+  ctaTop.toggleAttribute("data-today",done);
+}
+ctaTop.addEventListener("click",e=>{if(ctaTop.hasAttribute("data-today")){e.preventDefault();openPlayer(ctaTop)}});
+addEventListener("resize",fitHeader);
+document.fonts?.ready?.then(fitHeader);
+document.querySelector(".lang").addEventListener("click",e=>{const b=e.target.closest("[data-lang]");if(b&&b.dataset.lang!==LANG)setLang(b.dataset.lang,true)});
+
+/* journey: scroll-linked growth line */
+function journeyAnim(){
+  const sec=document.getElementById("journey"), arc=sec.querySelector(".arc");
+  const steps=[...sec.querySelectorAll(".step")], labels=[...sec.querySelectorAll(".arc-labels span")];
+  const cols=["var(--g-red)","var(--g-orange)","var(--g-yellow)","var(--g-green)","var(--blue)"];
+  steps.forEach((s,i)=>{s.style.setProperty("--c",cols[i]);const d=s.querySelector(".feel i");if(d)d.removeAttribute("style")});
+  arc.innerHTML='<span class="arc-fill"></span><span class="arc-dot"></span>';
+  function upd(){
+    let p=1;
+    if(!reduce){const r=sec.getBoundingClientRect(),vh=innerHeight;p=(vh*.8-(r.top+r.height*.2))/(r.height*.6);p=Math.min(1,Math.max(0,p))}
+    let last=0;
+    steps.forEach((s,i)=>{const on=p>=i/4-.001;s.classList.toggle("on",on);if(on)last=i});
+    arc.style.setProperty("--x",(.1+.8*p).toFixed(3));
+    arc.style.setProperty("--dot",cols[last]);
+    labels.forEach((l,i)=>l.classList.toggle("on",p>=i/2-.001));
+  }
+  addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd();
+}
+
+/* ================= BOOT ================= */
+journeyAnim();
+heroFigure();
+particles();
+setLang(LANG);
+document.querySelectorAll("canvas.stars").forEach(drawStars);
+let rs;addEventListener("resize",()=>{clearTimeout(rs);rs=setTimeout(()=>document.querySelectorAll("canvas.stars").forEach(drawStars),200)});
+</script>
+
+<!-- Vercel Web Analytics -->
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B477DWFBP5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B477DWFBP5');
+</script>
+
+</body>
+</html>

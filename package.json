@@ -1,0 +1,11 @@
+{
+  "name": "supple-body-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Supple Body Atlas: static site + anonymous check-in API on Vercel",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "postgres": "^3.4.4"
+  }
+}
