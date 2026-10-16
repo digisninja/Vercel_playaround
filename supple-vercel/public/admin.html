@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Supple Insights</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@300..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap">
+<style>
+:root{--bg:#fff;--fg:#121317;--muted:#45474d;--faint:#6a6d75;--surface:#f8f9fc;--surface-2:#eff2f7;--line:rgba(33,34,38,.12);
+  --blue:#3279f9;--focus:#d93025;--build:#e8a100;--keep:#1e8e3e;--btn:#121317;--btn-fg:#fff;
+  --sans:"Google Sans Flex","Google Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"Google Sans Code",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme: dark){:root{--bg:#121317;--fg:#eef0f5;--muted:#b2bbc5;--faint:#8d939e;--surface:#18191d;--surface-2:#212226;--line:rgba(230,234,240,.13);
+  --focus:#f28b82;--build:#fdd663;--keep:#81c995;--btn:#eef0f5;--btn-fg:#121317;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-left,0px)) 60px max(16px,env(safe-area-inset-right,0px))}
+h1{font-weight:450;font-size:2rem;letter-spacing:-.02em;margin:0}
+h2{font-weight:500;font-size:1.05rem;margin:0 0 12px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.sub{color:var(--muted)}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+select,input,button{font:inherit;color:inherit}
+select,input{height:38px;border-radius:999px;border:1px solid var(--line);background:var(--surface);padding:0 14px}
+button{height:38px;border-radius:999px;border:0;padding:0 16px;cursor:pointer;background:var(--surface-2)}
+button.primary{background:var(--btn);color:var(--btn-fg)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px;min-width:0}
+.c3{grid-column:span 3}.c4{grid-column:span 4}.c6{grid-column:span 6}.c8{grid-column:span 8}.c12{grid-column:span 12}
+@media (max-width:900px){.c3,.c4{grid-column:span 6}.c6,.c8{grid-column:span 12}}
+@media (max-width:520px){.c3,.c4{grid-column:span 12}}
+.kpi b{display:block;font-size:2.2rem;font-weight:400;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kpi span{color:var(--muted);font-size:.9rem}
+.rows{display:flex;flex-direction:column;gap:10px}
+.row{display:grid;grid-template-columns:130px minmax(0,1fr) 110px;gap:10px;align-items:center;font-size:.92rem}
+.row .num{font-family:var(--mono);font-size:.78rem;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.stack{display:flex;height:12px;border-radius:999px;overflow:hidden;background:var(--surface-2)}
+.stack i{display:block;height:100%}
+.bar{height:12px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--blue);border-radius:999px}
+.legend{display:flex;gap:14px;font-size:.8rem;color:var(--muted);margin-top:12px;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:9px;height:9px;border-radius:50%}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{padding:8px 10px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-weight:500;color:var(--muted)}
+td.h{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.empty{color:var(--faint);font-size:.9rem}
+.msg{padding:14px 16px;border-radius:14px;background:var(--surface-2);margin-bottom:16px}
+.spark{display:flex;align-items:flex-end;gap:3px;height:90px}
+.spark div{flex:1;max-width:28px;background:var(--blue);opacity:.75;border-radius:3px 3px 0 0;min-height:2px}
+.note{font-size:.84rem;color:var(--faint);margin-top:10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div><h1>Supple Insights</h1><div class="sub">Anonymous check-in results: which body regions people struggle with, and how they feel.</div></div>
+    <form class="controls" id="f">
+      <input id="token" type="password" placeholder="Admin token" autocomplete="current-password" aria-label="Admin token">
+      <select id="days" aria-label="Time range"><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90" selected>Last 90 days</option><option value="365">Last year</option><option value="3650">All time</option></select>
+      <button class="primary" type="submit">Load</button>
+      <button type="button" id="csv">Download CSV</button>
+    </form>
+  </div>
+  <div id="msg" class="msg" hidden></div>
+  <div id="out" class="grid"></div>
+</div>
+<script>
+const RN={neck:"Neck",shoulders:"Shoulders",thoracic:"Upper back",lumbar:"Lower back & core",hips:"Hips",knees:"Knees",ankles:"Ankles & feet"};
+const ORDER=Object.keys(RN);
+const TN={neck_rotation:"Look over your shoulder",shoulder_reach:"Reach behind your back",seated_twist:"Seated twist",toe_reach:"Reach toward your toes",chair_stand_30s:"30-second chair stand",single_leg_stand:"Stand on one leg",knee_to_wall:"Knee-to-wall"};
+const MOODS=["cautious","stiff","curious","ready","unknown"];
+const FEELS={looser:"Looser",same:"About the same",tired:"Tired, in a good way",hurt:"Something hurt"};
+const LANGS={en:"English",zh:"中文",pt:"Português"};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct=(a,b)=>b?Math.round(a/b*100):0;
+try{$("token").value=sessionStorage.getItem("supple.admin")||""}catch(e){}
+
+function msg(t){$("msg").hidden=!t;$("msg").textContent=t||""}
+async function load(){
+  const token=$("token").value.trim(); if(!token){msg("Enter the ADMIN_TOKEN you set in Vercel.");return}
+  try{sessionStorage.setItem("supple.admin",token)}catch(e){}
+  msg("Loading…");
+  const r=await fetch(`/api/stats?days=${$("days").value}`,{headers:{Authorization:`Bearer ${token}`}});
+  const d=await r.json().catch(()=>({error:"Unexpected response."}));
+  if(!r.ok){msg(d.error||"Could not load.");$("out").innerHTML="";return}
+  msg(""); render(d);
+}
+function rows(list,fn){return list.length?`<div class="rows">${list.map(fn).join("")}</div>`:`<p class="empty">No data yet.</p>`}
+function render(d){
+  const t=d.totals||{started:0,completed:0,people:0};
+  const regions=ORDER.map(k=>d.byRegion.find(x=>x.region===k)||{region:k,n:0,avg:null,limited:0,partial:0,full:0});
+  const byLimited=[...regions].sort((a,b)=>pct(b.limited,b.n)-pct(a.limited,a.n));
+  const focusTotal=d.focus.reduce((s,x)=>s+x.n,0), maxFocus=Math.max(1,...d.focus.map(x=>x.n));
+  const moodRows=MOODS.map(m=>d.byMood.find(x=>x.mood===m)).filter(Boolean);
+  const moodTotal=moodRows.reduce((s,x)=>s+x.started,0);
+  const tests=Object.keys(TN).map(id=>{const g=s=>(d.byTest.find(x=>x.test_id===id&&x.score===s)||{n:0}).n;const l=g(0),p=g(1),f=g(2);return{id,l,p,f,n:l+p+f}});
+  const mr=(m,r)=>d.moodRegion.find(x=>x.mood===m&&x.region===r);
+  const shade=v=>v==null?"transparent":`color-mix(in srgb, var(--focus) ${Math.round((2-v)/2*55)}%, transparent)`;
+  const fbTotal=d.feedback.reduce((s,x)=>s+x.n,0);
+  const maxDay=Math.max(1,...d.daily.map(x=>x.started));
+  $("out").innerHTML=`
+  <div class="card kpi c3"><b>${t.started}</b><span>Check-ins started</span></div>
+  <div class="card kpi c3"><b>${t.completed}</b><span>Completed (${pct(t.completed,t.started)}%)</span></div>
+  <div class="card kpi c3"><b>${t.people}</b><span>Different browsers</span></div>
+  <div class="card kpi c3"><b>${fbTotal}</b><span>Training sessions rated</span></div>
+
+  <div class="card c8"><h2>Where people struggle most</h2>
+    ${rows(byLimited.filter(r=>r.n),r=>`<div class="row"><span>${RN[r.region]}</span><span class="stack" title="${r.limited} limited · ${r.partial} partial · ${r.full} full"><i style="width:${pct(r.limited,r.n)}%;background:var(--focus)"></i><i style="width:${pct(r.partial,r.n)}%;background:var(--build)"></i><i style="width:${pct(r.full,r.n)}%;background:var(--keep)"></i></span><span class="num">${pct(r.limited,r.n)}% limited · n=${r.n}</span></div>`)}
+    <div class="legend"><span><i style="background:var(--focus)"></i>Limited</span><span><i style="background:var(--build)"></i>Partial</span><span><i style="background:var(--keep)"></i>Full</span></div>
+  </div>
+  <div class="card c4"><h2>Weakest region per person</h2>
+    ${rows(d.focus,f=>`<div class="row" style="grid-template-columns:110px minmax(0,1fr) 60px"><span>${RN[f.region]||esc(f.region)}</span><span class="bar"><i style="width:${f.n/maxFocus*100}%"></i></span><span class="num">${pct(f.n,focusTotal)}%</span></div>`)}
+    <p class="note">From completed check-ins: the lowest-scoring region for each person.</p>
+  </div>
+
+  <div class="card c6"><h2>How people felt before starting</h2>
+    ${rows(moodRows,m=>`<div class="row"><span style="text-transform:capitalize">${esc(m.mood)}</span><span class="bar"><i style="width:${pct(m.started,moodTotal)}%"></i></span><span class="num">${pct(m.started,moodTotal)}% · ${pct(m.completed,m.started)}% done</span></div>`)}
+  </div>
+  <div class="card c6"><h2>Feeling after a training session</h2>
+    ${rows(Object.keys(FEELS).map(k=>({k,n:(d.feedback.find(x=>x.feel===k)||{n:0}).n})).filter(x=>fbTotal),x=>`<div class="row"><span>${FEELS[x.k]}</span><span class="bar"><i style="width:${pct(x.n,fbTotal)}%;${x.k==="hurt"?"background:var(--focus)":""}"></i></span><span class="num">${pct(x.n,fbTotal)}% · ${x.n}</span></div>`)}
+  </div>
+
+  <div class="card c12"><h2>Average score by starting mood and region</h2>
+    <div class="tbl"><table><thead><tr><th>Mood</th>${ORDER.map(r=>`<th>${RN[r]}</th>`).join("")}</tr></thead><tbody>
+    ${moodRows.length?moodRows.map(m=>`<tr><td style="text-transform:capitalize">${esc(m.mood)}</td>${ORDER.map(r=>{const c=mr(m.mood,r);return `<td class="h" style="background:${shade(c?c.avg:null)}">${c?c.avg.toFixed(2):"–"}</td>`}).join("")}</tr>`).join(""):`<tr><td colspan="8" class="empty">No data yet.</td></tr>`}
+    </tbody></table></div>
+    <p class="note">0 = limited, 2 = full. Redder cells mean more difficulty.</p>
+  </div>
+
+  <div class="card c8"><h2>Answers per movement test</h2>
+    ${rows(tests.filter(x=>x.n),x=>`<div class="row" style="grid-template-columns:170px minmax(0,1fr) 70px"><span>${TN[x.id]}</span><span class="stack"><i style="width:${pct(x.l,x.n)}%;background:var(--focus)"></i><i style="width:${pct(x.p,x.n)}%;background:var(--build)"></i><i style="width:${pct(x.f,x.n)}%;background:var(--keep)"></i></span><span class="num">n=${x.n}</span></div>`)}
+  </div>
+  <div class="card c4"><h2>Language and device</h2>
+    ${rows(d.byLang,l=>`<div class="row" style="grid-template-columns:100px minmax(0,1fr) 50px"><span>${LANGS[l.lang]||esc(l.lang)}</span><span class="bar"><i style="width:${pct(l.n,t.started)}%"></i></span><span class="num">${pct(l.n,t.started)}%</span></div>`)}
+    <div style="height:14px"></div>
+    ${rows(d.byDevice,l=>`<div class="row" style="grid-template-columns:100px minmax(0,1fr) 50px"><span style="text-transform:capitalize">${esc(l.device)}</span><span class="bar"><i style="width:${pct(l.n,t.started)}%"></i></span><span class="num">${pct(l.n,t.started)}%</span></div>`)}
+  </div>
+
+  <div class="card c12"><h2>Check-ins per day (last 30 days)</h2>
+    ${d.daily.length?`<div class="spark">${d.daily.map(x=>`<div style="height:${x.started/maxDay*100}%" title="${x.day}: ${x.started} started, ${x.completed} completed"></div>`).join("")}</div><p class="note">${esc(d.daily[0].day)} → ${esc(d.daily[d.daily.length-1].day)}</p>`:`<p class="empty">No data yet.</p>`}
+  </div>`;
+}
+$("f").addEventListener("submit",e=>{e.preventDefault();load().catch(()=>msg("Network error. Try again."))});
+$("csv").addEventListener("click",async()=>{
+  const token=$("token").value.trim(); if(!token){msg("Enter the admin token first.");return}
+  const r=await fetch(`/api/export?days=${$("days").value}`,{headers:{Authorization:`Bearer ${token}`}});
+  if(!r.ok){const d=await r.json().catch(()=>({}));msg(d.error||"Could not export.");return}
+  const url=URL.createObjectURL(await r.blob()); const a=document.createElement("a");
+  a.href=url; a.download=`supple-answers-${$("days").value}d.csv`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+});
+if($("token").value) load().catch(()=>{});
+</script>
+</body>
+</html>
