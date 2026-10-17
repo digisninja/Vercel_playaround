@@ -159,6 +159,12 @@ p{margin:0}
 .hero-fig svg{width:100%;height:100%}
 .chip{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(22,23,27,.82);border:1px solid var(--panel-line);font-family:var(--mono);font-size:.74rem;color:var(--panel-fg);white-space:nowrap;backdrop-filter:blur(4px)}
 .chip i{width:7px;height:7px;border-radius:50%;flex:none}
+.chip .ct{display:flex;flex-direction:column;line-height:1.25;text-align:left}
+.chip .ct b{font-family:var(--sans);font-weight:500;font-size:.8rem;color:var(--panel-fg)}
+.chip .ct small{font-size:.7rem;color:var(--panel-muted)}
+.hero-chips .chip{border-radius:12px;padding:6px 12px 6px 10px}
+.hero-panel.stack .hero-chips .chip{border-radius:999px}
+.hero-panel.stack .chip .ct{flex-direction:row;align-items:baseline;gap:6px}
 .caption-pill{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;max-width:min(560px,100%);padding:10px 18px;border-radius:18px;border:1px solid var(--panel-line);font-size:.86rem;line-height:1.4;color:var(--panel-muted);background:rgba(22,23,27,.7);text-align:center;flex:none}
 .caption-pill b{color:var(--panel-fg);font-weight:500}
 .cap-dots{display:flex;gap:5px}
@@ -260,6 +266,23 @@ section.block{padding-block:96px 24px}
 .ex-fig{border-radius:0;min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 16px}
 @media (max-width:900px){.ex-fig{min-height:520px}}
 .ex-fig svg{position:relative;height:560px;max-height:70vh;width:auto;max-width:100%}
+#exFig{flex-direction:column;align-items:center}
+#exFig svg.fig{flex:none}
+.ex-fig svg.ex-leaders{position:absolute;inset:0;width:100%;height:100%;max-height:none;max-width:none;pointer-events:none;overflow:visible}
+.ex-leaders line{stroke:var(--panel-line);stroke-width:1;stroke-dasharray:3 4;transition:stroke .3s}
+.ex-leaders line.on{stroke:var(--unset);stroke-dasharray:none;opacity:.8}
+.ex-leaders circle{fill:var(--panel-fg);opacity:.7}
+.ex-chips{position:absolute;inset:0;pointer-events:none}
+#exFig:not(.ready) .ex-chips{visibility:hidden}
+.ex-chip{pointer-events:auto;cursor:pointer;font:inherit;text-align:left;border-radius:12px;padding:6px 12px 6px 10px;transition:border-color .2s,background .2s}
+#exFig:not(.stack) .ex-chip{max-width:128px;white-space:normal}
+.ex-chip:hover{border-color:var(--panel-muted)}
+.ex-chip.on{border-color:var(--unset);background:rgba(138,180,248,.16)}
+.ex-chip:focus-visible{outline:2px solid var(--unset);outline-offset:2px}
+#exFig.stack .ex-leaders{display:none}
+#exFig.stack .ex-chips{position:relative;inset:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:14px;visibility:visible}
+#exFig.stack .ex-chip{position:static;border-radius:999px;font-size:.68rem;padding:5px 10px}
+#exFig.stack .ex-chip .ct{flex-direction:row;align-items:baseline;gap:6px}
 .legend{position:relative;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:14px;font-size:.78rem;color:var(--panel-muted)}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend i{width:8px;height:8px;border-radius:50%}
@@ -536,11 +559,11 @@ footer a:hover{color:var(--fg)}
       <svg class="hero-leaders" aria-hidden="true"></svg>
       <div class="hero-fig" id="heroFig"></div>
       <div class="hero-chips" id="heroChips">
-        <span class="chip" data-j="neck" data-side="L"><i style="background:var(--keep)"></i>Neck · 70–80° rotation</span>
-        <span class="chip" data-j="thoracic" data-side="R"><i style="background:var(--unset)"></i>Upper back · ≈35° twist</span>
-        <span class="chip" data-j="hips" data-side="R"><i style="background:var(--build)"></i>Hip · 120° flexion</span>
-        <span class="chip" data-j="knees" data-side="L"><i style="background:var(--keep)"></i>Knee · stable hinge</span>
-        <span class="chip" data-j="ankles" data-side="R"><i style="background:var(--focus)"></i>Ankle · knee-to-wall 10 cm</span>
+        <span class="chip" data-j="neck" data-side="L"><i style="background:var(--keep)"></i><span class="ct"><b>Neck</b><small>70–80° rotation</small></span></span>
+        <span class="chip" data-j="thoracic" data-side="R"><i style="background:var(--unset)"></i><span class="ct"><b>Upper back</b><small>≈35° twist</small></span></span>
+        <span class="chip" data-j="hips" data-side="R"><i style="background:var(--build)"></i><span class="ct"><b>Hip</b><small>120° flexion</small></span></span>
+        <span class="chip" data-j="knees" data-side="L"><i style="background:var(--keep)"></i><span class="ct"><b>Knee</b><small>stable hinge</small></span></span>
+        <span class="chip" data-j="ankles" data-side="R"><i style="background:var(--focus)"></i><span class="ct"><b>Ankle</b><small>knee-to-wall 10 cm</small></span></span>
       </div>
       <div class="caption-pill" aria-live="polite">
         <span class="cap-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
@@ -906,7 +929,7 @@ const ZH = {
 "Normal for the first sessions. Range usually starts to change after a week or two of steady practice.":"前几次训练这很正常。坚持一到两周后，活动度通常会开始改变。",
 "Good. That's the training effect. Drink some water and keep moving gently today.":"很好，这就是训练效果。多喝水，今天继续温和地活动。",
 "Skip that exercise next time or make the range smaller. Sharp or lasting pain is a reason to check with a physiotherapist.":"下次跳过那个动作或缩小幅度。如果是剧痛或持续疼痛，请咨询物理治疗师。",
-"Back to my plan":"返回我的计划","Stand tall":"站直放松","Feet under hips. Let your breath slow down.":"双脚与髋同宽，让呼吸慢下来。","Commencement":"起势","Float the arms up. Soften the knees.":"双臂缓缓浮起，膝盖放松。","Ward off":"掤","Shift your weight. Stay soft, stay balanced.":"转移重心，保持柔和与平衡。","Single whip":"单鞭","Open wide through the hips and shoulders.":"打开髋部与肩膀。","Cloud hands":"云手","Turn from the waist. Eyes follow the hand.":"以腰带动，目随手转。","Keep turning. Slow is the point.":"继续转动，慢才是关键。","Golden rooster":"金鸡独立","Lift one knee. Balance grows with practice.":"提起一膝，平衡在练习中增长。","Closing":"收势","Hands settle. You just moved every joint.":"双手收回，你刚刚活动了每一个关节。","Scroll to move with the figure ↓":"向下滚动，跟着一起动 ↓","Save my answers anonymously (no name or email) to help improve Supple.":"匿名保存我的答案（不含姓名或邮箱），帮助改进 Supple。","Exercise library":"动作库","Train today":"今日训练","Today's session":"今日训练","Watch and train":"观看并练习","Train all three":"三个一起练","← Library":"← 动作库","Menu":"菜单","Light / dark":"浅色 / 深色","Pick any exercise to see how it moves and train along.":"选择任意动作，观看演示并跟着练习。","Today":"今天","Train again":"再练一次"
+"Back to my plan":"返回我的计划","Hip":"髋部","Knee":"膝部","Ankle":"踝部","70–80° rotation":"旋转 70–80°","≈35° twist":"扭转约 35°","120° flexion":"屈曲 120°","stable hinge":"稳定的铰链","knee-to-wall 10 cm":"膝触墙 10 厘米","Stand tall":"站直放松","Feet under hips. Let your breath slow down.":"双脚与髋同宽，让呼吸慢下来。","Commencement":"起势","Float the arms up. Soften the knees.":"双臂缓缓浮起，膝盖放松。","Ward off":"掤","Shift your weight. Stay soft, stay balanced.":"转移重心，保持柔和与平衡。","Single whip":"单鞭","Open wide through the hips and shoulders.":"打开髋部与肩膀。","Cloud hands":"云手","Turn from the waist. Eyes follow the hand.":"以腰带动，目随手转。","Keep turning. Slow is the point.":"继续转动，慢才是关键。","Golden rooster":"金鸡独立","Lift one knee. Balance grows with practice.":"提起一膝，平衡在练习中增长。","Closing":"收势","Hands settle. You just moved every joint.":"双手收回，你刚刚活动了每一个关节。","Scroll to move with the figure ↓":"向下滚动，跟着一起动 ↓","Save my answers anonymously (no name or email) to help improve Supple.":"匿名保存我的答案（不含姓名或邮箱），帮助改进 Supple。","Exercise library":"动作库","Train today":"今日训练","Today's session":"今日训练","Watch and train":"观看并练习","Train all three":"三个一起练","← Library":"← 动作库","Menu":"菜单","Light / dark":"浅色 / 深色","Pick any exercise to see how it moves and train along.":"选择任意动作，观看演示并跟着练习。","Today":"今天","Train again":"再练一次"
 };
 const PT = {
 "Journey":"Jornada","Check-in":"Avaliação","Body atlas":"Atlas do corpo","How it connects":"Conexões","Your plan":"Seu plano","Plan":"Plano","Start check-in":"Começar avaliação",
@@ -1033,7 +1056,7 @@ const PT = {
 "Normal for the first sessions. Range usually starts to change after a week or two of steady practice.":"Normal nas primeiras sessões. A amplitude costuma mudar depois de uma ou duas semanas de prática constante.",
 "Good. That's the training effect. Drink some water and keep moving gently today.":"Ótimo. Esse é o efeito do treino. Beba água e continue se movendo com leveza hoje.",
 "Skip that exercise next time or make the range smaller. Sharp or lasting pain is a reason to check with a physiotherapist.":"Pule esse exercício na próxima vez ou diminua a amplitude. Dor aguda ou persistente é motivo para consultar um fisioterapeuta.",
-"Back to my plan":"Voltar ao meu plano","Stand tall":"Postura alta","Feet under hips. Let your breath slow down.":"Pés alinhados ao quadril. Deixe a respiração desacelerar.","Commencement":"Abertura","Float the arms up. Soften the knees.":"Flutue os braços para cima. Solte os joelhos.","Ward off":"Aparar","Shift your weight. Stay soft, stay balanced.":"Transfira o peso. Fique leve e equilibrado.","Single whip":"Chicote simples","Open wide through the hips and shoulders.":"Abra bem quadris e ombros.","Cloud hands":"Mãos de nuvem","Turn from the waist. Eyes follow the hand.":"Gire a partir da cintura. Os olhos seguem a mão.","Keep turning. Slow is the point.":"Continue girando. Devagar é o objetivo.","Golden rooster":"Galo dourado","Lift one knee. Balance grows with practice.":"Levante um joelho. O equilíbrio cresce com a prática.","Closing":"Encerramento","Hands settle. You just moved every joint.":"As mãos descansam. Você acabou de mover todas as articulações.","Scroll to move with the figure ↓":"Role a página para se mover junto ↓","Save my answers anonymously (no name or email) to help improve Supple.":"Salvar minhas respostas de forma anônima (sem nome ou e-mail) para ajudar a melhorar o Supple.","Exercise library":"Exercícios","Train today":"Treinar hoje","Today's session":"Sessão de hoje","Watch and train":"Ver e treinar","Train all three":"Treinar os três","← Library":"← Exercícios","Menu":"Menu","Light / dark":"Claro / escuro","Pick any exercise to see how it moves and train along.":"Escolha qualquer exercício para ver como ele se move e treinar junto.","Train again":"Treinar de novo","Today":"Hoje",
+"Back to my plan":"Voltar ao meu plano","Hip":"Quadril","Knee":"Joelho","Ankle":"Tornozelo","70–80° rotation":"rotação de 70–80°","≈35° twist":"giro de ≈35°","120° flexion":"flexão de 120°","stable hinge":"dobradiça estável","knee-to-wall 10 cm":"joelho na parede 10 cm","Stand tall":"Postura alta","Feet under hips. Let your breath slow down.":"Pés alinhados ao quadril. Deixe a respiração desacelerar.","Commencement":"Abertura","Float the arms up. Soften the knees.":"Flutue os braços para cima. Solte os joelhos.","Ward off":"Aparar","Shift your weight. Stay soft, stay balanced.":"Transfira o peso. Fique leve e equilibrado.","Single whip":"Chicote simples","Open wide through the hips and shoulders.":"Abra bem quadris e ombros.","Cloud hands":"Mãos de nuvem","Turn from the waist. Eyes follow the hand.":"Gire a partir da cintura. Os olhos seguem a mão.","Keep turning. Slow is the point.":"Continue girando. Devagar é o objetivo.","Golden rooster":"Galo dourado","Lift one knee. Balance grows with practice.":"Levante um joelho. O equilíbrio cresce com a prática.","Closing":"Encerramento","Hands settle. You just moved every joint.":"As mãos descansam. Você acabou de mover todas as articulações.","Scroll to move with the figure ↓":"Role a página para se mover junto ↓","Save my answers anonymously (no name or email) to help improve Supple.":"Salvar minhas respostas de forma anônima (sem nome ou e-mail) para ajudar a melhorar o Supple.","Exercise library":"Exercícios","Train today":"Treinar hoje","Today's session":"Sessão de hoje","Watch and train":"Ver e treinar","Train all three":"Treinar os três","← Library":"← Exercícios","Menu":"Menu","Light / dark":"Claro / escuro","Pick any exercise to see how it moves and train along.":"Escolha qualquer exercício para ver como ele se move e treinar junto.","Train again":"Treinar de novo","Today":"Hoje",
 "Moving:":"Em movimento:","Support:":"Apoio:","Chair":"Cadeira","Wall":"Parede","Resistance band":"Elástico de resistência","Door frame":"Batente da porta","Floor mat":"Tapete","Step":"Degrau","Counter":"Bancada","Faint figure = start position":"Figura clara = posição inicial",
 "Move":"Movimento","Region":"Região","head to feet":"da cabeça aos pés","Exercise":"Exercício"
 };
@@ -1122,10 +1145,10 @@ function figure(interactive){
   REGIONS.forEach(r=>{
     J[r.id].forEach((p,i)=>{
       const st=status(sc[r.id]);
-      const attrs=interactive?` role="button" tabindex="${i===0?0:-1}" aria-label="${esc(r.name)}: ${ST[st]}"`:"";
+      const attrs=interactive?` aria-hidden="true"`:"";
       joints+=`<g class="joint s-${st}" data-r="${r.id}"${attrs}><circle class="halo" cx="${p[0]}" cy="${p[1]}" r="17"/><circle class="ring" cx="${p[0]}" cy="${p[1]}" r="12"/><circle class="dot" cx="${p[0]}" cy="${p[1]}" r="4.6"/></g>`;
     });
-    if(interactive){
+    if(false){
       const p=J[r.id][J[r.id].length-1], left=J[r.id].length===1;
       const x=left? p[0]-26 : p[0]+26, anchor=left?"end":"start";
       joints+=`<text class="lbl" data-l="${r.id}" x="${x}" y="${p[1]+3}" text-anchor="${anchor}">${esc(zh()?T(r.name):SVGLBL[LANG]?SVGLBL[LANG][r.id]:r.name.split(" ")[0].toUpperCase())}</text>`;
@@ -1217,10 +1240,44 @@ card.addEventListener("click",e=>{
 
 /* ================= EXPLORER ================= */
 const exFig=document.getElementById("exFig"), exDetail=document.getElementById("exDetail");
+function layoutExploreChips(){
+  const box=exFig, svg=box.querySelector("svg.fig"), lead=box.querySelector(".ex-leaders");
+  if(!svg||!lead) return;
+  const chips=[...box.querySelectorAll(".ex-chip")];
+  box.classList.remove("stack"); svg.style.height=""; chips.forEach(c=>{c.style.left=c.style.top=""});
+  const GAP=12, EDGE=2, need=Math.max(...chips.map(c=>c.offsetWidth));
+  let br=box.getBoundingClientRect(), fr=svg.getBoundingClientRect();
+  if(!br.width||!fr.width){box.classList.add("ready");return}
+  let scale=fr.height/600;
+  // body (with arms) spans x 70–230 of the 300-wide figure; labels sit outside that, shrinking the figure if needed
+  const sMax=(br.width/2-EDGE-GAP-need)/80;
+  if(sMax<scale){ if(sMax*600>=300){svg.style.height=Math.floor(sMax*600)+"px";br=box.getBoundingClientRect();fr=svg.getBoundingClientRect();scale=fr.height/600}
+                  else {svg.style.height="";box.classList.add("stack","ready");lead.innerHTML="";return} }
+  const ox=fr.left-br.left, oy=fr.top-br.top, reachL=ox+70*scale, reachR=ox+230*scale;
+  lead.innerHTML=chips.map(()=>`<line/><circle r="2"/>`).join(""); const nodes=[...lead.children];
+  ["L","R"].forEach(side=>{
+    let last=-Infinity;
+    chips.map((c,i)=>({c,i})).filter(x=>x.c.dataset.side===side).map(x=>{const pts=J[x.c.dataset.r];const p=pts.length>1?(side==="L"?pts[0]:pts[1]):pts[0];return {...x,p:[ox+p[0]*scale,oy+p[1]*scale]}})
+      .sort((a,b)=>a.p[1]-b.p[1]).forEach(({c,i,p})=>{
+        const w=c.offsetWidth,h=c.offsetHeight;
+        let y=Math.max(p[1]-h/2,last+6,0); y=Math.min(y,br.height-h); last=y+h;
+        const x=side==="L"?reachL-GAP-w:reachR+GAP;
+        c.style.left=x+"px"; c.style.top=y+"px";
+        const cx=side==="L"?x+w:x, l=nodes[i*2], d=nodes[i*2+1];
+        l.setAttribute("x1",p[0].toFixed(1));l.setAttribute("y1",p[1].toFixed(1));l.setAttribute("x2",cx.toFixed(1));l.setAttribute("y2",(y+h/2).toFixed(1));
+        l.classList.toggle("on",c.classList.contains("on"));
+        d.setAttribute("cx",p[0].toFixed(1));d.setAttribute("cy",p[1].toFixed(1));
+      });
+  });
+  box.classList.add("ready");
+}
+addEventListener("resize",()=>requestAnimationFrame(layoutExploreChips));
+const EX_SIDE={neck:"L",shoulders:"R",thoracic:"L",lumbar:"R",hips:"L",knees:"R",ankles:"L"};
 function renderExplorer(){
-  exFig.innerHTML=figure(true);
+  const scx=scores();
+  exFig.innerHTML=figure(true)+`<svg class="ex-leaders" aria-hidden="true"></svg><div class="ex-chips" role="group" aria-label="Body regions">${REGIONS.map(x=>{const st=status(scx[x.id]);return `<button class="chip ex-chip${x.id===S.region?" on":""}" data-r="${x.id}" data-side="${EX_SIDE[x.id]}" aria-pressed="${x.id===S.region}"><i style="background:var(--${st})"></i><span class="ct"><b>${esc(x.name)}</b><small>${ST[st]}</small></span></button>`}).join("")}</div>`;
+  requestAnimationFrame(layoutExploreChips);
   exFig.querySelectorAll(".joint").forEach(g=>{ if(g.dataset.r===S.region) g.classList.add("active"); });
-  exFig.querySelectorAll(".lbl").forEach(t=>t.classList.toggle("on",t.dataset.l===S.region));
   const r=R[S.region], sc=scores(), st=status(sc[r.id]), idx=REGIONS.indexOf(r);
   exDetail.innerHTML=`
    <div class="tabs" role="tablist" aria-label="Body regions, head to feet">${REGIONS.map(x=>`<button class="pill tonal" role="tab" data-r="${x.id}" aria-selected="${x.id===r.id}">${esc(x.name)}</button>`).join("")}</div>
@@ -1245,7 +1302,7 @@ function selectRegion(id,scroll){
   S.region=id;save();renderExplorer();
   if(scroll) document.getElementById("explore").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
 }
-exFig.addEventListener("click",e=>{const g=e.target.closest(".joint");if(g)selectRegion(g.dataset.r)});
+exFig.addEventListener("click",e=>{const g=e.target.closest(".joint,.ex-chip");if(g){selectRegion(g.dataset.r);exFig.querySelector(`.ex-chip[data-r="${g.dataset.r}"]`)?.focus({preventScroll:true})}});
 exFig.addEventListener("keydown",e=>{const g=e.target.closest(".joint");if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();selectRegion(g.dataset.r);exFig.querySelector(`.joint[data-r="${g.dataset.r}"]`)?.focus()}});
 exDetail.addEventListener("click",e=>{const dr=e.target.closest("[data-drill]");if(dr){openPlayer(dr,{region:S.region,i:+dr.dataset.drill});return}const b=e.target.closest("[data-r]");if(b&&!b.disabled){selectRegion(b.dataset.r);exDetail.querySelector(".tabs [aria-selected=true]")?.scrollIntoView({block:"nearest",inline:"center"})}});
 
@@ -1716,17 +1773,23 @@ function layoutHeroChips(){
   if(!panel||!fig||!HS.el) return;
   const chips=[...panel.querySelectorAll(".hero-chips .chip")];
   panel.classList.remove("stack"); chips.forEach(c=>{c.style.left=c.style.top=""});
-  const pr=panel.getBoundingClientRect(), fr=fig.getBoundingClientRect();
+  fig.style.height=""; fig.style.flex="";
+  let pr=panel.getBoundingClientRect(), fr=fig.getBoundingClientRect();
   if(!pr.width||!fr.width){panel.classList.add("ready");return}
   const GAP=18, EDGE=14;
-  const scale=Math.min(fr.width/400,fr.height/600), ox=fr.left-pr.left+(fr.width-400*scale)/2, oy=fr.top-pr.top+(fr.height-600*scale)/2;
+  let scale=Math.min(fr.width/400,fr.height/600);
+  // labels need room beside the arms' widest reach; shrink the figure (down to 330px tall) to make that room
+  const need=Math.max(...chips.map(c=>c.offsetWidth));
+  const sMax=(pr.width/2-EDGE-GAP-need)/170;
+  if(sMax<scale && sMax*600>=330){ fig.style.flex="0 0 auto"; fig.style.height=Math.floor(sMax*600)+"px"; pr=panel.getBoundingClientRect(); fr=fig.getBoundingClientRect(); scale=Math.min(fr.width/400,fr.height/600); }
+  const ox=fr.left-pr.left+(fr.width-400*scale)/2, oy=fr.top-pr.top+(fr.height-600*scale)/2;
   // the arms sweep wide, so labels sit outside the widest reach of the pose sequence (x 30–370 in figure units)
   const reachL=ox+30*scale, reachR=ox+370*scale;
   const roomL=reachL-EDGE-GAP, roomR=pr.width-reachR-EDGE-GAP;
   const items=chips.map(c=>({c,w:c.offsetWidth,h:c.offsetHeight,side:c.dataset.side,key:CHIP_JOINT[c.dataset.j]}));
   const fits=items.every(x=>x.w<=(x.side==="L"?roomL:roomR));
   const lead=panel.querySelector(".hero-leaders");
-  if(!fits){panel.classList.add("stack","ready");lead.innerHTML="";HS.cache={stack:true};return}
+  if(!fits){fig.style.height="";fig.style.flex="";panel.classList.add("stack","ready");lead.innerHTML="";HS.cache={stack:true};return}
   lead.innerHTML=items.map(()=>`<line/><circle r="2"/>`).join("");
   const nodes=[...lead.children];
   items.forEach((x,i)=>{x.line=nodes[i*2];x.dot=nodes[i*2+1];x.x=x.side==="L"?reachL-GAP-x.w:reachR+GAP});
