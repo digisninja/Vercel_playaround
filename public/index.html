@@ -261,10 +261,11 @@ section.block{padding-block:96px 24px}
 .mini-panel svg{width:auto;height:340px;max-width:100%;position:relative}
 
 /* ---------- Explorer ---------- */
-.explorer{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:0;overflow:hidden}
+.explorer{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:16px;align-items:start}
 @media (max-width:900px){.explorer{grid-template-columns:1fr}}
-.ex-fig{border-radius:0;min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 16px}
-@media (max-width:900px){.ex-fig{min-height:520px}}
+.ex-fig{position:sticky;top:calc(env(safe-area-inset-top,0px) + 80px);border-radius:var(--r-xl);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 16px 18px}
+.ex-fig svg.fig{max-height:calc(100vh - 210px)}
+@media (max-width:900px){.ex-fig{position:relative;top:auto}}
 .ex-fig svg{position:relative;height:560px;max-height:70vh;width:auto;max-width:100%}
 #exFig{flex-direction:column;align-items:center}
 #exFig svg.fig{flex:none}
@@ -288,6 +289,9 @@ section.block{padding-block:96px 24px}
 .legend i{width:8px;height:8px;border-radius:50%}
 .ex-detail{padding:clamp(20px,3.4vw,40px);display:flex;flex-direction:column;gap:26px;min-width:0}
 .tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+@media (min-width:901px){.ex-detail .tabs{display:none}}
+.ex-detail.swap{animation:exSwap .26s cubic-bezier(.2,.8,.2,1)}
+@keyframes exSwap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .tabs button{flex:none}
 .tabs button[aria-selected="true"]{background:var(--btn);color:var(--btn-fg)}
 .ex-title{display:flex;flex-direction:column;gap:8px}
@@ -481,6 +485,7 @@ footer a:hover{color:var(--fg)}
 .pl-hint{text-align:center;font-size:.86rem;color:var(--faint)}
 .pl-ctrl{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .pl-ctrl .mid{flex:1;display:flex;justify-content:center}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -627,7 +632,7 @@ footer a:hover{color:var(--fg)}
       <p>Tap any joint. Each region shows how far it should move, the muscles that move it, the neighbours it depends on, what changes with age, and three drills to start with.</p>
     </div>
     <div class="glow">
-      <div class="card explorer">
+      <div class="explorer">
         <div class="panel ex-fig">
           <canvas class="stars" aria-hidden="true"></canvas>
           <div id="exFig" style="position:relative;display:flex;justify-content:center;width:100%"></div>
@@ -638,7 +643,7 @@ footer a:hover{color:var(--fg)}
             <span><i style="background:var(--unset)"></i>Not checked</span>
           </div>
         </div>
-        <div class="ex-detail" id="exDetail"></div>
+        <div class="card ex-detail" id="exDetail" aria-live="polite"></div>
       </div>
     </div>
   </div>
@@ -1244,6 +1249,10 @@ function layoutExploreChips(){
   const box=exFig, svg=box.querySelector("svg.fig"), lead=box.querySelector(".ex-leaders");
   if(!svg||!lead) return;
   const chips=[...box.querySelectorAll(".ex-chip")];
+  // keep the stacked layout across region changes (re-measuring would shift the page under the reader)
+  const key=Math.round(box.clientWidth)+LANG;
+  if(box.classList.contains("stack")&&box.dataset.k===key) return;
+  box.dataset.k=key;
   box.classList.remove("stack"); svg.style.height=""; chips.forEach(c=>{c.style.left=c.style.top=""});
   const GAP=12, EDGE=2, need=Math.max(...chips.map(c=>c.offsetWidth));
   let br=box.getBoundingClientRect(), fr=svg.getBoundingClientRect();
@@ -1299,12 +1308,19 @@ function renderExplorer(){
   tr(exDetail); tr(exFig);
 }
 function selectRegion(id,scroll){
+  const changed=id!==S.region;
   S.region=id;save();renderExplorer();
-  if(scroll) document.getElementById("explore").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  if(changed&&!reduce){exDetail.classList.remove("swap");void exDetail.offsetWidth;exDetail.classList.add("swap");}
+  const sec=document.getElementById("explore"), d=exDetail.getBoundingClientRect(), vh=innerHeight;
+  const behavior=reduce?"auto":"smooth";
+  if(scroll){ const r=sec.getBoundingClientRect(); if(r.top>vh*0.6||r.bottom<vh*0.3) sec.scrollIntoView({behavior}); }
+  else if(d.top<0){ // reading lower down when a new region is picked: bring the new region's heading into view
+    scrollBy({top:d.top-90,behavior});
+  }
 }
 exFig.addEventListener("click",e=>{const g=e.target.closest(".joint,.ex-chip");if(g){selectRegion(g.dataset.r);exFig.querySelector(`.ex-chip[data-r="${g.dataset.r}"]`)?.focus({preventScroll:true})}});
 exFig.addEventListener("keydown",e=>{const g=e.target.closest(".joint");if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();selectRegion(g.dataset.r);exFig.querySelector(`.joint[data-r="${g.dataset.r}"]`)?.focus()}});
-exDetail.addEventListener("click",e=>{const dr=e.target.closest("[data-drill]");if(dr){openPlayer(dr,{region:S.region,i:+dr.dataset.drill});return}const b=e.target.closest("[data-r]");if(b&&!b.disabled){selectRegion(b.dataset.r);exDetail.querySelector(".tabs [aria-selected=true]")?.scrollIntoView({block:"nearest",inline:"center"})}});
+exDetail.addEventListener("click",e=>{const dr=e.target.closest("[data-drill]");if(dr){openPlayer(dr,{region:S.region,i:+dr.dataset.drill});return}const b=e.target.closest("[data-r]");if(b&&!b.disabled){selectRegion(b.dataset.r);const tb=exDetail.querySelector(".tabs"),on=tb?.querySelector("[aria-selected=true]");if(tb&&on)tb.scrollLeft=on.offsetLeft-tb.clientWidth/2+on.offsetWidth/2;}});
 
 /* ================= CHAIN ================= */
 const CHAIN=[
@@ -1641,7 +1657,9 @@ function refreshAll(){renderExplorer();renderPlan();if(typeof heroStatus==="func
 
 /* ================= VISUALS ================= */
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const starRO=("ResizeObserver" in window)?new ResizeObserver(es=>es.forEach(e=>{const c=e.target.querySelector(":scope > canvas.stars");if(c)drawStars(c)})):null;
 function drawStars(cv){
+  if(starRO&&!cv._ro){cv._ro=1;starRO.observe(cv.parentElement)}
   const r=cv.getBoundingClientRect(), dpr=Math.min(2,devicePixelRatio||1);
   if(!r.width) return;
   cv.width=r.width*dpr; cv.height=r.height*dpr;
