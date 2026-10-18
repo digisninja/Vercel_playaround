@@ -14,8 +14,10 @@ export default async function handler(req, res) {
 
   try {
     await ensureSchema();
-    const [totals, byRegion, byTest, byMood, moodRegion, focus, byLang, byDevice, feedback, daily,
-           trainTotals, trainBySource, byExercise, trainFeel] = await Promise.all([
+    const names = ["totals", "byRegion", "byTest", "byMood", "moodRegion", "focus", "byLang", "byDevice", "feedback", "daily",
+                   "trainTotals", "trainBySource", "byExercise", "trainFeel"];
+    // One failing query no longer blanks the whole dashboard: it comes back empty and is listed in `problems`.
+    const settled = await Promise.allSettled([
       sql`SELECT count(*)::int AS started, count(completed_at)::int AS completed,
                  count(DISTINCT anon_id)::int AS people
           FROM assessments WHERE started_at > ${since}`,
@@ -35,7 +37,7 @@ export default async function handler(req, res) {
       sql`SELECT region, count(*)::int AS n FROM (
             SELECT DISTINCT ON (a.id) a.id, e.key AS region
             FROM assessments a, jsonb_each(a.region_scores) e
-            WHERE a.completed_at IS NOT NULL AND a.started_at > ${since} AND jsonb_typeof(e.value) = 'number'
+            WHERE a.completed_at IS NOT NULL AND jsonb_typeof(a.region_scores) = 'object' AND a.started_at > ${since} AND jsonb_typeof(e.value) = 'number'
             ORDER BY a.id, (e.value #>> '{}')::float ASC
           ) t GROUP BY region ORDER BY n DESC`,
       sql`SELECT lang, count(*)::int AS n FROM assessments WHERE started_at > ${since} GROUP BY lang`,
@@ -64,12 +66,20 @@ export default async function handler(req, res) {
           FROM session_feedback sf JOIN training_sessions ts ON ts.id = sf.training_id
           WHERE sf.created_at > ${since} GROUP BY 1, 2`,
     ]);
-    return res.status(200).json({
-      days, totals: totals[0], byRegion, byTest, byMood, moodRegion, focus, byLang, byDevice, feedback, daily,
-      training: { totals: trainTotals[0], bySource: trainBySource, byExercise, feel: trainFeel },
+    const problems = [];
+    const [totals, byRegion, byTest, byMood, moodRegion, focus, byLang, byDevice, feedback, daily,
+           trainTotals, trainBySource, byExercise, trainFeel] = settled.map((r, i) => {
+      if (r.status === "fulfilled") return r.value;
+      console.error(`stats query ${names[i]} failed`, r.reason);
+      problems.push(`${names[i]}: ${r.reason?.message || r.reason}`);
+      return [];
+    });
+    return res.status(200).json({ problems,
+      days, totals: totals[0] || {}, byRegion, byTest, byMood, moodRegion, focus, byLang, byDevice, feedback, daily,
+      training: { totals: trainTotals[0] || {}, bySource: trainBySource, byExercise, feel: trainFeel },
     });
   } catch (err) {
     console.error("stats error", err);
-    return res.status(500).json({ error: "Could not load stats." });
+    return res.status(500).json({ error: `Could not load stats: ${err?.message || err}` });
   }
 }

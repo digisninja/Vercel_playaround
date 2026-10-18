@@ -92,7 +92,7 @@ async function load(){
   const r=await fetch(`/api/stats?days=${$("days").value}`,{headers:{Authorization:`Bearer ${token}`}});
   const d=await r.json().catch(()=>({error:"Unexpected response."}));
   if(!r.ok){msg(d.error||"Could not load.");$("out").innerHTML="";return}
-  msg(""); render(d);
+  msg(d.problems&&d.problems.length?"Some sections could not load: "+d.problems.join(" · "):""); render(d);
 }
 function rows(list,fn){return list.length?`<div class="rows">${list.map(fn).join("")}</div>`:`<p class="empty">No data yet.</p>`}
 function render(d){

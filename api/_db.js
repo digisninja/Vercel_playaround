@@ -47,6 +47,9 @@ CREATE OR REPLACE VIEW region_answers AS
 SELECT a.assessment_id, r.region, a.test_id, a.score, s.mood_start, s.lang, s.country, a.answered_at
 FROM answers a JOIN assessments s ON s.id = a.assessment_id
 CROSS JOIN LATERAL unnest(a.regions) AS r(region);
+-- Repair check-ins saved by an early version as a JSON string instead of an object.
+UPDATE assessments SET region_scores = (region_scores #>> '{}')::jsonb
+WHERE jsonb_typeof(region_scores) = 'string' AND left(region_scores #>> '{}', 1) = '{';
 `;
 
 let ready = null;
