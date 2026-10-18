@@ -77,12 +77,16 @@ export const isUuid = (v) =>
   typeof v === "string" && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(v);
 
 // Constant-time token check for the admin endpoints.
-export function isAdmin(req) {
-  const want = process.env.ADMIN_TOKEN || "";
+// Returns null when allowed, otherwise a message explaining what is wrong.
+export function adminProblem(req) {
+  const want = String(process.env.ADMIN_TOKEN || "").trim();
+  if (!want) return "ADMIN_TOKEN is not set on the server. Add it in Vercel → Settings → Environment Variables (Production), then redeploy.";
+  if (want.length < 12) return "ADMIN_TOKEN on the server is shorter than 12 characters. Use a longer value, then redeploy.";
   const auth = String(req.headers.authorization || "");
-  const got = auth.startsWith("Bearer ") ? auth.slice(7) : "";
-  if (!want || want.length < 12 || got.length !== want.length) return false;
-  let diff = 0;
-  for (let i = 0; i < want.length; i++) diff |= want.charCodeAt(i) ^ got.charCodeAt(i);
-  return diff === 0;
+  const got = (auth.startsWith("Bearer ") ? auth.slice(7) : "").trim();
+  if (!got) return "Enter the admin token.";
+  let diff = got.length ^ want.length;
+  for (let i = 0; i < want.length; i++) diff |= want.charCodeAt(i) ^ (got.charCodeAt(i) || 0);
+  return diff === 0 ? null : "That token doesn't match ADMIN_TOKEN on the server.";
 }
+export const isAdmin = (req) => adminProblem(req) === null;

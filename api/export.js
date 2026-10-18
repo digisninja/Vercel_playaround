@@ -1,7 +1,7 @@
 // GET /api/export?days=90 — raw check-in answers as CSV (one row per test answered).
 // GET /api/export?days=90&table=training — one row per exercise visit in Train with me.
 // Requires header: Authorization: Bearer <ADMIN_TOKEN>
-import { sql, ensureSchema, isAdmin } from "./_db.js";
+import { sql, ensureSchema, adminProblem } from "./_db.js";
 
 const cell = (v) => {
   if (v === null || v === undefined) return "";
@@ -12,7 +12,8 @@ const cell = (v) => {
 export default async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");
   if (req.method !== "GET") return res.status(405).json({ error: "Use GET." });
-  if (!isAdmin(req)) return res.status(401).json({ error: "Wrong or missing admin token." });
+  const problem = adminProblem(req);
+  if (problem) return res.status(401).json({ error: problem });
   if (!sql) return res.status(503).json({ error: "DATABASE_URL is not set." });
 
   const days = Math.min(3650, Math.max(1, parseInt(req.query.days, 10) || 90));
