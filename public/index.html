@@ -148,6 +148,11 @@ p{margin:0}
 @media (prefers-reduced-motion: reduce){.hero-scene{height:auto}.hero-panel{position:relative;top:auto}}
 .hero-fig{position:relative;z-index:1}
 .hero-chips{position:absolute;inset:0;pointer-events:none;z-index:2}
+.hero-chips .chip{pointer-events:auto;cursor:pointer;font:inherit;text-align:left;transition:border-color .2s,background .2s}
+.hero-chips .chip:hover{border-color:var(--unset);background:rgba(138,180,248,.16)}
+.hero-chips .chip:focus-visible{outline:2px solid var(--unset);outline-offset:2px}
+.hero-svg .joint{cursor:pointer}
+.hero-svg .joint:hover .halo{opacity:.4}
 .hero-leaders{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
 .hero-leaders line{stroke:var(--panel-line);stroke-width:1;stroke-dasharray:3 4}
 .hero-leaders circle{fill:var(--panel-fg);opacity:.7}
@@ -299,6 +304,9 @@ section.block{padding-block:96px 24px}
 .ex-title .sub{color:var(--muted)}
 .badges{display:flex;gap:8px;flex-wrap:wrap}
 .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;border:1px solid var(--line);font-size:.82rem}
+.badge-link{text-decoration:none;color:inherit;cursor:pointer;transition:border-color .2s,background .2s}
+.badge-link:hover{border-color:var(--unset-ink);background:color-mix(in srgb,var(--unset) 12%,transparent)}
+.badge-link .bl-go{font-weight:500;color:var(--unset-ink)}
 .badge i{width:7px;height:7px;border-radius:50%}
 .sec-label{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
 .rom{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -564,11 +572,11 @@ footer a:hover{color:var(--fg)}
       <svg class="hero-leaders" aria-hidden="true"></svg>
       <div class="hero-fig" id="heroFig"></div>
       <div class="hero-chips" id="heroChips">
-        <span class="chip" data-j="neck" data-side="L"><i style="background:var(--keep)"></i><span class="ct"><b>Neck</b><small>70–80° rotation</small></span></span>
-        <span class="chip" data-j="thoracic" data-side="R"><i style="background:var(--unset)"></i><span class="ct"><b>Upper back</b><small>≈35° twist</small></span></span>
-        <span class="chip" data-j="hips" data-side="R"><i style="background:var(--build)"></i><span class="ct"><b>Hip</b><small>120° flexion</small></span></span>
-        <span class="chip" data-j="knees" data-side="L"><i style="background:var(--keep)"></i><span class="ct"><b>Knee</b><small>stable hinge</small></span></span>
-        <span class="chip" data-j="ankles" data-side="R"><i style="background:var(--focus)"></i><span class="ct"><b>Ankle</b><small>knee-to-wall 10 cm</small></span></span>
+        <button type="button" class="chip" data-j="neck" data-goto="neck" data-side="L"><i style="background:var(--keep)"></i><span class="ct"><b>Neck</b><small>70–80° rotation</small></span></button>
+        <button type="button" class="chip" data-j="thoracic" data-goto="thoracic" data-side="R"><i style="background:var(--unset)"></i><span class="ct"><b>Upper back</b><small>≈35° twist</small></span></button>
+        <button type="button" class="chip" data-j="hips" data-goto="hips" data-side="R"><i style="background:var(--build)"></i><span class="ct"><b>Hip</b><small>120° flexion</small></span></button>
+        <button type="button" class="chip" data-j="knees" data-goto="knees" data-side="L"><i style="background:var(--keep)"></i><span class="ct"><b>Knee</b><small>stable hinge</small></span></button>
+        <button type="button" class="chip" data-j="ankles" data-goto="ankles" data-side="R"><i style="background:var(--focus)"></i><span class="ct"><b>Ankle</b><small>knee-to-wall 10 cm</small></span></button>
       </div>
       <div class="caption-pill" aria-live="polite">
         <span class="cap-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
@@ -934,7 +942,7 @@ const ZH = {
 "Normal for the first sessions. Range usually starts to change after a week or two of steady practice.":"前几次训练这很正常。坚持一到两周后，活动度通常会开始改变。",
 "Good. That's the training effect. Drink some water and keep moving gently today.":"很好，这就是训练效果。多喝水，今天继续温和地活动。",
 "Skip that exercise next time or make the range smaller. Sharp or lasting pain is a reason to check with a physiotherapist.":"下次跳过那个动作或缩小幅度。如果是剧痛或持续疼痛，请咨询物理治疗师。",
-"Back to my plan":"返回我的计划","Hip":"髋部","Knee":"膝部","Ankle":"踝部","70–80° rotation":"旋转 70–80°","≈35° twist":"扭转约 35°","120° flexion":"屈曲 120°","stable hinge":"稳定的铰链","knee-to-wall 10 cm":"膝触墙 10 厘米","Stand tall":"站直放松","Feet under hips. Let your breath slow down.":"双脚与髋同宽，让呼吸慢下来。","Commencement":"起势","Float the arms up. Soften the knees.":"双臂缓缓浮起，膝盖放松。","Ward off":"掤","Shift your weight. Stay soft, stay balanced.":"转移重心，保持柔和与平衡。","Single whip":"单鞭","Open wide through the hips and shoulders.":"打开髋部与肩膀。","Cloud hands":"云手","Turn from the waist. Eyes follow the hand.":"以腰带动，目随手转。","Keep turning. Slow is the point.":"继续转动，慢才是关键。","Golden rooster":"金鸡独立","Lift one knee. Balance grows with practice.":"提起一膝，平衡在练习中增长。","Closing":"收势","Hands settle. You just moved every joint.":"双手收回，你刚刚活动了每一个关节。","Scroll to move with the figure ↓":"向下滚动，跟着一起动 ↓","Save my answers anonymously (no name or email) to help improve Supple.":"匿名保存我的答案（不含姓名或邮箱），帮助改进 Supple。","Exercise library":"动作库","Train today":"今日训练","Today's session":"今日训练","Watch and train":"观看并练习","Train all three":"三个一起练","← Library":"← 动作库","Menu":"菜单","Light / dark":"浅色 / 深色","Pick any exercise to see how it moves and train along.":"选择任意动作，观看演示并跟着练习。","Today":"今天","Train again":"再练一次"
+"Back to my plan":"返回我的计划","Check now →":"去自测 →","Hip":"髋部","Knee":"膝部","Ankle":"踝部","70–80° rotation":"旋转 70–80°","≈35° twist":"扭转约 35°","120° flexion":"屈曲 120°","stable hinge":"稳定的铰链","knee-to-wall 10 cm":"膝触墙 10 厘米","Stand tall":"站直放松","Feet under hips. Let your breath slow down.":"双脚与髋同宽，让呼吸慢下来。","Commencement":"起势","Float the arms up. Soften the knees.":"双臂缓缓浮起，膝盖放松。","Ward off":"掤","Shift your weight. Stay soft, stay balanced.":"转移重心，保持柔和与平衡。","Single whip":"单鞭","Open wide through the hips and shoulders.":"打开髋部与肩膀。","Cloud hands":"云手","Turn from the waist. Eyes follow the hand.":"以腰带动，目随手转。","Keep turning. Slow is the point.":"继续转动，慢才是关键。","Golden rooster":"金鸡独立","Lift one knee. Balance grows with practice.":"提起一膝，平衡在练习中增长。","Closing":"收势","Hands settle. You just moved every joint.":"双手收回，你刚刚活动了每一个关节。","Scroll to move with the figure ↓":"向下滚动，跟着一起动 ↓","Save my answers anonymously (no name or email) to help improve Supple.":"匿名保存我的答案（不含姓名或邮箱），帮助改进 Supple。","Exercise library":"动作库","Train today":"今日训练","Today's session":"今日训练","Watch and train":"观看并练习","Train all three":"三个一起练","← Library":"← 动作库","Menu":"菜单","Light / dark":"浅色 / 深色","Pick any exercise to see how it moves and train along.":"选择任意动作，观看演示并跟着练习。","Today":"今天","Train again":"再练一次"
 };
 const PT = {
 "Journey":"Jornada","Check-in":"Avaliação","Body atlas":"Atlas do corpo","How it connects":"Conexões","Your plan":"Seu plano","Plan":"Plano","Start check-in":"Começar avaliação",
@@ -1061,7 +1069,7 @@ const PT = {
 "Normal for the first sessions. Range usually starts to change after a week or two of steady practice.":"Normal nas primeiras sessões. A amplitude costuma mudar depois de uma ou duas semanas de prática constante.",
 "Good. That's the training effect. Drink some water and keep moving gently today.":"Ótimo. Esse é o efeito do treino. Beba água e continue se movendo com leveza hoje.",
 "Skip that exercise next time or make the range smaller. Sharp or lasting pain is a reason to check with a physiotherapist.":"Pule esse exercício na próxima vez ou diminua a amplitude. Dor aguda ou persistente é motivo para consultar um fisioterapeuta.",
-"Back to my plan":"Voltar ao meu plano","Hip":"Quadril","Knee":"Joelho","Ankle":"Tornozelo","70–80° rotation":"rotação de 70–80°","≈35° twist":"giro de ≈35°","120° flexion":"flexão de 120°","stable hinge":"dobradiça estável","knee-to-wall 10 cm":"joelho na parede 10 cm","Stand tall":"Postura alta","Feet under hips. Let your breath slow down.":"Pés alinhados ao quadril. Deixe a respiração desacelerar.","Commencement":"Abertura","Float the arms up. Soften the knees.":"Flutue os braços para cima. Solte os joelhos.","Ward off":"Aparar","Shift your weight. Stay soft, stay balanced.":"Transfira o peso. Fique leve e equilibrado.","Single whip":"Chicote simples","Open wide through the hips and shoulders.":"Abra bem quadris e ombros.","Cloud hands":"Mãos de nuvem","Turn from the waist. Eyes follow the hand.":"Gire a partir da cintura. Os olhos seguem a mão.","Keep turning. Slow is the point.":"Continue girando. Devagar é o objetivo.","Golden rooster":"Galo dourado","Lift one knee. Balance grows with practice.":"Levante um joelho. O equilíbrio cresce com a prática.","Closing":"Encerramento","Hands settle. You just moved every joint.":"As mãos descansam. Você acabou de mover todas as articulações.","Scroll to move with the figure ↓":"Role a página para se mover junto ↓","Save my answers anonymously (no name or email) to help improve Supple.":"Salvar minhas respostas de forma anônima (sem nome ou e-mail) para ajudar a melhorar o Supple.","Exercise library":"Exercícios","Train today":"Treinar hoje","Today's session":"Sessão de hoje","Watch and train":"Ver e treinar","Train all three":"Treinar os três","← Library":"← Exercícios","Menu":"Menu","Light / dark":"Claro / escuro","Pick any exercise to see how it moves and train along.":"Escolha qualquer exercício para ver como ele se move e treinar junto.","Train again":"Treinar de novo","Today":"Hoje",
+"Back to my plan":"Voltar ao meu plano","Check now →":"Avaliar agora →","Hip":"Quadril","Knee":"Joelho","Ankle":"Tornozelo","70–80° rotation":"rotação de 70–80°","≈35° twist":"giro de ≈35°","120° flexion":"flexão de 120°","stable hinge":"dobradiça estável","knee-to-wall 10 cm":"joelho na parede 10 cm","Stand tall":"Postura alta","Feet under hips. Let your breath slow down.":"Pés alinhados ao quadril. Deixe a respiração desacelerar.","Commencement":"Abertura","Float the arms up. Soften the knees.":"Flutue os braços para cima. Solte os joelhos.","Ward off":"Aparar","Shift your weight. Stay soft, stay balanced.":"Transfira o peso. Fique leve e equilibrado.","Single whip":"Chicote simples","Open wide through the hips and shoulders.":"Abra bem quadris e ombros.","Cloud hands":"Mãos de nuvem","Turn from the waist. Eyes follow the hand.":"Gire a partir da cintura. Os olhos seguem a mão.","Keep turning. Slow is the point.":"Continue girando. Devagar é o objetivo.","Golden rooster":"Galo dourado","Lift one knee. Balance grows with practice.":"Levante um joelho. O equilíbrio cresce com a prática.","Closing":"Encerramento","Hands settle. You just moved every joint.":"As mãos descansam. Você acabou de mover todas as articulações.","Scroll to move with the figure ↓":"Role a página para se mover junto ↓","Save my answers anonymously (no name or email) to help improve Supple.":"Salvar minhas respostas de forma anônima (sem nome ou e-mail) para ajudar a melhorar o Supple.","Exercise library":"Exercícios","Train today":"Treinar hoje","Today's session":"Sessão de hoje","Watch and train":"Ver e treinar","Train all three":"Treinar os três","← Library":"← Exercícios","Menu":"Menu","Light / dark":"Claro / escuro","Pick any exercise to see how it moves and train along.":"Escolha qualquer exercício para ver como ele se move e treinar junto.","Train again":"Treinar de novo","Today":"Hoje",
 "Moving:":"Em movimento:","Support:":"Apoio:","Chair":"Cadeira","Wall":"Parede","Resistance band":"Elástico de resistência","Door frame":"Batente da porta","Floor mat":"Tapete","Step":"Degrau","Counter":"Bancada","Faint figure = start position":"Figura clara = posição inicial",
 "Move":"Movimento","Region":"Região","head to feet":"da cabeça aos pés","Exercise":"Exercício"
 };
@@ -1294,7 +1302,7 @@ function renderExplorer(){
      <span class="mono" style="color:var(--faint)">${T("Region")} ${of(idx+1,REGIONS.length)} · ${T("head to feet")}</span>
      <h3>${esc(r.name)}</h3>
      <p class="sub">${esc(r.sub)}</p>
-     <div class="badges"><span class="badge">${esc(r.role)}</span><span class="badge"><i style="background:var(--${st})"></i><span class="st-${st}">${ST[st]}</span></span></div>
+     <div class="badges"><span class="badge">${esc(r.role)}</span>${st==="unset"?`<a class="badge badge-link" href="#assess"><i style="background:var(--${st})"></i><span class="st-${st}">${ST[st]}</span><span class="bl-go">Check now →</span></a>`:`<span class="badge"><i style="background:var(--${st})"></i><span class="st-${st}">${ST[st]}</span></span>`}</div>
    </div>
    <div><div class="sec-label">Typical adult range</div><div class="rom">${r.rom.map(x=>`<div><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div></div>
    <div><div class="sec-label">Muscles that move it</div><div class="muscles">${r.muscles.map((m,k)=>`<details${k===0?" open":""}><summary><b>${esc(m.n)}</b><span>${esc(m.s)}</span></summary><div class="path"><em>${esc(m.from)}</em><span aria-label="to">→</span><em>${esc(m.to)}</em></div></details>`).join("")}</div></div>
@@ -1739,7 +1747,7 @@ function heroFigure(){
   const host=document.getElementById("heroFig"); if(!host) return;
   host.querySelector("svg")?.remove();
   const sc=scores();
-  const joints=HJ.map(([r,k])=>`<g class="joint s-${status(sc[r])}" data-k="${k}"><circle class="halo" r="17"/><circle class="ring" r="12"/><circle class="dot" r="4.8"/></g>`).join("");
+  const joints=HJ.map(([r,k])=>`<g class="joint s-${status(sc[r])}" data-k="${k}" data-goto="${r}"><circle class="halo" r="17"/><circle class="ring" r="12"/><circle class="dot" r="4.8"/></g>`).join("");
   host.insertAdjacentHTML("afterbegin",`<svg class="fig hero-svg" viewBox="0 0 400 600" role="img" aria-label="Animated figure moving through slow tai chi poses">
     <polygon class="body" data-b="torso" stroke-width="26"/><line class="body" data-b="neckB" stroke-width="20"/>
     <polyline class="body" data-b="armLB" fill="none" stroke-width="22"/><polyline class="body" data-b="armRB" fill="none" stroke-width="22"/>
@@ -1762,6 +1770,11 @@ function heroFigure(){
   heroKick();
 }
 function heroStatus(){ const sc=scores(); document.querySelectorAll(".hero-svg .joint").forEach((g,i)=>{g.setAttribute("class","joint s-"+status(sc[HJ[i][0]]))}); }
+/* hero: any joint or label opens that region in the body atlas */
+document.querySelector(".hero-panel").addEventListener("click",e=>{
+  const t=e.target.closest("[data-goto]"); if(!t) return;
+  selectRegion(t.dataset.goto,true);
+});
 function heroDraw(J){
   const e=HS.el; if(!e) return;
   e.torso.setAttribute("points",pts([J.shL,J.shR,J.hipR,J.hipL]));
