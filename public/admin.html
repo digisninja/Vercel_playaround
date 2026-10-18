@@ -179,7 +179,7 @@ function renderTraining(tr){
     ${feelRows.length?feelRows.map(fr=>`<div style="margin-bottom:12px"><div class="sub" style="font-size:.85rem;margin-bottom:6px">${SRC[fr.src]} · ${fr.n}</div><div class="stack">${["looser","same","tired","hurt"].map((k,i)=>{const c=(fr.rows.find(r=>r.feel===k)||{n:0}).n;return `<i title="${FEELS[k]}: ${c}" style="width:${pct(c,fr.n)}%;background:${["var(--keep)","var(--blue)","var(--build)","var(--focus)"][i]}"></i>`}).join("")}</div></div>`).join("")+`<div class="legend"><span><i style="background:var(--keep)"></i>Looser</span><span><i style="background:var(--blue)"></i>Same</span><span><i style="background:var(--build)"></i>Tired, good</span><span><i style="background:var(--focus)"></i>Hurt</span></div>`:`<p class="empty">No ratings yet.</p>`}
   </div>`;
 }
-$("f").addEventListener("submit",e=>{e.preventDefault();load().catch(()=>msg("Network error. Try again."))});
+$("f").addEventListener("submit",e=>{e.preventDefault();load().catch(err=>msg("Could not show the dashboard: "+(err&&err.message||err)))});
 $("csvTrain").addEventListener("click",()=>downloadCsv("training"));
 async function downloadCsv(table){
   const token=$("token").value.trim(); if(!token){msg("Enter the admin token first.");return}
