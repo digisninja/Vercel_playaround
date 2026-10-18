@@ -1,6 +1,6 @@
 // POST /api/assess — receives anonymous check-in events from the website.
-// Event types: start | answer | complete | feel
-import { sql, ensureSchema, REGIONS, TESTS, MOODS, FEELS, LANGS, isUuid } from "./_db.js";
+// Event types: start | answer | complete | feel | train_start | train_exercise | train_end
+import { sql, ensureSchema, REGIONS, TESTS, MOODS, FEELS, LANGS, EXERCISES, TRAIN_SOURCES, TRAIN_ACTIONS, isUuid } from "./_db.js";
 
 function deviceFrom(ua = "") {
   if (/iPad|Tablet/i.test(ua)) return "tablet";
@@ -84,9 +84,49 @@ export default async function handler(req, res) {
       if (!FEELS.includes(b.feel)) return res.status(400).json({ error: "Unknown feel value." });
       const aid = isUuid(assessment_id) ? assessment_id : null;
       const label = typeof b.session === "string" ? b.session.slice(0, 120) : null;
+      const tid = isUuid(b.training_id) ? b.training_id : null;
       await sql`
-        INSERT INTO session_feedback (anon_id, assessment_id, session_label, feel)
-        VALUES (${anon_id}, (SELECT id FROM assessments WHERE id = ${aid} AND anon_id = ${anon_id}), ${label}, ${b.feel})`;
+        INSERT INTO session_feedback (anon_id, assessment_id, session_label, feel, training_id)
+        VALUES (${anon_id}, (SELECT id FROM assessments WHERE id = ${aid} AND anon_id = ${anon_id}), ${label}, ${b.feel},
+                (SELECT id FROM training_sessions WHERE id = ${tid} AND anon_id = ${anon_id}))`;
+      return res.status(204).end();
+    }
+
+    // ---- Train with me ----
+    const tid = b.training_id;
+    const int = (v, max) => Math.max(0, Math.min(max, Math.round(Number(v) || 0)));
+
+    if (type === "train_start") {
+      if (!isUuid(tid)) return res.status(400).json({ error: "training_id must be a UUID." });
+      if (!TRAIN_SOURCES.includes(b.source)) return res.status(400).json({ error: "Unknown source." });
+      const aid = isUuid(assessment_id) ? assessment_id : null;
+      const label = typeof b.session === "string" ? b.session.slice(0, 120) : null;
+      await sql`
+        INSERT INTO training_sessions (id, anon_id, assessment_id, source, session_label, lang, device, exercises_total)
+        VALUES (${tid}, ${anon_id}, (SELECT id FROM assessments WHERE id = ${aid} AND anon_id = ${anon_id}),
+                ${b.source}, ${label}, ${lang}, ${deviceFrom(req.headers["user-agent"])}, ${int(b.exercises, 20)})
+        ON CONFLICT (id) DO NOTHING`;
+      return res.status(204).end();
+    }
+
+    if (type === "train_exercise") {
+      if (!isUuid(tid)) return res.status(400).json({ error: "training_id must be a UUID." });
+      const region = EXERCISES[b.exercise_id];
+      if (!region) return res.status(400).json({ error: "Unknown exercise_id." });
+      const action = TRAIN_ACTIONS.includes(b.action) ? b.action : "next";
+      await sql`
+        INSERT INTO training_exercises (training_id, exercise_id, region, position, started, active_seconds, timer_completed, view_seconds, action)
+        SELECT ${tid}, ${b.exercise_id}, ${region}, ${int(b.position, 20)}, ${b.started === true},
+               ${int(b.active_seconds, 3600)}, ${b.timer_completed === true}, ${int(b.view_seconds, 7200)}, ${action}
+        WHERE EXISTS (SELECT 1 FROM training_sessions WHERE id = ${tid} AND anon_id = ${anon_id})`;
+      return res.status(204).end();
+    }
+
+    if (type === "train_end") {
+      if (!isUuid(tid)) return res.status(400).json({ error: "training_id must be a UUID." });
+      await sql`
+        UPDATE training_sessions SET ended_at = now(), completed = ${b.completed === true}, last_position = ${int(b.last_position, 20)}
+        WHERE id = ${tid} AND anon_id = ${anon_id} AND ended_at IS NULL`;
       return res.status(204).end();
     }
 

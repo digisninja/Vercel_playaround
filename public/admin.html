@@ -63,7 +63,8 @@ td.h{font-family:var(--mono);font-variant-numeric:tabular-nums}
       <input id="token" type="password" placeholder="Admin token" autocomplete="current-password" aria-label="Admin token">
       <select id="days" aria-label="Time range"><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90" selected>Last 90 days</option><option value="365">Last year</option><option value="3650">All time</option></select>
       <button class="primary" type="submit">Load</button>
-      <button type="button" id="csv">Download CSV</button>
+      <button type="button" id="csv">Check-in CSV</button>
+      <button type="button" id="csvTrain">Training CSV</button>
     </form>
   </div>
   <div id="msg" class="msg" hidden></div>
@@ -74,6 +75,8 @@ const RN={neck:"Neck",shoulders:"Shoulders",thoracic:"Upper back",lumbar:"Lower 
 const ORDER=Object.keys(RN);
 const TN={neck_rotation:"Look over your shoulder",shoulder_reach:"Reach behind your back",seated_twist:"Seated twist",toe_reach:"Reach toward your toes",chair_stand_30s:"30-second chair stand",single_leg_stand:"Stand on one leg",knee_to_wall:"Knee-to-wall"};
 const MOODS=["cautious","stiff","curious","ready","unknown"];
+const EXN={"chin_tucks":"Chin tucks","slow_neck_turns":"Slow neck turns","upper_trap_stretch":"Upper-trap stretch","wall_slides":"Wall slides","band_pull_aparts":"Band pull-aparts","doorway_chest_stretch":"Doorway chest stretch","open_book":"Open book","cat_cow":"Cat–cow","chair_back_extension":"Chair-back extension","dead_bug":"Dead bug","bird_dog":"Bird dog","90_90_breathing":"90/90 breathing","90_90_switches":"90/90 switches","glute_bridge":"Glute bridge","half_kneeling_hip_flexor_stretch":"Half-kneeling hip-flexor stretch","sit_to_stand":"Sit-to-stand","heel_slides":"Heel slides","step_ups":"Step-ups","knee_to_wall_rocks":"Knee-to-wall rocks","calf_raises":"Calf raises","tandem_stance":"Tandem stance"};
+const SRC={today:"Today's session",region:"From the body atlas",library:"From the exercise library"};
 const FEELS={looser:"Looser",same:"About the same",tired:"Tired, in a good way",hurt:"Something hurt"};
 const LANGS={en:"English",zh:"中文",pt:"Português"};
 const $=id=>document.getElementById(id);
@@ -144,9 +147,47 @@ function render(d){
 
   <div class="card c12"><h2>Check-ins per day (last 30 days)</h2>
     ${d.daily.length?`<div class="spark">${d.daily.map(x=>`<div style="height:${x.started/maxDay*100}%" title="${x.day}: ${x.started} started, ${x.completed} completed"></div>`).join("")}</div><p class="note">${esc(d.daily[0].day)} → ${esc(d.daily[d.daily.length-1].day)}</p>`:`<p class="empty">No data yet.</p>`}
+  </div>
+  ${renderTraining(d.training)}`;
+}
+function renderTraining(tr){
+  if(!tr) return "";
+  const t=tr.totals||{started:0,completed:0,people:0,active_seconds:0};
+  const ex=tr.byExercise||[], views=ex.reduce((s,x)=>s+x.views,0), starts=ex.reduce((s,x)=>s+x.starts,0);
+  const mins=Math.round((t.active_seconds||0)/60);
+  const srcTotal=(tr.bySource||[]).reduce((s,x)=>s+x.started,0);
+  const feelRows=["today","region","library"].map(src=>{const rows=(tr.feel||[]).filter(x=>x.source===src);const n=rows.reduce((s,x)=>s+x.n,0);return{src,n,rows}}).filter(x=>x.n);
+  return `
+  <div class="c12" style="margin-top:18px"><h1 style="font-size:1.5rem">Train with me</h1><div class="sub">What people actually do inside the trainer.</div></div>
+  <div class="card kpi c3"><b>${t.started}</b><span>Sessions started</span></div>
+  <div class="card kpi c3"><b>${pct(t.completed,t.started)}%</b><span>Finished to the end (${t.completed})</span></div>
+  <div class="card kpi c3"><b>${pct(starts,views)}%</b><span>Exercises where Start was pressed</span></div>
+  <div class="card kpi c3"><b>${(t.active_seconds||0)<120?(t.active_seconds||0)+" s":mins+" min"}</b><span>Total time moving (timer running)</span></div>
+
+  <div class="card c12"><h2>Exercises</h2>
+    ${ex.length?`<div class="tbl"><table><thead><tr><th>Exercise</th><th>Region</th><th>Views</th><th>Started</th><th>Avg time moving</th><th>Full timer</th><th>Quit here</th></tr></thead><tbody>
+    ${ex.map(x=>`<tr><td>${esc(EXN[x.exercise_id]||x.exercise_id)}</td><td>${RN[x.region]||esc(x.region)}</td><td class="h">${x.views}</td>
+      <td class="h">${pct(x.starts,x.views)}%</td><td class="h">${x.starts?x.avg_active+" s":"–"}</td>
+      <td class="h">${pct(x.full_timer,x.views)}%</td><td class="h" style="${x.quit_here?"color:var(--focus)":""}">${x.quit_here}</td></tr>`).join("")}
+    </tbody></table></div><p class="note">Views count every visit to an exercise screen. "Started" = pressed Start on the timer. "Avg time moving" counts only running timer seconds (pauses excluded). "Quit here" = the session was closed on this exercise.</p>`:`<p class="empty">No training sessions yet.</p>`}
+  </div>
+
+  <div class="card c6"><h2>Where sessions start</h2>
+    ${rows(tr.bySource||[],x=>`<div class="row"><span>${SRC[x.source]||esc(x.source)}</span><span class="bar"><i style="width:${pct(x.started,srcTotal)}%"></i></span><span class="num">${x.started} · ${pct(x.completed,x.started)}% done</span></div>`)}
+  </div>
+  <div class="card c6"><h2>Feeling after training, by start point</h2>
+    ${feelRows.length?feelRows.map(fr=>`<div style="margin-bottom:12px"><div class="sub" style="font-size:.85rem;margin-bottom:6px">${SRC[fr.src]} · ${fr.n}</div><div class="stack">${["looser","same","tired","hurt"].map((k,i)=>{const c=(fr.rows.find(r=>r.feel===k)||{n:0}).n;return `<i title="${FEELS[k]}: ${c}" style="width:${pct(c,fr.n)}%;background:${["var(--keep)","var(--blue)","var(--build)","var(--focus)"][i]}"></i>`}).join("")}</div></div>`).join("")+`<div class="legend"><span><i style="background:var(--keep)"></i>Looser</span><span><i style="background:var(--blue)"></i>Same</span><span><i style="background:var(--build)"></i>Tired, good</span><span><i style="background:var(--focus)"></i>Hurt</span></div>`:`<p class="empty">No ratings yet.</p>`}
   </div>`;
 }
 $("f").addEventListener("submit",e=>{e.preventDefault();load().catch(()=>msg("Network error. Try again."))});
+$("csvTrain").addEventListener("click",()=>downloadCsv("training"));
+async function downloadCsv(table){
+  const token=$("token").value.trim(); if(!token){msg("Enter the admin token first.");return}
+  const r=await fetch(`/api/export?days=${$("days").value}&table=${table}`,{headers:{Authorization:`Bearer ${token}`}});
+  if(!r.ok){const d=await r.json().catch(()=>({}));msg(d.error||"Could not export.");return}
+  const url=URL.createObjectURL(await r.blob()); const a=document.createElement("a");
+  a.href=url; a.download=`supple-${table}-${$("days").value}d.csv`; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+}
 $("csv").addEventListener("click",async()=>{
   const token=$("token").value.trim(); if(!token){msg("Enter the admin token first.");return}
   const r=await fetch(`/api/export?days=${$("days").value}`,{headers:{Authorization:`Bearer ${token}`}});

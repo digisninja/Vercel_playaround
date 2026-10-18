@@ -6,7 +6,7 @@ const url = process.env.DATABASE_URL || process.env.POSTGRES_URL;
 // One small connection per function instance. prepare:false keeps it compatible
 // with pooled connection strings (Neon pooler, Supabase transaction pooler).
 export const sql = url
-  ? postgres(url, { ssl: /localhost|127\.0\.0\.1|sslmode=disable/.test(url) ? false : "require", max: 1, idle_timeout: 20, connect_timeout: 10, prepare: false })
+  ? postgres(url, { ssl: /localhost|127\.0\.0\.1|sslmode=disable/.test(url) ? false : "require", max: 1, idle_timeout: 20, connect_timeout: 10, prepare: false, onnotice: () => {} })
   : null;
 
 // Keep in sync with db/schema.sql
@@ -27,6 +27,22 @@ CREATE TABLE IF NOT EXISTS session_feedback (
   id bigserial PRIMARY KEY, anon_id uuid NOT NULL,
   assessment_id uuid REFERENCES assessments(id) ON DELETE SET NULL,
   session_label text, feel text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE IF NOT EXISTS training_sessions (
+  id uuid PRIMARY KEY, anon_id uuid NOT NULL,
+  assessment_id uuid REFERENCES assessments(id) ON DELETE SET NULL,
+  source text NOT NULL, session_label text, lang text NOT NULL DEFAULT 'en', device text,
+  exercises_total smallint, started_at timestamptz NOT NULL DEFAULT now(), ended_at timestamptz,
+  completed boolean NOT NULL DEFAULT false, last_position smallint);
+CREATE INDEX IF NOT EXISTS training_sessions_started_idx ON training_sessions (started_at);
+CREATE TABLE IF NOT EXISTS training_exercises (
+  id bigserial PRIMARY KEY,
+  training_id uuid NOT NULL REFERENCES training_sessions(id) ON DELETE CASCADE,
+  exercise_id text NOT NULL, region text NOT NULL, position smallint NOT NULL,
+  started boolean NOT NULL, active_seconds int NOT NULL, timer_completed boolean NOT NULL,
+  view_seconds int NOT NULL, action text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX IF NOT EXISTS training_exercises_training_idx ON training_exercises (training_id);
+CREATE INDEX IF NOT EXISTS training_exercises_exercise_idx ON training_exercises (exercise_id);
+ALTER TABLE session_feedback ADD COLUMN IF NOT EXISTS training_id uuid REFERENCES training_sessions(id) ON DELETE SET NULL;
 CREATE OR REPLACE VIEW region_answers AS
 SELECT a.assessment_id, r.region, a.test_id, a.score, s.mood_start, s.lang, s.country, a.answered_at
 FROM answers a JOIN assessments s ON s.id = a.assessment_id
@@ -50,6 +66,10 @@ export const TESTS = {
   single_leg_stand: ["ankles"],
   knee_to_wall: ["ankles", "knees"],
 };
+// Trainer exercises (id → body region). ids are the English exercise names in snake_case.
+export const EXERCISES = {"chin_tucks":"neck","slow_neck_turns":"neck","upper_trap_stretch":"neck","wall_slides":"shoulders","band_pull_aparts":"shoulders","doorway_chest_stretch":"shoulders","open_book":"thoracic","cat_cow":"thoracic","chair_back_extension":"thoracic","dead_bug":"lumbar","bird_dog":"lumbar","90_90_breathing":"lumbar","90_90_switches":"hips","glute_bridge":"hips","half_kneeling_hip_flexor_stretch":"hips","sit_to_stand":"knees","heel_slides":"knees","step_ups":"knees","knee_to_wall_rocks":"ankles","calf_raises":"ankles","tandem_stance":"ankles"};
+export const TRAIN_SOURCES = ["today", "region", "library"];
+export const TRAIN_ACTIONS = ["next", "prev", "finish", "close", "library"];
 export const MOODS = ["cautious", "stiff", "curious", "ready"];
 export const FEELS = ["looser", "same", "tired", "hurt"];
 export const LANGS = ["en", "zh", "pt"];

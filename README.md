@@ -10,7 +10,7 @@ api/
   _db.js          database connection, auto-creates tables, allowed values
   assess.js       POST /api/assess   ← the website sends events here
   stats.js        GET  /api/stats    ← dashboard data (needs ADMIN_TOKEN)
-  export.js       GET  /api/export   ← CSV download of every answer (needs ADMIN_TOKEN)
+  export.js       GET  /api/export   ← CSV of every check-in answer, or ?table=training for trainer activity (needs ADMIN_TOKEN)
 db/schema.sql     reference schema (tables are created automatically on first use)
 vercel.json       security headers, no-index for /admin and /api
 .env.example      environment variables you need
@@ -39,6 +39,16 @@ Nothing is sent if the visitor unticks **"Save my answers anonymously"** on the 
 | `answer` | each of the 7 tests | test id, body regions, score 0 limited / 1 partial / 2 full (changing an answer overwrites it) |
 | `complete` | results screen | per-region scores, completion time |
 | `feel` | end of a Train-with-me session | looser / same / tired / hurt and the session name |
+
+And for **Train with me**:
+
+| Event | When | Saved |
+|---|---|---|
+| `train_start` | a session opens (today's plan, a body-atlas region, or the library) | session id, where it was opened from, session name, number of exercises, language, device, link to the latest check-in |
+| `train_exercise` | leaving an exercise screen (Next, Back, Finish, Close, Library) | which exercise, its position, whether Start was pressed, seconds the timer ran (pauses excluded), whether the timer finished, seconds on the screen, how they left |
+| `train_end` | finishing or closing the session | finished or not, which exercise they were on |
+
+These go into the `training_sessions` and `training_exercises` tables, and the end-of-session feeling is linked to its session. The dashboard has a **Train with me** section, and **Training CSV** downloads every exercise visit.
 
 No names, emails, IP addresses or free text are stored.
 

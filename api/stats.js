@@ -13,7 +13,8 @@ export default async function handler(req, res) {
 
   try {
     await ensureSchema();
-    const [totals, byRegion, byTest, byMood, moodRegion, focus, byLang, byDevice, feedback, daily] = await Promise.all([
+    const [totals, byRegion, byTest, byMood, moodRegion, focus, byLang, byDevice, feedback, daily,
+           trainTotals, trainBySource, byExercise, trainFeel] = await Promise.all([
       sql`SELECT count(*)::int AS started, count(completed_at)::int AS completed,
                  count(DISTINCT anon_id)::int AS people
           FROM assessments WHERE started_at > ${since}`,
@@ -42,9 +43,29 @@ export default async function handler(req, res) {
       sql`SELECT to_char(date_trunc('day', started_at), 'YYYY-MM-DD') AS day,
                  count(*)::int AS started, count(completed_at)::int AS completed
           FROM assessments WHERE started_at > now() - interval '30 days' GROUP BY 1 ORDER BY 1`,
+      // ---- Train with me ----
+      sql`SELECT count(*)::int AS started, count(*) FILTER (WHERE completed)::int AS completed,
+                 count(DISTINCT anon_id)::int AS people,
+                 coalesce((SELECT sum(active_seconds) FROM training_exercises te JOIN training_sessions t2 ON t2.id = te.training_id
+                           WHERE t2.started_at > ${since}), 0)::int AS active_seconds
+          FROM training_sessions WHERE started_at > ${since}`,
+      sql`SELECT source, count(*)::int AS started, count(*) FILTER (WHERE completed)::int AS completed
+          FROM training_sessions WHERE started_at > ${since} GROUP BY source`,
+      sql`SELECT te.exercise_id, te.region, count(*)::int AS views,
+                 count(*) FILTER (WHERE te.started)::int AS starts,
+                 coalesce(round(avg(te.active_seconds) FILTER (WHERE te.started)), 0)::int AS avg_active,
+                 count(*) FILTER (WHERE te.timer_completed)::int AS full_timer,
+                 count(*) FILTER (WHERE te.action IN ('close', 'library'))::int AS quit_here,
+                 sum(te.active_seconds)::int AS total_active
+          FROM training_exercises te JOIN training_sessions ts ON ts.id = te.training_id
+          WHERE ts.started_at > ${since} GROUP BY 1, 2 ORDER BY views DESC`,
+      sql`SELECT ts.source, sf.feel, count(*)::int AS n
+          FROM session_feedback sf JOIN training_sessions ts ON ts.id = sf.training_id
+          WHERE sf.created_at > ${since} GROUP BY 1, 2`,
     ]);
     return res.status(200).json({
       days, totals: totals[0], byRegion, byTest, byMood, moodRegion, focus, byLang, byDevice, feedback, daily,
+      training: { totals: trainTotals[0], bySource: trainBySource, byExercise, feel: trainFeel },
     });
   } catch (err) {
     console.error("stats error", err);
